@@ -1,0 +1,33 @@
+@mixin grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 16px;
+
+  @include onTablet {
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 16px;
+  }
+
+  @include onDesktop {
+    grid-template-columns: repeat(24, 32px);
+    column-gap: 16px;
+  }
+}
+
+@mixin onDesktop() {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin onTablet() {
+  @media (min-width: 640px) and (max-width: 1199px) {
+    @content;
+  }
+}
+
+@mixin notMobile {
+  @media (min-width: 640px) {
+    @content;
+  }
+}
