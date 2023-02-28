@@ -23,6 +23,8 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+        working-directory: mateAcademy/projects/product_catalog
 
       - name: Lint
         run: npm run lint
+        working-directory: mateAcademy/projects/product_catalog
