@@ -10,6 +10,10 @@ module.exports = {
         type: Sequelize.STRING,
         primaryKey: true,
       },
+      namespaceId: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
       name: {
         type: Sequelize.STRING,
         allowNull: false,
@@ -79,11 +83,8 @@ module.exports = {
         allowNull: false,
         defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
       },
-      updatedAt: {
-        type: Sequelize.DATE,
-        allowNull: false,
-        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
-      },
+    }, {
+      updatedAt: false
     });
   },
 

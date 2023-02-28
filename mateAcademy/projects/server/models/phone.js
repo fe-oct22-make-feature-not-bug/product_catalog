@@ -16,6 +16,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   Phone.init({
     name: DataTypes.STRING,
+    namespaceId: DataTypes.STRING,
     capacityAvailable: DataTypes.ARRAY(DataTypes.STRING),
     capacity: DataTypes.STRING,
     priceRegular: DataTypes.FLOAT,

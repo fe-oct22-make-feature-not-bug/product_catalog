@@ -20,6 +20,7 @@
   "scripts": {
     "start": "node -r @swc-node/register main.ts",
     "dev": "nodemon --exec node -r @swc-node/register main.ts",
+    "make-seed": "",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
