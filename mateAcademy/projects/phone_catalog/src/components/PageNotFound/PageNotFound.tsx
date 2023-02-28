@@ -4,12 +4,12 @@ import './PageNotFound.scss';
 
 export const PageNotFound: React.FC = () => {
   return (
-    <section className="PageNotFound">
+    <section className="pageNotFound">
       <h1 hidden>Page Not Found</h1>
       <img
-      className="PageNotFound__image"
-      src={Page404}
-      alt="Page Not Found"
+        className="pageNotFound__image"
+        src={Page404}
+        alt="Page Not Found"
       />
     </section>
     

@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import svg from '../../public/icons/chevron-up.svg';
+import chevronUp from '../../public/icons/chevron-up.svg';
 import { Logo } from '../Logo';
 import { Link } from 'react-router-dom';
 import './Footer.scss';
@@ -8,31 +8,31 @@ const navLinks = ['github', 'contacts', 'rights'];
 
 export const Footer: React.FC = memo(() => {
   return (
-    <footer className='Footer'>
-      <div className='Footer__container'> 
-        <div className='Footer__logo'>
+    <footer className='footer'>
+      <div className='footer__container'> 
+        <div className='footer__logo'>
           < Logo />
         </div>
-        <nav className='Footer__navigation'>
-          <ul className='Footer__list'>
+        <nav className='footer__navigation'>
+          <ul className='footer__list'>
             {navLinks.map(navLink => (
               <li
-                className='Footer__list-item'
+                className='footer__list-item'
                 key={navLink}
               >
-              <Link to="/" className='Footer__link'>
+              <Link to="/" className='footer__link'>
                 {navLink}
               </Link>
             </li>
             ))}
           </ul>
         </nav>
-        <div className='Footer__totop'>
-          <p className='Footer__totop-label'>Back to top</p>
-          <button className='Footer__totop-button'>
+        <div className='footer__toTop'>
+          <p className='footer__toTop-label'>Back to top</p>
+          <button className='footer__toTop-button'>
             <img
-              className='Footer__totop-icon'
-              src={ svg }
+              className='footer__toTop-icon'
+              src={ chevronUp }
               alt="back to top"
             />
           </button>
