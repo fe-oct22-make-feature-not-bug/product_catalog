@@ -1,18 +1,16 @@
 {
   "parser": "@typescript-eslint/parser",
-  "plugins": [
-    "@typescript-eslint",
-    "prettier"
-  ],
+  "plugins": ["@typescript-eslint", "prettier"],
   "extends": [
-    "eslint:recommended",
+    "@mate-academy/eslint-config",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
     "prettier"
   ],
   "rules": {
     "react/jsx-uses-react": "error",
-    "react/jsx-uses-vars": "error"
+    "react/jsx-uses-vars": "error",
+    "no-unused-expressions": "off" 
   },
   "settings": {
     "react": {
