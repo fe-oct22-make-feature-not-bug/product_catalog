@@ -1,3 +1,4 @@
+/* eslint-disable react/display-name */
 import React, { memo } from 'react';
 import chevronUp from '../../public/icons/chevron-up.svg';
 import { Logo } from '../Logo';
@@ -9,7 +10,7 @@ const navLinks = ['github', 'contacts', 'rights'];
 export const Footer: React.FC = memo(() => {
   return (
     <footer className='footer'>
-      <div className='footer__container'> 
+      <div className='footer__container'>
         <div className='footer__logo'>
           < Logo />
         </div>
@@ -20,10 +21,10 @@ export const Footer: React.FC = memo(() => {
                 className='footer__list-item'
                 key={navLink}
               >
-              <Link to="/" className='footer__link'>
-                {navLink}
-              </Link>
-            </li>
+                <Link to="/" className='footer__link'>
+                  {navLink}
+                </Link>
+              </li>
             ))}
           </ul>
         </nav>
@@ -32,7 +33,7 @@ export const Footer: React.FC = memo(() => {
           <button className='footer__toTop-button'>
             <img
               className='footer__toTop-icon'
-              src={ chevronUp }
+              src={chevronUp}
               alt="back to top"
             />
           </button>
