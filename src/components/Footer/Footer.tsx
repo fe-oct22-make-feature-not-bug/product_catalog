@@ -6,7 +6,6 @@ import './Footer.scss';
 
 const navLinks = ["github", "contacts", "rights"];
 
-// eslint-disable-next-line react/display-name
 export const Footer: React.FC = memo(() => {
   return (
     <footer className="footer">

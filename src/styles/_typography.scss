@@ -1,0 +1,64 @@
+@import "../styles/abstracts/index.scss";
+
+.h1 {
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 41px;
+
+  @include notMobile {
+    font-size: 48px;
+    line-height: 56px;
+  }
+}
+
+.h2 {
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 31px;
+
+  @include notMobile {
+    font-size: 32px;
+    line-height: 41px;
+  }
+}
+
+.h3 {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 26px;
+
+  @include notMobile {
+    font-size: 22px;
+    line-height: 31px;
+    font-weight: 800;
+  }
+}
+
+.h4 {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+
+  @include notMobile {
+    font-size: 20px;
+    line-height: 26px;
+  }
+}
+
+.text-uppercase {
+  font-size: 12px;
+  line-height: 11px;
+  font-weight: 800;
+}
+
+.text-button {
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 700;
+}
+
+.text-small {
+  font-size: 12px;
+  line-height: 15px;
+  font-weight: 700;
+}
