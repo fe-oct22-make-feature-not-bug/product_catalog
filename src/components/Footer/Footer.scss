@@ -31,7 +31,7 @@
   &__navigation {
     width: 100%;
 
-    @include onTablet {
+    @include notMobile {
       width: 33%;
     }
   }
@@ -49,7 +49,7 @@
     text-align: left;
     list-style: none;
 
-    @include onTablet {
+    @include notMobile {
       flex-wrap: nowrap;
       flex-direction: row;
       justify-content: space-between;

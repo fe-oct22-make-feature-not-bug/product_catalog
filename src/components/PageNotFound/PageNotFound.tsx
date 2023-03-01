@@ -1,5 +1,5 @@
 import React from "react";
-import Page404 from "../../public/images/404.png";
+import Page404 from "../../assets/images/404.png";
 import "./PageNotFound.scss";
 
 export const PageNotFound: React.FC = () => {
