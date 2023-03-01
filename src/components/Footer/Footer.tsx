@@ -4,33 +4,30 @@ import { Logo } from '../Logo';
 import { Link } from 'react-router-dom';
 import './Footer.scss';
 
-const navLinks = ['github', 'contacts', 'rights'];
+const navLinks = ["github", "contacts", "rights"];
 
 // eslint-disable-next-line react/display-name
 export const Footer: React.FC = memo(() => {
   return (
-    <footer className='footer'>
-      <div className='footer__container'> 
-        <div className='footer__logo'>
-          < Logo />
+    <footer className="footer">
+      <div className="footer__container">
+        <div className="footer__logo">
+          <Logo />
         </div>
-        <nav className='footer__navigation'>
-          <ul className='footer__list'>
-            {navLinks.map(navLink => (
-              <li
-                className='footer__list-item'
-                key={navLink}
-              >
-              <Link to="/" className='footer__link'>
-                {navLink}
-              </Link>
-            </li>
+        <nav className="footer__navigation">
+          <ul className="footer__list">
+            {navLinks.map((navLink) => (
+              <li className="footer__list-item" key={navLink}>
+                <Link to="/" className="footer__link">
+                  {navLink}
+                </Link>
+              </li>
             ))}
           </ul>
         </nav>
-        <div className='footer__toTop'>
-          <p className='footer__toTop-label'>Back to top</p>
-          <button className='footer__toTop-button'>
+        <div className="footer__toTop">
+          <p className="footer__toTop-label">Back to top</p>
+          <button className="footer__toTop-button">
             <img
               className='footer__toTop-icon'
               src={chevronUp}

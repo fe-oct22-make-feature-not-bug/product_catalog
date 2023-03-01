@@ -1,4 +1,4 @@
-@import '../../styles/abstracts/index.scss';
+@import "../../styles/abstracts/index.scss";
 
 .footer {
   padding: 32px 16px;
@@ -30,8 +30,8 @@
 
   &__navigation {
     width: 100%;
-    
-    @include notMobile {
+
+    @include onTablet {
       width: 33%;
     }
   }
@@ -48,9 +48,8 @@
 
     text-align: left;
     list-style: none;
-    
 
-    @include notMobile {
+    @include onTablet {
       flex-wrap: nowrap;
       flex-direction: row;
       justify-content: space-between;
