@@ -1,54 +1,112 @@
 import React, { memo } from 'react';
-import chevronUp from '../../public/icons/chevron-up.svg';
 import { Logo } from '../Logo';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './Header.scss';
+import './BurgerMenu/BurgerMenu'
 import like from '../../images/like.png';
 import bag from '../../images/bag.png';
+import menu from '../../images/menu.png';
+import { BurgerMenu } from './BurgerMenu/BurgerMenu';
+
 
 export const Header: React.FC = () => {
   return (
     <>
       <header className="header">
         <div className="header__container">
-          <div className="header__logo">
+          <NavLink
+            to="/"
+            className="header__logo"
+          >
             <Logo />
-          </div>
+          </NavLink>
 
           <nav className="nav">
             <ul className="nav__list">
               <li className="nav__item">
-                HOME
+                <NavLink
+                  to="/"
+                  end
+                  className={({ isActive }) => (isActive 
+                    ? 'nav__link nav__link--is--active is-active' 
+                    : 'nav__link')}
+                >
+                  home
+                </NavLink>
+              </li>
+              
+              <li className="nav__item">
+                <NavLink
+                  to="/phones"
+                  className={({ isActive }) => (isActive 
+                    ? 'nav__link nav__link--is--active is-active' 
+                    : 'nav__link')}
+                >
+                  phones
+                </NavLink>
               </li>
               <li className="nav__item">
-                PHONES
+                <NavLink
+                  to="/tablets"
+                  className={({ isActive }) => (isActive 
+                    ? 'nav__link nav__link--is--active is-active' 
+                    : 'nav__link')}
+                >
+                  tablets
+                </NavLink>
               </li>
               <li className="nav__item">
-                TABLETS
-              </li>
-              <li className="nav__item">
-                ACCESSORIES
+                <NavLink
+                  to="/accessories"
+                  className={({ isActive }) => (isActive 
+                    ? 'nav__link nav__link--is--active is-active' 
+                    : 'nav__link')}
+                >
+                  accessories
+                </NavLink>
               </li>
             </ul>
           </nav>
+        </div>
 
-          <div className="image__likeAndBag">
-            <img
-              src={like}
-              alt="like"
-              className="image"
-            />
+        <div className="header__likeAndBag">
           
-            <div className="image__likeAndBag">
+          <div className="like">
+            <NavLink
+              to="/like"
+            >
+              <img
+                src={like}
+                alt="like"
+                className="image"
+              />
+            </NavLink>
+          </div>
+
+          <div className="bag"> 
+            <NavLink
+              to="/bag"
+            >
               <img
                 src={bag}
                 alt="bag"
                 className="image"
               />
-            </div>
+            </NavLink>
           </div>
+        </div> 
+
+        <div className="burger__menu">
+          <a href="#menu">
+            <img 
+              src={menu} 
+              alt="menu" 
+            />
+          </a>
         </div>
       </header>
+      
+      <BurgerMenu />
     </>
   )
 }
