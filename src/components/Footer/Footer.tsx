@@ -38,3 +38,5 @@ export const Footer: React.FC = memo(() => {
     </footer>
   );
 });
+
+Footer.displayName = 'Footer';
