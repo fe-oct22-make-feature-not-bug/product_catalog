@@ -18,10 +18,5 @@
     "react": {
       "version": "detect"
     }
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   }
 }
