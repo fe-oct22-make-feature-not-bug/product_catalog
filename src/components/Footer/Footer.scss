@@ -12,7 +12,7 @@
     max-width: 1136px;
     margin: 0 auto;
 
-    @include onTablet {
+    @include notMobile {
       flex-wrap: nowrap;
     }
   }
@@ -22,7 +22,7 @@
     width: 100%;
     margin-bottom: 32px;
 
-    @include onTablet {
+    @include notMobile {
       width: 33%;
       margin-bottom: 0;
     }
@@ -31,7 +31,7 @@
   &__navigation {
     width: 100%;
     
-    @include onTablet {
+    @include notMobile {
       width: 33%;
     }
   }
@@ -50,7 +50,7 @@
     list-style: none;
     
 
-    @include onTablet {
+    @include notMobile {
       flex-wrap: nowrap;
       flex-direction: row;
       justify-content: space-between;
@@ -76,7 +76,7 @@
     justify-content: center;
     width: 100%;
 
-    @include onTablet {
+    @include notMobile {
       width: 33%;
       justify-content: end;
     }
