@@ -1,12 +1,12 @@
-/* eslint-disable react/display-name */
-import React, { memo } from "react";
-import chevronUp from "../../public/icons/chevron-up.svg";
-import { Logo } from "../Logo";
-import { Link } from "react-router-dom";
-import "./Footer.scss";
+import React, { memo } from 'react';
+import chevronUp from '../../assets/icons/chevron-up.svg';
+import { Logo } from '../Logo';
+import { Link } from 'react-router-dom';
+import './Footer.scss';
 
 const navLinks = ["github", "contacts", "rights"];
 
+// eslint-disable-next-line react/display-name
 export const Footer: React.FC = memo(() => {
   return (
     <footer className="footer">
@@ -29,7 +29,7 @@ export const Footer: React.FC = memo(() => {
           <p className="footer__toTop-label">Back to top</p>
           <button className="footer__toTop-button">
             <img
-              className="footer__toTop-icon"
+              className='footer__toTop-icon'
               src={chevronUp}
               alt="back to top"
             />
