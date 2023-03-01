@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import "./styles/index.scss";
 import { Footer } from "./components/Footer/Footer";
 import { PageNotFound } from "./components/PageNotFound/PageNotFound";
+import { Card } from "./components/Card/Card";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
 
         <Route path="*" element={<PageNotFound />} />
       </Routes>
+      <Card />
       <Footer />
     </div>
   );
