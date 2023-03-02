@@ -10,7 +10,7 @@
   "rules": {
     "react/jsx-uses-react": "error",
     "react/jsx-uses-vars": "error",
-    "no-unused-expressions": "off" 
+    "no-unused-expressions": "off"
   },
   "settings": {
     "react": {
