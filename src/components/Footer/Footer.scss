@@ -58,13 +58,6 @@
     }
   }
 
-  &__list-item {
-    text-transform: uppercase;
-    font-weight: 800;
-    font-size: 12px;
-    line-height: 11px;
-  }
-
   &__link {
     color: $color-white;
   }
@@ -83,9 +76,6 @@
 
   &__toTop-label {
     color: $color-secondary;
-    font-weight: 700;
-    font-size: 12px;
-    line-height: 15px;
   }
 
   &__toTop-button {
