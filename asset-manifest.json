@@ -1,29 +1,29 @@
 {
   "files": {
-    "main.css": "/fe-oct22-make-feature-not-bug/product_catalog/static/css/main.675b0143.css",
-    "main.js": "/fe-oct22-make-feature-not-bug/product_catalog/static/js/main.291c2910.js",
-    "static/js/787.10a53ce6.chunk.js": "/fe-oct22-make-feature-not-bug/product_catalog/static/js/787.10a53ce6.chunk.js",
-    "static/media/logo_footer.svg": "/fe-oct22-make-feature-not-bug/product_catalog/static/media/logo_footer.017df26b30774e1dcf803209904aa24c.svg",
-    "static/media/Mont-Heavy.ttf": "/fe-oct22-make-feature-not-bug/product_catalog/static/media/Mont-Heavy.f370bce757bbfe4c8350.ttf",
-    "static/media/Mont-SemiBold.ttf": "/fe-oct22-make-feature-not-bug/product_catalog/static/media/Mont-SemiBold.0b5e68ebb36ca4006e21.ttf",
-    "static/media/Mont-Bold.ttf": "/fe-oct22-make-feature-not-bug/product_catalog/static/media/Mont-Bold.3675b597d3ffb2b75168.ttf",
-    "static/media/404.png": "/fe-oct22-make-feature-not-bug/product_catalog/static/media/404.690f5682ec222bb15211.png",
-    "static/media/Mont-Heavy.woff": "/fe-oct22-make-feature-not-bug/product_catalog/static/media/Mont-Heavy.235606fac6f32b88355c.woff",
-    "static/media/Mont-SemiBold.woff": "/fe-oct22-make-feature-not-bug/product_catalog/static/media/Mont-SemiBold.5d4afcfe00f8d6a38e5f.woff",
-    "static/media/Mont-Bold.woff": "/fe-oct22-make-feature-not-bug/product_catalog/static/media/Mont-Bold.bbedfa075d47682c0041.woff",
-    "static/media/Mont-Heavy.woff2": "/fe-oct22-make-feature-not-bug/product_catalog/static/media/Mont-Heavy.1a5d4089eeb291d65b03.woff2",
-    "static/media/Mont-SemiBold.woff2": "/fe-oct22-make-feature-not-bug/product_catalog/static/media/Mont-SemiBold.95ab478c134f9e9da545.woff2",
-    "static/media/Mont-Bold.woff2": "/fe-oct22-make-feature-not-bug/product_catalog/static/media/Mont-Bold.8b7a4e0626328dd44205.woff2",
-    "static/media/test-phone-image.png": "/fe-oct22-make-feature-not-bug/product_catalog/static/media/test-phone-image.e2839025f465a1b9efff.png",
-    "static/media/heart.svg": "/fe-oct22-make-feature-not-bug/product_catalog/static/media/heart.a48831a1ed897e1e3553.svg",
-    "index.html": "/fe-oct22-make-feature-not-bug/product_catalog/index.html",
-    "static/media/chevron-up.svg": "/fe-oct22-make-feature-not-bug/product_catalog/static/media/chevron-up.c0e3f15d57e31409821a3231e7f6f127.svg",
-    "main.675b0143.css.map": "/fe-oct22-make-feature-not-bug/product_catalog/static/css/main.675b0143.css.map",
-    "main.291c2910.js.map": "/fe-oct22-make-feature-not-bug/product_catalog/static/js/main.291c2910.js.map",
-    "787.10a53ce6.chunk.js.map": "/fe-oct22-make-feature-not-bug/product_catalog/static/js/787.10a53ce6.chunk.js.map"
+    "main.css": "/product_catalog/static/css/main.98b928e5.css",
+    "main.js": "/product_catalog/static/js/main.9187ea7c.js",
+    "static/js/787.10a53ce6.chunk.js": "/product_catalog/static/js/787.10a53ce6.chunk.js",
+    "static/media/logo_footer.svg": "/product_catalog/static/media/logo_footer.017df26b30774e1dcf803209904aa24c.svg",
+    "static/media/Mont-Heavy.ttf": "/product_catalog/static/media/Mont-Heavy.f370bce757bbfe4c8350.ttf",
+    "static/media/Mont-SemiBold.ttf": "/product_catalog/static/media/Mont-SemiBold.0b5e68ebb36ca4006e21.ttf",
+    "static/media/Mont-Bold.ttf": "/product_catalog/static/media/Mont-Bold.3675b597d3ffb2b75168.ttf",
+    "static/media/404.png": "/product_catalog/static/media/404.690f5682ec222bb15211.png",
+    "static/media/Mont-Heavy.woff": "/product_catalog/static/media/Mont-Heavy.235606fac6f32b88355c.woff",
+    "static/media/Mont-SemiBold.woff": "/product_catalog/static/media/Mont-SemiBold.5d4afcfe00f8d6a38e5f.woff",
+    "static/media/Mont-Bold.woff": "/product_catalog/static/media/Mont-Bold.bbedfa075d47682c0041.woff",
+    "static/media/Mont-Heavy.woff2": "/product_catalog/static/media/Mont-Heavy.1a5d4089eeb291d65b03.woff2",
+    "static/media/Mont-SemiBold.woff2": "/product_catalog/static/media/Mont-SemiBold.95ab478c134f9e9da545.woff2",
+    "static/media/Mont-Bold.woff2": "/product_catalog/static/media/Mont-Bold.8b7a4e0626328dd44205.woff2",
+    "static/media/test-phone-image.png": "/product_catalog/static/media/test-phone-image.e2839025f465a1b9efff.png",
+    "static/media/heart.svg": "/product_catalog/static/media/heart.a48831a1ed897e1e3553.svg",
+    "index.html": "/product_catalog/index.html",
+    "static/media/chevron-up.svg": "/product_catalog/static/media/chevron-up.c0e3f15d57e31409821a3231e7f6f127.svg",
+    "main.98b928e5.css.map": "/product_catalog/static/css/main.98b928e5.css.map",
+    "main.9187ea7c.js.map": "/product_catalog/static/js/main.9187ea7c.js.map",
+    "787.10a53ce6.chunk.js.map": "/product_catalog/static/js/787.10a53ce6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.675b0143.css",
-    "static/js/main.291c2910.js"
+    "static/css/main.98b928e5.css",
+    "static/js/main.9187ea7c.js"
   ]
 }
