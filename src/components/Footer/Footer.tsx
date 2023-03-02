@@ -16,7 +16,7 @@ export const Footer: React.FC = memo(() => {
         <nav className="footer__navigation">
           <ul className="footer__list">
             {navLinks.map((navLink) => (
-              <li className="footer__list-item" key={navLink}>
+              <li className="footer__list-item text-uppercase" key={navLink}>
                 <Link to="/" className="footer__link">
                   {navLink}
                 </Link>
@@ -25,7 +25,7 @@ export const Footer: React.FC = memo(() => {
           </ul>
         </nav>
         <div className="footer__toTop">
-          <p className="footer__toTop-label">Back to top</p>
+          <p className="footer__toTop-label text-small">Back to top</p>
           <button type="submit" className="footer__toTop-button">
             <img
               className="footer__toTop-icon"
