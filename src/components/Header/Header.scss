@@ -1,17 +1,17 @@
-@import '../../styles/abstracts/index.scss';
+@import "../../styles/abstracts/index.scss";
 
 .header {
   height: 48px;
   position: relative;
   display: flex;
   justify-content: space-between;
-  align-items:start;
+  align-items: start;
   border-bottom: 1px solid $color-elements;
 
   @include onDesktop {
     height: 64px;
   }
-  
+
   &__container {
     display: flex;
     align-items: center;
@@ -32,24 +32,17 @@
   &__likeAndBag {
     display: none;
 
-    @include onTablet {
+    @include notMobile {
       display: flex;
       margin: auto 0;
       height: 100%;
       align-items: center;
     }
-    
-    @include onDesktop {
-      display: flex;
-      margin: auto 0;
-      height: 100%;
-      align-items: center;
-    }
-
   }
 }
 
-.like, .bag {
+.like,
+.bag {
   position: relative;
   display: flex;
   width: 100%;
@@ -60,11 +53,7 @@
   padding-left: 16px;
   align-items: center;
 
-  @include onTablet {
-    padding-right: 25px;
-    padding-left: 25px;
-  }
-  @include onDesktop {
+  @include notMobile {
     padding-right: 25px;
     padding-left: 25px;
   }
@@ -77,11 +66,7 @@
 .nav__list {
   display: none;
 
-  @include onTablet {
-    display: flex;
-  }
-
-  @include onDesktop {
+  @include notMobile {
     display: flex;
   }
 }
@@ -89,18 +74,10 @@
 .nav__item {
   display: flex;
   padding-right: 32px;
-  text-transform: uppercase;
-  font-weight: 800;
-  font-size: 12px;
-  line-height: 11px;
   letter-spacing: 0.04em;
   color: $color-secondary;
 
-  @include onDesktop {
-    padding-right: 64px;
-  }
-
-  @include onDesktop {
+  @include notMobile {
     padding-right: 64px;
   }
 }
@@ -141,11 +118,7 @@
   justify-content: center;
   border-left: 1px solid $color-elements;
 
-  @include onTablet {
-    display: none;
-  }
-
-  @include onDesktop {
+  @include notMobile {
     display: none;
   }
 }
