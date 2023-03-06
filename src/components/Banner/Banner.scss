@@ -42,13 +42,13 @@
     width: 100%;
     height: auto;
 
-      @include onTablet {
-        height: 189px;
-      }
+    @include onTablet {
+      height: 189px;
+    }
 
-      @include onDesktop {
-        height: 400px;
-      }
+    @include onDesktop {
+      height: 400px;
+    }
   }
 
   .slick-prev,

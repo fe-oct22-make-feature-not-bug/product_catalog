@@ -46,7 +46,7 @@ export const Banner: React.FC = memo(() => {
       <button key={i} className="custom-dot">
         {i + 1}
       </button>
-    )
+    ),
   };
 
   return (
@@ -65,7 +65,7 @@ export const Banner: React.FC = memo(() => {
             <img className="banner__photo" src={bannerPhoto} alt="photo2" />
           </picture>
         </div>
-        
+
         <div className="banner__photo-container">
           <picture>
             <source media="(max-width: 639px)" srcSet={bannerSmall} />

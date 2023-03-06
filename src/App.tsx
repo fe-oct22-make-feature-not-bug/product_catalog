@@ -9,22 +9,6 @@ import { Home } from "./components/Home/Home";
 import { ProductDetail } from "./components/ProductDetail/ProductDetail";
 
 function App() {
-
-  // useEffect(() => {
-  //   if (user) {
-  //     getTodos()
-  //       .then(setTodos)
-  //       .catch(() => {
-  //         setTodos([]);
-  //         showError(ErorrMessage.ON_UPLOAD);
-  //       });
-  //   }
-
-  //   return () => {
-  //     window.clearInterval(errorTimer);
-  //   };
-  // }, [showError, todos.length]);
-
   return (
     <div className="App">
       <Header />
@@ -35,11 +19,11 @@ function App() {
 
         <Route path="/phones" element={<h1>Mobile phones!</h1>} />
 
-        <Route path="*" element={< PageNotFound />} />
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
       <Card />
 
-      < ProductDetail />
+      <ProductDetail />
 
       <Footer />
     </div>

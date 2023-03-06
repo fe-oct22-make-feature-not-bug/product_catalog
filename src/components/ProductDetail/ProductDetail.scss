@@ -62,7 +62,7 @@
       max-width: 274px;
     }
 
-    @include onDesktop{
+    @include onDesktop {
       max-width: 442px;
       height: 100%;
     }
@@ -117,21 +117,21 @@
   &__slider-nav {
     .slick-track {
       @include onTablet {
-        width: 50px!important;
+        width: 50px !important;
       }
       @include onDesktop {
         display: flex;
         flex-direction: column;
-        width: 80px!important;
+        width: 80px !important;
       }
     }
 
     .slick-slide {
       @include onTablet {
-        width: 50px!important;
+        width: 50px !important;
       }
       @include onDesktop {
-        width: 80px!important;
+        width: 80px !important;
       }
     }
   }
@@ -165,7 +165,7 @@
   &__form-color-wrapper {
     margin-right: 10px;
   }
-  
+
   &__form-color-item {
     display: block;
     width: 26px;
@@ -174,7 +174,8 @@
     outline: 1px solid $color-phone-grey;
     outline-offset: 2px;
 
-    &:hover, :active {
+    &:hover,
+    :active {
       outline: 1px solid $color-white;
     }
 
