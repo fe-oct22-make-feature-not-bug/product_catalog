@@ -10,3 +10,15 @@
     @include grid-container;
   }
 }
+
+.home-header {
+  margin-bottom: 24px;
+
+  @include onTablet {
+    margin-bottom: 32px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 56px;
+  }
+}

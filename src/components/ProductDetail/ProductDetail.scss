@@ -16,6 +16,7 @@
     height: 16px;
     margin-bottom: 16px;
     padding-left: 10px;
+    cursor: pointer;
 
     @include notMobile {
       padding-left: 0;

@@ -34,9 +34,9 @@
   &:hover {
     background-color: $color-icons;
   }
+}
 
-  &:active {
-    background-image: url(../../assets/icons/heart-red.svg);
-    background-size: 16px 14px;
-  }
+.is-selected {
+  background-image: url(../../assets/icons/heart-red.svg);
+  background-size: 16px 14px;
 }
