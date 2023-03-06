@@ -2,6 +2,22 @@
 
 .main {
   max-width: 1136px;
-  @include grid-container;
   margin: 0 auto;
+  padding: 16px;
+
+  @include onTablet {
+    padding: 24px;
+  }
+}
+
+.home-header {
+  margin-bottom: 24px;
+
+  @include onTablet {
+    margin-bottom: 32px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 56px;
+  }
 }

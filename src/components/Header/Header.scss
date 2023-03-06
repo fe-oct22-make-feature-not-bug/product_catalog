@@ -7,9 +7,15 @@
   justify-content: space-between;
   align-items: start;
   border-bottom: 1px solid $color-elements;
+  margin-bottom: 24px;
+
+  @include onTablet {
+    margin-bottom: 32px;
+  }
 
   @include onDesktop {
     height: 64px;
+    margin-bottom: 56px;
   }
 
   &__container {
