@@ -6,6 +6,7 @@ import { PageNotFound } from "./components/PageNotFound/PageNotFound";
 import { Card } from "./components/Card/Card";
 import { Header } from "./components/Header/Header";
 import { Home } from "./components/Home/Home";
+import { ProductDetail } from "./components/ProductDetail/ProductDetail";
 
 function App() {
   return (
@@ -18,9 +19,12 @@ function App() {
 
         <Route path="/phones" element={<h1>Mobile phones!</h1>} />
 
-        <Route path="*" element={<PageNotFound />} />
+        <Route path="*" element={< PageNotFound />} />
       </Routes>
       <Card />
+
+      < ProductDetail />
+
       <Footer />
     </div>
   );
