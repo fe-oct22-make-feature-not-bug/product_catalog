@@ -28,10 +28,12 @@
     display: block;
     margin-left: 16px;
     margin-right: 32px;
+    width: 64px;
 
     @include onDesktop {
       margin-left: 24px;
       margin-right: 48px;
+      width: 80px;
     }
   }
 
@@ -51,7 +53,7 @@
 .bag {
   position: relative;
   display: flex;
-  width: 100%;
+  width: 64px;
   height: 100%;
   flex-grow: 1;
   border-left: 1px solid $color-elements;
@@ -82,6 +84,10 @@
   padding-right: 32px;
   letter-spacing: 0.04em;
   color: $color-secondary;
+
+  &:last-child {
+    padding-right: 0;
+  }
 
   @include notMobile {
     padding-right: 64px;
@@ -123,6 +129,10 @@
   align-items: center;
   justify-content: center;
   border-left: 1px solid $color-elements;
+  background-image: url("../../assets/icons/menu.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
 
   @include notMobile {
     display: none;
