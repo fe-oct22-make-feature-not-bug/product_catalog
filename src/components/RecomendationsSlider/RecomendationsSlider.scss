@@ -9,7 +9,8 @@
     height: 32px;
     border: 1px solid $color-elements;
 
-    &:hover, :active {
+    &:hover,
+    :active {
       background-color: $color-surface-2;
     }
 
@@ -33,7 +34,8 @@
     height: 32px;
     border: 1px solid $color-elements;
 
-    &:hover, :active {
+    &:hover,
+    :active {
       background-color: $color-surface-2;
     }
 
@@ -59,7 +61,7 @@
       max-width: 274px;
     }
 
-    @include onDesktop{
+    @include onDesktop {
       max-width: 442px;
       height: 100%;
     }

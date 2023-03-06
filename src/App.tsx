@@ -17,8 +17,11 @@ function App() {
     
         <Route path="/phones" element={<Phones />} />
 
-        <Route path="*" element={< PageNotFound />} />
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
+      <Card />
+
+      <ProductDetail />
 
       <Footer />
     </div>

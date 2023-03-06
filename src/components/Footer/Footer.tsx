@@ -9,7 +9,7 @@ const navLinks = ["github", "contacts", "rights"];
 const scrollToTop = () => {
   window.scrollTo({
     top: 0,
-    behavior: "smooth"
+    behavior: "smooth",
   });
 };
 
@@ -34,8 +34,8 @@ export const Footer: React.FC = memo(() => {
         <div className="footer__toTop">
           <p className="footer__toTop-label text-small">Back to top</p>
           <button
-            type="submit" 
-            className="footer__toTop-button" 
+            type="submit"
+            className="footer__toTop-button"
             onClick={scrollToTop}
           >
             <img
