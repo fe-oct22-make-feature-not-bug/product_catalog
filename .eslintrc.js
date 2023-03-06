@@ -1,10 +1,7 @@
 module.exports = {
-  extends: ['@mate-academy/eslint-config-react-typescript', "prettier"],
+  extends: ["@mate-academy/eslint-config-react-typescript", "prettier"],
   parser: "@typescript-eslint/parser",
-  plugins: [
-    "@typescript-eslint",
-    "prettier"
-  ],
+  plugins: ["@typescript-eslint", "prettier"],
 
   rules: {
     "react/jsx-uses-react": "error",
@@ -15,19 +12,15 @@ module.exports = {
     "no-unused-expressions": "off",
 
     // TypeScript
-    "@typescript-eslint/no-unused-vars": [
-      "error"
-    ],
+    "@typescript-eslint/no-unused-vars": ["error"],
     "@typescript-eslint/camelcase": 0,
     "@typescript-eslint/explicit-module-boundary-types": 0,
     "@typescript-eslint/ban-types": 0,
-    "@typescript-eslint/semi": [
-      "error"
-    ]
+    "@typescript-eslint/semi": ["error"],
   },
   settings: {
-    "react": {
-      "version": "detect"
-    }
-  }
+    react: {
+      version: "detect",
+    },
+  },
 };
