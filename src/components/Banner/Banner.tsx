@@ -40,6 +40,7 @@ export const Banner: React.FC = memo(() => {
         <img className="banner__photo" src={bannerPhoto} alt="photo1" />
         <img className="banner__photo" src={bannerPhoto} alt="photo2" />
         <img className="banner__photo" src={bannerPhoto} alt="photo3" />
+        <img className="banner__photo" src={bannerPhoto} alt="photo4" />
       </Slider>
     </section>
   );
