@@ -3,21 +3,23 @@ import { Routes, Route } from "react-router-dom";
 import "./styles/index.scss";
 import { Footer } from "./components/Footer/Footer";
 import { PageNotFound } from "./components/PageNotFound/PageNotFound";
-import { Card } from "./components/Card/Card";
 import { Header } from "./components/Header/Header";
+import { Home } from "./components/Home/Home";
+import { Phones } from "./components/Phones/Phones";
 
 function App() {
   return (
     <div className="App">
       <Header />
+
       <Routes>
-        <Route path="/" element={<h1>Home page!</h1>} />
+        <Route path="/" element={<Home /> } />
+    
+        <Route path="/phones" element={<Phones />} />
 
-        <Route path="/phones" element={<h1>Mobile phones!</h1>} />
-
-        <Route path="*" element={<PageNotFound />} />
+        <Route path="*" element={< PageNotFound />} />
       </Routes>
-      <Card />
+
       <Footer />
     </div>
   );

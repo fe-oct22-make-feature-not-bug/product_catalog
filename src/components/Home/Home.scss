@@ -1,0 +1,23 @@
+@import "../../styles/abstracts/index.scss";
+
+.main {
+  max-width: 1136px;
+  margin: 0 auto;
+  padding: 16px;
+
+  @include onTablet {
+    padding: 24px;
+  }
+}
+
+.home-header {
+  margin-bottom: 24px;
+
+  @include onTablet {
+    margin-bottom: 32px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 56px;
+  }
+}

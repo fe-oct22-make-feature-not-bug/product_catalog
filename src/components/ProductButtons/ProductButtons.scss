@@ -1,0 +1,42 @@
+@import "../../styles/abstracts/index.scss";
+
+.product-buttons {
+  display: flex;
+}
+
+.addToCart {
+  height: 48px;
+  min-width: 180px;
+  text-align: center;
+  background-color: $color-accent;
+  flex-grow: 1;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $color-accent-hover;
+  }
+
+  &:active {
+    background-color: $color-surface-2;
+  }
+}
+
+.addToWishlist {
+  width: 48px;
+  height: 48px;
+  background-color: $color-surface-2;
+  background-image: url(../../assets/icons/heart.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-left: 8px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $color-icons;
+  }
+}
+
+.is-selected {
+  background-image: url(../../assets/icons/heart-red.svg);
+  background-size: 16px 14px;
+}

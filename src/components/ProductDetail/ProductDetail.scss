@@ -1,0 +1,334 @@
+@import "../../styles/abstracts/index.scss";
+
+.product {
+  padding: 24px 16px;
+  max-width: 1200px;
+  margin: auto;
+
+  @include onTablet {
+    padding: 41px 24px;
+  }
+
+  &__toBack {
+    display: flex;
+    align-items: center;
+    width: 66px;
+    height: 16px;
+    margin-bottom: 16px;
+    padding-left: 10px;
+    cursor: pointer;
+
+    @include notMobile {
+      padding-left: 0;
+    }
+  }
+
+  &__toBack-button {
+    display: block;
+    margin-right: 10px;
+  }
+
+  &__toBack-label {
+    display: block;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include notMobile {
+      flex-direction: row;
+    }
+
+    @include onDesktop {
+      justify-content: start;
+    }
+  }
+  &__header {
+    text-align: center;
+    margin-bottom: 38px;
+
+    @include notMobile {
+      text-align: left;
+    }
+  }
+
+  &__image {
+    height: 100%;
+    margin: 0 auto;
+    margin-bottom: 23px;
+
+    @include onTablet {
+      max-width: 274px;
+    }
+
+    @include onDesktop{
+      max-width: 442px;
+      height: 100%;
+    }
+  }
+
+  &__image-item {
+    height: 100%;
+  }
+
+  &__image-small {
+    max-width: 50px;
+
+    @include onTablet {
+      max-width: 35px;
+    }
+
+    .slick-current & {
+      border: 1px solid $color-white;
+    }
+
+    @include onDesktop {
+      max-width: 80px;
+      max-height: 80px;
+    }
+  }
+
+  &__slider-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      flex-direction: row;
+      flex-wrap: nowrap;
+      width: 60%;
+    }
+
+    @include onDesktop {
+      flex-direction: row;
+      flex-wrap: nowrap;
+      width: 50%;
+    }
+  }
+
+  &__slider-img {
+    @include notMobile {
+      width: calc(100% - 80px);
+      order: 1;
+    }
+  }
+
+  &__slider-nav {
+    .slick-track {
+      @include onTablet {
+        width: 50px!important;
+      }
+      @include onDesktop {
+        display: flex;
+        flex-direction: column;
+        width: 80px!important;
+      }
+    }
+
+    .slick-slide {
+      @include onTablet {
+        width: 50px!important;
+      }
+      @include onDesktop {
+        width: 80px!important;
+      }
+    }
+  }
+
+  &__form {
+    @include onDesktop {
+      width: 30%;
+    }
+  }
+
+  &__form-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+  &__form-label-color {
+    color: $color-secondary;
+  }
+
+  &__form-label-id {
+    color: $color-icons;
+  }
+
+  &__form-color {
+    display: flex;
+    padding-bottom: 25px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid $color-elements;
+  }
+
+  &__form-color-wrapper {
+    margin-right: 10px;
+  }
+  
+  &__form-color-item {
+    display: block;
+    width: 26px;
+    height: 26px;
+    border-radius: 100%;
+    outline: 1px solid $color-phone-grey;
+    outline-offset: 2px;
+
+    &:hover, :active {
+      outline: 1px solid $color-white;
+    }
+
+    &--pink {
+      border: 1px solid $color-phone-pink;
+      background-color: $color-phone-pink;
+    }
+
+    &--green {
+      border: 1px solid $color-phone-green;
+      background-color: $color-phone-green;
+    }
+
+    &--grey {
+      border: 1px solid $color-phone-grey;
+      background-color: $color-phone-grey;
+    }
+
+    &--white {
+      border: 1px solid $color-phone-white;
+      background-color: $color-phone-white;
+    }
+  }
+
+  &__form-capacity-label {
+    color: $color-secondary;
+    margin-bottom: 8px;
+  }
+
+  &__form-capacity-btn {
+    display: flex;
+    padding-bottom: 25px;
+    margin-bottom: 32px;
+    border-bottom: 1px solid $color-elements;
+  }
+
+  &__form-capacity-item {
+    display: inline-block;
+    padding: 7px 8px 4px;
+    border: 1px solid $color-icons;
+    margin-right: 8px;
+    cursor: pointer;
+
+    &.is-active {
+      color: $color-black;
+      background-color: $color-white;
+      border: 1px solid $color-white;
+    }
+  }
+
+  &__form-price {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  &__form-price-actual {
+    margin-right: 8px;
+  }
+
+  &__form-price-old {
+    font-size: 22px;
+    color: $color-secondary;
+    text-decoration: line-through;
+  }
+
+  &__form-buttons {
+    margin-bottom: 32px;
+  }
+
+  &__form-details {
+    margin-bottom: 56px;
+  }
+
+  &__form-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+
+  &__form-details-key {
+    color: $color-secondary;
+  }
+
+  &__form-details-values {
+    text-align: right;
+  }
+
+  &__about {
+    margin-bottom: 56px;
+  }
+
+  &__about-header {
+    padding-bottom: 16px;
+    border-bottom: 1px solid $color-icons;
+    margin-bottom: 32px;
+  }
+
+  &__about-title {
+    margin-bottom: 16px;
+  }
+
+  &__about-text {
+    margin-bottom: 32px;
+    color: $color-secondary;
+  }
+
+  &__specs {
+    margin-bottom: 56px;
+  }
+
+  &__specs-header {
+    padding-bottom: 16px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid $color-icons;
+  }
+
+  &__specs-details {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+
+  &__specs-key {
+    color: $color-secondary;
+  }
+
+  &__info {
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__about {
+    @include onDesktop {
+      width: 50%;
+      padding-right: 40px;
+    }
+  }
+
+  &__specs {
+    @include onDesktop {
+      width: 50%;
+    }
+  }
+
+  &__recomendations {
+    position: relative;
+    margin-bottom: 48px;
+  }
+  &__recomendations-header {
+    margin-bottom: 25px;
+  }
+}
