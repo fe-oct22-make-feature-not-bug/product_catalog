@@ -9,6 +9,22 @@ import { Home } from "./components/Home/Home";
 import { ProductDetail } from "./components/ProductDetail/ProductDetail";
 
 function App() {
+
+  // useEffect(() => {
+  //   if (user) {
+  //     getTodos()
+  //       .then(setTodos)
+  //       .catch(() => {
+  //         setTodos([]);
+  //         showError(ErorrMessage.ON_UPLOAD);
+  //       });
+  //   }
+
+  //   return () => {
+  //     window.clearInterval(errorTimer);
+  //   };
+  // }, [showError, todos.length]);
+
   return (
     <div className="App">
       <Header />

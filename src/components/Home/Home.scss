@@ -1,7 +1,12 @@
 @import "../../styles/abstracts/index.scss";
 
 .main {
-  max-width: 1136px;
-  @include grid-container;
   margin: 0 auto;
+  @include grid-container;
+  max-width: 1200px;
+
+  @mixin onDesktop {
+    margin: 0 auto;
+    @include grid-container;
+  }
 }

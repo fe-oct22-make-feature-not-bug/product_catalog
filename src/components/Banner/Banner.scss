@@ -1,68 +1,132 @@
 @import "../../styles/abstracts/index.scss";
 
 .banner {
-  grid-column: 2/24;
+  grid-column: 1/5;
+
+  width: 100%;
   padding: 0;
-  height: 320px;
 
   @include onTablet {
-    height: 189px;
+    grid-column: 2/12;
   }
 
   @include onDesktop {
-    height: 400px;
+    grid-column: 2/24;
+  }
+
+  &__photo-container {
+    position: relative;
+    width: 100%;
+
+    @include onTablet {
+      height: 189px;
+    }
+
+    @include onDesktop {
+      height: 400px;
+    }
+
+    @media (max-width: 639px) {
+      &::before {
+        content: "";
+        display: block;
+        padding-top: 100%;
+      }
+    }
   }
 
   &__photo {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
+    height: auto;
+
+      @include onTablet {
+        height: 189px;
+      }
+
+      @include onDesktop {
+        height: 400px;
+      }
+  }
+
+  .slick-prev,
+  .slick-next {
+    position: absolute;
+    width: 32px;
     height: 400px;
+    top: 200px;
+
+    background-color: $color-surface-2;
+    transition: background-color 0.3s;
+
+    @include onTablet {
+      height: 189px;
+      top: 95px;
+    }
+
+    &:before {
+      display: none;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      width: 6px;
+      height: 10px;
+
+      transform: translate(180%, 195px);
+
+      @include onTablet {
+        transform: translate(180%, 90px);
+      }
+
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+
+    &:hover {
+      background-color: $color-icons;
+    }
   }
-}
 
-.slick-prev,
-.slick-next {
-  position: absolute;
-  width: 32px;
-  height: 400px;
-  top: 200px;
+  .slick-prev {
+    left: -50px;
 
-  background-color: $color-surface-2;
-  transition: background-color 0.3s;
-
-  &:before {
-    display: none;
+    &::after {
+      background-image: url(../../assets/icons/chevron-left.svg);
+    }
   }
 
-  &::after {
-    content: "";
-    display: block;
-    width: 6px;
-    height: 10px;
+  .slick-next {
+    right: -50px;
 
-    transform: translate(180%, 195px);
-
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
+    &::after {
+      background-image: url(../../assets/icons/chevron-right.svg);
+    }
   }
 
-  &:hover {
-    background-color: $color-icons;
+  .custom-dot {
+    &::before {
+      display: none;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      width: 14px;
+      height: 4px;
+      background-color: $color-elements;
+    }
   }
-}
 
-.slick-prev {
-  left: -50px;
-
-  &::after {
-    background-image: url(../../assets/icons/chevron-left.svg);
-  }
-}
-
-.slick-next {
-  right: -50px;
-
-  &::after {
-    background-image: url(../../assets/icons/chevron-right.svg);
+  .slick-active {
+    & button {
+      &::after {
+        background-color: $color-white;
+      }
+    }
   }
 }
