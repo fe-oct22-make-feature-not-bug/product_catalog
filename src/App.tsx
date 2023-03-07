@@ -19,10 +19,7 @@ function App() {
 
         <Route path="*" element={<PageNotFound />} />
       </Routes>
-      <Card />
-
-      <ProductDetail />
-
+  
       <Footer />
     </div>
   );
