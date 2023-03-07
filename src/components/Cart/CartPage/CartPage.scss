@@ -11,11 +11,13 @@
   color: $color-white;
 }
 
-.container {
-  max-width: 1200px;
+.cart__container {
+  max-width: 1136px;
   margin: 56px 16px;
   margin-top: 0;
   @include onDesktop {
+    max-width: 1136px;
     display: flex;
+    justify-content: space-between;
   }
 }

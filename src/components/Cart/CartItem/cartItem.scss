@@ -15,6 +15,9 @@
 
   @include onDesktop {
     margin-right: 16px;
+    display: flex;
+    justify-content: space-between;
+    width: 752px;
   }
 
   &-phoneData {
@@ -79,7 +82,7 @@
         height: 32px;
 
         border: 1px solid $color-elements;
-        
+
       }
 
       &-minus:disabled {
