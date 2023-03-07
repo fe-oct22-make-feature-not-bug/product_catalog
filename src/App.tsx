@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import "./styles/index.scss";
-import { useState } from "react";
+// import { useState } from "react";
 import { Footer } from "./components/Footer/Footer";
 import { PageNotFound } from "./components/PageNotFound/PageNotFound";
 import { Header } from "./components/Header/Header";
@@ -9,14 +9,7 @@ import { Phones } from "./components/Phones/Phones";
 import "./Test.scss";
 import { ProductDetail } from "./components/ProductDetail/ProductDetail";
 
-
-
 function App() {
-  const [showPhoneDetails, setShowPhoneDetails] = useState(false);
-
-  const handleClick = (newValue: boolean) => {
-    setShowPhoneDetails(newValue);
-  };
 
   return (
     <div className="App">
@@ -24,8 +17,9 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/phones" element={<Phones />} />
 
-        <Route path="/phones" element={showPhoneDetails ? <ProductDetail /> : <Phones showPhoneDetails={showPhoneDetails} handleClick={handleClick}/>} />
+        <Route path="/phones/:phoneId" element={<ProductDetail />} />
 
         <Route
           path="/tablets"
@@ -45,5 +39,3 @@ function App() {
 }
 
 export default App;
-
-

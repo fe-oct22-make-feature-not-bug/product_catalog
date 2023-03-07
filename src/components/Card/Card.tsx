@@ -7,24 +7,15 @@ import { Link } from "react-router-dom";
 import testPhoneImage from "../../assets/images/test-phone-image.png";
 import { Phone } from "../../types/Phone";
 
-
 type Props = {
   phone: Phone;
-  showPhoneDetails: boolean;
-  handleClick: (newValue: boolean) => void;
 };
 
-export const Card: React.FC<Props> = memo(({ phone, showPhoneDetails, handleClick}: Props) => {
-
-  const handleClickDetails = () => {
-    handleClick(!showPhoneDetails);
-  };
-
+export const Card: React.FC<Props> = memo(({ phone }) => {
   return (
     <div className="phone-card">
       <Link
-        to="/phones"
-        onClick={handleClickDetails}
+        to={`/phones/${phone.id}`}
       >
         <div className="phone-card__image-container">
           <img src={testPhoneImage} alt="phone" className="phone-card__image" />

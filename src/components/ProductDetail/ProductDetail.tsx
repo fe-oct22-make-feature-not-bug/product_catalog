@@ -21,9 +21,7 @@ export const ProductDetail: React.FC = () => {
   const navigate = useNavigate();
   const [phone, setPhone] = useState<Phone>();
   const { phoneId } = useParams();
-  const [selectedCapacityButton, setSelectedCapacityButton] = useState<
-    string | null
-  >(null);
+  const [selectedCapacityButton, setSelectedCapacityButton] = useState<string | null>(null);
   const [capacityButtons, setCapacityButtons] = useState<CapacityButton[]>([
     { name: "64GB", isActive: false },
     { name: "256GB", isActive: false },
@@ -51,15 +49,13 @@ export const ProductDetail: React.FC = () => {
     getPhone(phoneId)
       .then(setPhone)
       .catch(() => {
-        // eslint-disable-next-line no-console
-        console.log(phoneId);
         // showError();
       });
   }, []);
 
   return (
     <section className="product">
-       {phone && (
+      {phone && (
         <>
           <div className="product__toBack">
             <button
@@ -119,9 +115,8 @@ export const ProductDetail: React.FC = () => {
                   <button
                     key={button.name}
                     type="submit"
-                    className={`product__form-capacity-item ${
-                      selectedCapacityButton === button.name ? "is-active" : ""
-                    }`}
+                    className={`product__form-capacity-item ${selectedCapacityButton === button.name ? "is-active" : ""
+                      }`}
                     onClick={() => handleClick(index, button.name)}
                     onKeyUp={() => handleClick(index, button.name)}
                   >
@@ -236,8 +231,8 @@ export const ProductDetail: React.FC = () => {
             <h2 className="h2 product__recomendations-header">You may also like</h2>
             <RecomendationsSlider />
           </div>
-            </>
-          )}
+        </>
+      )}
     </section>
   );
 };
