@@ -14,9 +14,7 @@ type Props = {
 export const Card: React.FC<Props> = memo(({ phone }) => {
   return (
     <div className="phone-card">
-      <Link
-        to={`/phones/${phone.id}`}
-      >
+      <Link to={`/phones/${phone.id}`}>
         <div className="phone-card__image-container">
           <img src={testPhoneImage} alt="phone" className="phone-card__image" />
         </div>

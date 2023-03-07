@@ -21,7 +21,9 @@ export const ProductDetail: React.FC = () => {
   const navigate = useNavigate();
   const [phone, setPhone] = useState<Phone>();
   const { phoneId } = useParams();
-  const [selectedCapacityButton, setSelectedCapacityButton] = useState<string | null>(null);
+  const [selectedCapacityButton, setSelectedCapacityButton] = useState<
+    string | null
+  >(null);
   const [capacityButtons, setCapacityButtons] = useState<CapacityButton[]>([
     { name: "64GB", isActive: false },
     { name: "256GB", isActive: false },
@@ -63,13 +65,15 @@ export const ProductDetail: React.FC = () => {
               className="product__toBack-button"
               onClick={handleGoBack}
             >
-              <img className="product__toBack-icon" src={chevronLeft} alt="back" />
+              <img
+                className="product__toBack-icon"
+                src={chevronLeft}
+                alt="back"
+              />
               <span className="product__toBack-label">back</span>
             </button>
           </div>
-          <h2 className="h2 product__header">
-            {phone.name}
-          </h2>
+          <h2 className="h2 product__header">{phone.name}</h2>
           <div className="product__wrapper">
             <div className="product__slider-wrapper">
               <ImagesSlider />
@@ -115,8 +119,9 @@ export const ProductDetail: React.FC = () => {
                   <button
                     key={button.name}
                     type="submit"
-                    className={`product__form-capacity-item ${selectedCapacityButton === button.name ? "is-active" : ""
-                      }`}
+                    className={`product__form-capacity-item ${
+                      selectedCapacityButton === button.name ? "is-active" : ""
+                    }`}
                     onClick={() => handleClick(index, button.name)}
                     onKeyUp={() => handleClick(index, button.name)}
                   >
@@ -142,7 +147,9 @@ export const ProductDetail: React.FC = () => {
                 </div>
                 <div className="product__form-item">
                   <p className="product__form-details-key">Processor</p>
-                  <p className="product__form-details-values">Apple A12 Bionic</p>
+                  <p className="product__form-details-values">
+                    Apple A12 Bionic
+                  </p>
                 </div>
                 <div className="product__form-item">
                   <p className="product__form-details-key">RAM</p>
@@ -155,37 +162,39 @@ export const ProductDetail: React.FC = () => {
           <article className="product__info">
             <div className="product__about">
               <h3 className="h3 product__about-header">About</h3>
-              <h4 className="h4 product__about-title">And then there was Pro</h4>
+              <h4 className="h4 product__about-title">
+                And then there was Pro
+              </h4>
               <p className="product__about-text">
-                A transformative triple‑camera system that adds tons of capability
-                without complexity.
+                A transformative triple‑camera system that adds tons of
+                capability without complexity.
                 <br />
                 <br />
-                An unprecedented leap in battery life. And a mind‑blowing chip that
-                doubles down on machine learning and pushes the boundaries of what a
-                smartphone can do. Welcome to the first iPhone powerful enough to be
-                called Pro.
+                An unprecedented leap in battery life. And a mind‑blowing chip
+                that doubles down on machine learning and pushes the boundaries
+                of what a smartphone can do. Welcome to the first iPhone
+                powerful enough to be called Pro.
               </p>
               <h4 className="h4 product__about-title">Camera</h4>
               <p className="product__about-text">
                 Meet the first triple‑camera system to combine cutting‑edge
-                technology with the legendary simplicity of iPhone. Capture up to
-                four times more scene. Get beautiful images in drastically lower
-                light. Shoot the highest‑quality video in a smartphone — then edit
-                with the same tools you love for photos. You’ve never shot with
-                anything like it.
+                technology with the legendary simplicity of iPhone. Capture up
+                to four times more scene. Get beautiful images in drastically
+                lower light. Shoot the highest‑quality video in a smartphone —
+                then edit with the same tools you love for photos. You’ve never
+                shot with anything like it.
               </p>
               <h4 className="h4 product__about-title">
                 Shoot it. Flip it. Zoom it. Crop it. Cut it. Light it. Tweak it.
                 Love it.
               </h4>
               <p className="product__about-text">
-                iPhone 11 Pro lets you capture videos that are beautifully true to
-                life, with greater detail and smoother motion. Epic processing power
-                means it can shoot 4K video with extended dynamic range and
-                cinematic video stabilization — all at 60 fps. You get more creative
-                control, too, with four times more scene and powerful new editing
-                tools to play with.
+                iPhone 11 Pro lets you capture videos that are beautifully true
+                to life, with greater detail and smoother motion. Epic
+                processing power means it can shoot 4K video with extended
+                dynamic range and cinematic video stabilization — all at 60 fps.
+                You get more creative control, too, with four times more scene
+                and powerful new editing tools to play with.
               </p>
             </div>
             <div className="product__specs">
@@ -228,7 +237,9 @@ export const ProductDetail: React.FC = () => {
           </article>
 
           <div className="product__recomendations">
-            <h2 className="h2 product__recomendations-header">You may also like</h2>
+            <h2 className="h2 product__recomendations-header">
+              You may also like
+            </h2>
             <RecomendationsSlider />
           </div>
         </>
