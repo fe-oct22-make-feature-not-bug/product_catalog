@@ -80,7 +80,7 @@ export const Header: React.FC = () => {
           </div>
 
           <div className="bag">
-            <NavLink to="/bag">
+            <NavLink to="/cart">
               <img src={bag} alt="bag" className="image" />
             </NavLink>
           </div>

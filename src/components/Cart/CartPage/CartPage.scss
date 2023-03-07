@@ -1,0 +1,21 @@
+@import '../../../styles/';
+
+.cart__title {
+  margin: 24px 16px 32px;
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 41px;
+
+  letter-spacing: -1%;
+
+  color: $color-white;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 56px 16px;
+  margin-top: 0;
+  @include onDesktop {
+    display: flex;
+  }
+}
