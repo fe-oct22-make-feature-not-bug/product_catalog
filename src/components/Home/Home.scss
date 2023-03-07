@@ -1,23 +1,27 @@
 @import "../../styles/abstracts/index.scss";
 
 .main {
-  max-width: 1136px;
   margin: 0 auto;
-  padding: 16px;
+  @include grid-container;
+  max-width: 1200px;
 
-  @include onTablet {
-    padding: 24px;
+  @mixin onDesktop {
+    margin: 0 auto;
+    @include grid-container;
   }
 }
 
 .home-header {
   margin-bottom: 24px;
+  grid-column: 1/4;
 
   @include onTablet {
     margin-bottom: 32px;
+    grid-column: 1/10;
   }
 
   @include onDesktop {
     margin-bottom: 56px;
+    grid-column: 1/22;
   }
 }

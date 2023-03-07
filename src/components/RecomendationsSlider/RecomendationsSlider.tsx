@@ -3,9 +3,9 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./RecomendationsSlider.scss";
-import { Card } from "../Card/Card";
+// import { Card } from "../Card/Card";
 
-const recomendItems = ['1', '2', '3', '4', '5'];
+const recomendItems = ["1", "2", "3", "4", "5"];
 
 export const RecomendationsSlider: React.FC = () => {
   const settings = {
@@ -32,16 +32,14 @@ export const RecomendationsSlider: React.FC = () => {
   };
 
   return (
-      <div className="recomendations">
-        <Slider {...settings}>
-          {recomendItems.map((item) => 
-            <div
-              key={item}
-              className="recomendations__item">
-              <Card />
-            </div>
-          )}
-        </Slider>
-      </div>
-    );
-  };
+    <div className="recomendations">
+      <Slider {...settings}>
+        {recomendItems.map((item) => (
+          <div key={item} className="recomendations__item">
+            {/* <Card /> */}
+          </div>
+        ))}
+      </Slider>
+    </div>
+  );
+};

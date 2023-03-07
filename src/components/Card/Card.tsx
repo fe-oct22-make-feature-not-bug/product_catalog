@@ -4,34 +4,40 @@
 import React, { memo } from "react";
 import "./Card.scss";
 import testPhoneImage from "../../assets/images/test-phone-image.png";
+import { Phone } from "../../types/Phone";
 
-export const Card: React.FC = memo(() => {
+type Props = {
+  phone: Phone;
+};
+
+export const Card: React.FC<Props> = memo(({ phone }) => {
   return (
     <div className="phone-card">
       <div className="phone-card__image-container">
         <img src={testPhoneImage} alt="phone" className="phone-card__image" />
       </div>
 
-      <h3 className="phone-card__title">
-        Apple iPhone 14 Pro 128GB Silver (MQ023)
-      </h3>
+      <h3 className="phone-card__title">{phone.name}</h3>
 
-      <p className="phone-card__price">$999</p>
+      <div className="phone-card__price-block">
+        <p className="phone-card__price h3">${phone.priceRegular}</p>
+        <p className="phone-card__price-discount">${phone.priceDiscount}</p>
+      </div>
 
       <div className="phone-card__divider"></div>
 
       <div className="phone-card__info">
         <div className="phone-card__details">
           <span className="phone-card__attribute">Screen</span>
-          <span>6.7” OLED</span>
+          <span>{phone.screen}</span>
         </div>
         <div className="phone-card__details">
           <span className="phone-card__attribute">Capacity</span>
-          <span>128 GB</span>
+          <span>{phone.capacity}</span>
         </div>
         <div className="phone-card__details">
           <span className="phone-card__attribute">RAM</span>
-          <span>6 GB</span>
+          <span>{phone.ram}</span>
         </div>
       </div>
 

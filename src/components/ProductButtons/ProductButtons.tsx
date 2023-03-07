@@ -14,9 +14,13 @@ export const ProductButtons: React.FC = () => {
 
   return (
     <div className="product-buttons">
-      <button className="addToCart text-button" type="submit">Add to cart</button>
-      <button 
-        className={`addToWishlist ${addedToFavorites === true ? 'is-selected' : ''}`}
+      <button className="addToCart text-button" type="submit">
+        Add to cart
+      </button>
+      <button
+        className={`addToWishlist ${
+          addedToFavorites === true ? "is-selected" : ""
+        }`}
         type="submit"
         onClick={() => handleClick(addedToFavorites)}
       >
