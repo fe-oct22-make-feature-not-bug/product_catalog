@@ -3,6 +3,7 @@
 /* eslint-disable react/display-name */
 import React, { memo } from "react";
 import "./Card.scss";
+import { Link } from "react-router-dom";
 import testPhoneImage from "../../assets/images/test-phone-image.png";
 import { Phone } from "../../types/Phone";
 
@@ -13,11 +14,13 @@ type Props = {
 export const Card: React.FC<Props> = memo(({ phone }) => {
   return (
     <div className="phone-card">
-      <div className="phone-card__image-container">
-        <img src={testPhoneImage} alt="phone" className="phone-card__image" />
-      </div>
+      <Link to={`/phones/${phone.id}`}>
+        <div className="phone-card__image-container">
+          <img src={testPhoneImage} alt="phone" className="phone-card__image" />
+        </div>
 
-      <h3 className="phone-card__title">{phone.name}</h3>
+        <h3 className="phone-card__title">{phone.name}</h3>
+      </Link>
 
       <div className="phone-card__price-block">
         <p className="phone-card__price h3">${phone.priceRegular}</p>

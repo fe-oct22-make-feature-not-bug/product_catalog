@@ -1,14 +1,14 @@
-import React from "react";
 import { Routes, Route } from "react-router-dom";
 import "./styles/index.scss";
+// import { useState } from "react";
 import { Footer } from "./components/Footer/Footer";
 import { PageNotFound } from "./components/PageNotFound/PageNotFound";
 import { Header } from "./components/Header/Header";
 import { CartPage } from "./components/Cart/CartPage";
 import { Home } from "./components/Home/Home";
 import { Phones } from "./components/Phones/Phones";
-import { ProductDetail } from "./components/ProductDetail/ProductDetail";
 import "./Test.scss";
+import { ProductDetail } from "./components/ProductDetail/ProductDetail";
 
 function App() {
   return (
@@ -17,8 +17,10 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
-
         <Route path="/phones" element={<Phones />} />
+
+        <Route path="/phones/:phoneId" element={<ProductDetail />} />
+
         <Route
           path="/tablets"
           element={
@@ -32,10 +34,6 @@ function App() {
 
         <Route path="*" element={<PageNotFound />} />
       </Routes>
-
-      <div className="product-detail">
-        <ProductDetail />
-      </div>
 
       <Footer />
     </div>
