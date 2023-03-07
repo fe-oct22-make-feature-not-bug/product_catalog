@@ -1,13 +1,23 @@
-import React from "react";
+import React, { useState, useCallback } from "react";
+import cn from "classnames";
 import { NavLink } from "react-router-dom";
 import { Logo } from "../Logo";
 import "./Header.scss";
 import like from "../../assets/icons/like.png";
 import bag from "../../assets/icons/bag.png";
-import menu from "../../assets/icons/menu.png";
 import { BurgerMenu } from "./BurgerMenu/BurgerMenu";
 
-export const Header: React.FC = () => {
+export const Header: React.FC = React.memo(() => {
+  const [burgerMenuActive, setBurgerMenuActive] = useState(false);
+
+  const toggle = useCallback(
+    (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+      event.preventDefault();
+      setBurgerMenuActive((curr) => !curr);
+    },
+    []
+  );
+
   return (
     <>
       <header className="header">
@@ -86,14 +96,22 @@ export const Header: React.FC = () => {
           </div>
         </div>
 
-        <div className="burger__menu">
-          <a href="#menu">
-            <img src={menu} alt="menu" />
-          </a>
-        </div>
+        <button
+          type="button"
+          className={cn("burger__menu", {
+            menu__close: burgerMenuActive,
+            active: !burgerMenuActive,
+          })}
+          onClick={(event) => toggle(event)}
+        >
+          {true}
+        </button>
       </header>
 
-      <BurgerMenu />
+      <BurgerMenu
+        burgerMenuActive={burgerMenuActive}
+        setBurgerMenuActive={setBurgerMenuActive}
+      />
     </>
   );
-};
+});

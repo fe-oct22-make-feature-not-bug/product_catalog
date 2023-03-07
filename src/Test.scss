@@ -1,0 +1,11 @@
+@import "./styles/abstracts/index.scss";
+
+.product-detail {
+  max-width: 1136px;
+  margin: 0 auto;
+  padding: 16px;
+
+  @include onTablet {
+    padding: 24px;
+  }
+}

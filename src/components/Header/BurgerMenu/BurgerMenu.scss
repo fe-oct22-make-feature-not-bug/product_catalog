@@ -1,0 +1,89 @@
+@import "../../../styles/abstracts/index.scss";
+
+.menu {
+  min-height: calc(100vh - 48px);
+  overflow: hidden;
+  transform: translateX(-100%);
+  transition: transform 0.3s;
+
+  @include notMobile {
+    display: none;
+  }
+
+  &__close {
+    width: 48px;
+    display: flex;
+    margin: auto 0;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    border-left: 1px solid $color-elements;
+    background-image: url("../../../assets/icons/close.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+
+    @include notMobile {
+      display: none;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+    color: $color-secondary;
+  }
+
+  &__link:hover {
+    color: $color-white;
+  }
+
+  &__link.is-active {
+    color: $color-white;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      display: block;
+      height: 2px;
+      width: 100%;
+      background-color: $color-white;
+    }
+  }
+
+  &__likeAndBag {
+    position: fixed;
+    bottom: 0px;
+    display: flex;
+    margin: auto 0;
+    height: 64px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    height: 64px;
+    border-top: 1px solid $color-elements;
+  }
+}
+
+.like,
+.bag {
+  display: flex;
+  justify-content: center;
+}
+
+.active {
+  transform: translateX(0);
+}
