@@ -1,10 +1,9 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable react/display-name */
-import React, { memo } from "react";
+import React, { memo, useState } from "react";
 import "./Card.scss";
 import { Link } from "react-router-dom";
-import testPhoneImage from "../../assets/images/test-phone-image.png";
 import { Phone } from "../../types/Phone";
 
 type Props = {
@@ -12,19 +11,33 @@ type Props = {
 };
 
 export const Card: React.FC<Props> = memo(({ phone }) => {
+  const [addedToFavorites, setAddedToFavorites] = useState(false);
+
+  const handleClick = (selected: boolean) => {
+    if (selected === false) {
+      setAddedToFavorites(true);
+    } else {
+      setAddedToFavorites(false);
+    }
+  };
+
   return (
     <div className="phone-card">
       <Link to={`/phones/${phone.id}`}>
         <div className="phone-card__image-container">
-          <img src={testPhoneImage} alt="phone" className="phone-card__image" />
+          <img
+            src={`https://raw.githubusercontent.com/mate-academy/product_catalog/main/public/${phone.images[0]}`}
+            alt="phone"
+            className="phone-card__image"
+          />
         </div>
 
-        <h3 className="phone-card__title">{phone.name}</h3>
+        <h3 className="phone-card__title text-body">{phone.name}</h3>
       </Link>
 
       <div className="phone-card__price-block">
-        <p className="phone-card__price h3">${phone.priceRegular}</p>
-        <p className="phone-card__price-discount">${phone.priceDiscount}</p>
+        <p className="phone-card__price h3">${phone.priceDiscount}</p>
+        <p className="phone-card__price-discount">${phone.priceRegular}</p>
       </div>
 
       <div className="phone-card__divider"></div>
@@ -45,10 +58,16 @@ export const Card: React.FC<Props> = memo(({ phone }) => {
       </div>
 
       <div className="phone-card__actions">
-        <a className="phone-card__to-cart" href="#">
+        <button className="addToCart text-button" type="submit">
           Add to cart
-        </a>
-        <button type="submit" className="phone-card__to-favourite"></button>
+        </button>
+        <button
+          className={`addToWishlist ${addedToFavorites === true ? "is-selected" : ""}`}
+          type="submit"
+          onClick={() => handleClick(addedToFavorites)}
+        >
+          <span hidden>add to wishlist</span>
+        </button>
       </div>
     </div>
   );

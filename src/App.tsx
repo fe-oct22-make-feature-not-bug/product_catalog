@@ -4,7 +4,7 @@ import "./styles/index.scss";
 import { Footer } from "./components/Footer/Footer";
 import { PageNotFound } from "./components/PageNotFound/PageNotFound";
 import { Header } from "./components/Header/Header";
-import { CartPage } from "./components/Cart/CartPage";
+import { CartPage } from "./components/Cart/CartPage/index";
 import { Home } from "./components/Home/Home";
 import { Phones } from "./components/Phones/Phones";
 import "./Test.scss";

@@ -3,7 +3,7 @@
   grid-template-columns: repeat(4, 1fr);
   column-gap: 16px;
 
-  @include onTablet {
+  @include onTabletSize {
     grid-template-columns: repeat(12, 1fr);
     column-gap: 16px;
   }
@@ -20,8 +20,22 @@
   }
 }
 
+@mixin onBigTablet() {
+  @media (min-width: 769px) and (max-width: 1199px) {
+    @content;
+  }
+}
+
 @mixin onTablet() {
+  @media (min-width: 640px) and (max-width: 768px) {
+
+    @content;
+  }
+}
+
+@mixin onTabletSize() {
   @media (min-width: 640px) and (max-width: 1199px) {
+
     @content;
   }
 }

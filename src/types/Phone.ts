@@ -12,7 +12,7 @@ export interface Phone {
   camera: string;
   ram: string;
   year: number;
-  image: string;
+  images: string[];
   createdAt: string;
   namespaceId: string;
   processor: string;
