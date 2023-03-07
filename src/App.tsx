@@ -6,6 +6,8 @@ import { PageNotFound } from "./components/PageNotFound/PageNotFound";
 import { Header } from "./components/Header/Header";
 import { Home } from "./components/Home/Home";
 import { Phones } from "./components/Phones/Phones";
+import { ProductDetail } from "./components/ProductDetail/ProductDetail";
+import "./Test.scss";
 
 function App() {
   return (
@@ -13,15 +15,18 @@ function App() {
       <Header />
 
       <Routes>
-        <Route path="/" element={<Home /> } />
-    
+        <Route path="/" element={<Home />} />
+
         <Route path="/phones" element={<Phones />} />
+        <Route path="/tablets" element={<><h1 className="h1">Tablets</h1></>} />
 
         <Route path="*" element={<PageNotFound />} />
       </Routes>
-      <Card />
 
-      <ProductDetail />
+      <div className="product-detail">
+        <ProductDetail />
+      </div>
+
 
       <Footer />
     </div>

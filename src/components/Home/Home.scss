@@ -13,12 +13,15 @@
 
 .home-header {
   margin-bottom: 24px;
+  grid-column: 1/4;
 
   @include onTablet {
     margin-bottom: 32px;
+    grid-column: 1/10;
   }
 
   @include onDesktop {
     margin-bottom: 56px;
+    grid-column: 1/22;
   }
 }

@@ -90,9 +90,8 @@ export const ProductDetail: React.FC = () => {
               <button
                 key={button.name}
                 type="submit"
-                className={`product__form-capacity-item ${
-                  selectedCapacityButton === button.name ? "is-active" : ""
-                }`}
+                className={`product__form-capacity-item ${selectedCapacityButton === button.name ? "is-active" : ""
+                  }`}
                 onClick={() => handleClick(index, button.name)}
                 onKeyUp={() => handleClick(index, button.name)}
               >
