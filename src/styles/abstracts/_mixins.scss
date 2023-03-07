@@ -20,8 +20,14 @@
   }
 }
 
+@mixin onBigTablet() {
+  @media (min-width: 769px) and (max-width: 1199px) {
+    @content;
+  }
+}
+
 @mixin onTablet() {
-  @media (min-width: 640px) and (max-width: 1199px) {
+  @media (min-width: 640px) and (max-width: 768px) {
     @content;
   }
 }
