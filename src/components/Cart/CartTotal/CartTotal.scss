@@ -1,0 +1,56 @@
+@import '../../../styles/';
+
+.cart__total {
+  border: 1px solid $color-elements;
+  padding: 24px;
+
+  @include onDesktop {
+    width: 368px;
+    height: 206px;
+  }
+
+  &-title {
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 41px;
+
+    text-align: center;
+    letter-spacing: -0.01em;
+
+    color: $color-white;
+  }
+
+  &-subtitle {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+
+    text-align: center;
+
+    color: $color-secondary;
+    border-bottom: 1px solid $color-secondary;
+
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+  }
+
+  &-checkout {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 21px;
+
+    text-align: center;
+
+    color: #ffffff;
+
+    padding: 14px 86px;
+
+    background: $color-accent;
+  }
+}

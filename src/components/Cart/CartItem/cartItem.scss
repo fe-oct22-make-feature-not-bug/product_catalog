@@ -1,0 +1,118 @@
+@import '../../../styles/';
+
+
+.cart__item {
+  margin-bottom: 16px;
+  padding: 16px;
+  background-color: $color-surface-1;
+
+  @include onTablet {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 24px;
+  }
+
+  @include onDesktop {
+    margin-right: 16px;
+    display: flex;
+    justify-content: space-between;
+    width: 752px;
+  }
+
+  &-phoneData {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 16px;
+    padding: 7px 0;
+
+    @include onTablet {
+      margin: 0;
+    }
+
+    &__delete {
+      width: 16px;
+      height: 16px;
+    }
+
+    &__photo {
+      width: 66px;
+      height: 66px;
+
+      padding: 0 7px;
+    }
+
+    &__title {
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 21px;
+      color: $color-white;
+    }
+  }
+
+  &-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include onTablet {
+      gap: 53px;
+    }
+
+    &__counter {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 13px;
+
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 21px;
+
+      color: #000000;
+
+      &-minus {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 32px;
+        height: 32px;
+
+        border: 1px solid $color-elements;
+
+      }
+
+      &-minus:disabled {
+        border-color: #e2e6e9;
+      }
+
+      &-plus {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 32px;
+        height: 32px;
+
+        background-color: $color-surface-2;
+      }
+
+      &-value {
+        width: 10px;
+        color: $color-white;
+      }
+    }
+
+    &__value {
+      font-weight: 800;
+      font-size: 22px;
+      line-height: 140%;
+      width: 70px;
+
+      color: $color-white;
+    }
+  }
+}
