@@ -3,10 +3,10 @@
 .recomendations {
   & .slick-prev {
     left: unset;
-    right: 40px;
-    top: -40px;
-    width: 32px;
-    height: 32px;
+    right: 30px;
+    top: -42px;
+    width: 28px;
+    height: 28px;
     border: 1px solid $color-elements;
 
     &:hover,
@@ -16,22 +16,32 @@
 
     &::before {
       position: absolute;
-      top: 1px;
+      top: -1px;
       left: 11px;
       content: url(../../assets/icons/chevron-left.svg);
+
+      @include notMobile {
+        top: 1px
+      }
     }
 
     @include onTablet {
       right: 40px;
       top: -45px;
     }
+
+    @include notMobile {
+      width: 32px;
+      height: 32px;
+      right: 50px;
+    }
   }
 
   & .slick-next {
-    top: -40px;
+    top: -42px;
     right: 0;
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
     border: 1px solid $color-elements;
 
     &:hover,
@@ -41,14 +51,23 @@
 
     &::before {
       position: absolute;
-      top: 1px;
+      top: -1px;
       left: 11px;
       content: url(../../assets/icons/chevron-right.svg);
+
+      @include notMobile {
+        top: 1px
+      }
     }
 
     @include onTablet {
       right: 0px;
       top: -45px;
+    }
+
+    @include notMobile {
+      width: 32px;
+      height: 32px;
     }
   }
 

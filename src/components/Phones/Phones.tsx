@@ -8,7 +8,12 @@ export const getPhones = () => {
   return client.get<Phone[]>("phones");
 };
 
-export const Phones: React.FC = memo(() => {
+type Props ={
+  showPhoneDetails: boolean;
+  handleClick: (newValue: boolean) => void;
+};
+
+export const Phones: React.FC<Props> = memo(({showPhoneDetails, handleClick}: Props) => {
   const [phones, setPhones] = useState<Phone[]>([]);
 
   useEffect(() => {
@@ -23,7 +28,7 @@ export const Phones: React.FC = memo(() => {
   return (
     <div className="phone__catalog">
       {phones.map((phone) => (
-        <Card phone={phone} />
+        <Card phone={phone} showPhoneDetails={showPhoneDetails} handleClick={handleClick}/>
       ))}
     </div>
   );
