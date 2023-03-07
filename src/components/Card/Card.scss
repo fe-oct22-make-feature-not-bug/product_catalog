@@ -1,8 +1,8 @@
 @import "../../styles/abstracts/index.scss";
 
 .phone-card {
-  width: 272px;
-  height: 506px;
+  // width: 272px;
+  // height: 506px;
 
   padding: 32px;
 
@@ -46,11 +46,24 @@
     line-height: 21px;
   }
 
-  &__price {
+  &__price-block {
     margin-bottom: 8px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
 
+  &__price {
     font-size: 22px;
     line-height: 31px;
+    margin-right: 8px;
+  }
+
+  &__price-discount {
+    font-size: 22px;
+    line-height: 31px;
+    color: $color-secondary;
+    text-decoration: line-through;
   }
 
   &__actions {
