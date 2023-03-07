@@ -1,27 +1,26 @@
 export interface Phone {
-  'id': string;
-  'category': string;
-  'phoneId': string;
-  'itemId': string;
-  'name': string;
-  'priceRegular': string;
-  'priceDiscount': string;
-  'screen': string;
-  'capacity': string;
-  'color': string;
-  'camera': string;
-  'ram': string;
-  'year': number;
-  'image': string;
-  'createdAt': string;
-  'namespaceId': string;
-  'processor': string;
-  'zoom': string;
-  'resolution': string;
+  id: string;
+  category: string;
+  phoneId: string;
+  itemId: string;
+  name: string;
+  priceRegular: string;
+  priceDiscount: string;
+  screen: string;
+  capacity: string;
+  color: string;
+  camera: string;
+  ram: string;
+  year: number;
+  image: string;
+  createdAt: string;
+  namespaceId: string;
+  processor: string;
+  zoom: string;
+  resolution: string;
 }
 
-
-// capacityAvailable  - ['64GB', '128GB', '256GB'] 
+// capacityAvailable  - ['64GB', '128GB', '256GB']
 
 // cell ['GPRS', 'EDGE', 'WCDMA', 'UMTS', 'HSPA', 'LTE']
 

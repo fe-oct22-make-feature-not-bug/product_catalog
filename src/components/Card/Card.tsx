@@ -17,9 +17,7 @@ export const Card: React.FC<Props> = memo(({ phone }) => {
         <img src={testPhoneImage} alt="phone" className="phone-card__image" />
       </div>
 
-      <h3 className="phone-card__title">
-        {phone.name}
-      </h3>
+      <h3 className="phone-card__title">{phone.name}</h3>
 
       <div className="phone-card__price-block">
         <p className="phone-card__price h3">${phone.priceRegular}</p>

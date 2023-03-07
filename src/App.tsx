@@ -18,7 +18,14 @@ function App() {
         <Route path="/" element={<Home />} />
 
         <Route path="/phones" element={<Phones />} />
-        <Route path="/tablets" element={<><h1 className="h1">Tablets</h1></>} />
+        <Route
+          path="/tablets"
+          element={
+            <>
+              <h1 className="h1">Tablets</h1>
+            </>
+          }
+        />
 
         <Route path="*" element={<PageNotFound />} />
       </Routes>
@@ -26,7 +33,6 @@ function App() {
       <div className="product-detail">
         <ProductDetail />
       </div>
-
 
       <Footer />
     </div>

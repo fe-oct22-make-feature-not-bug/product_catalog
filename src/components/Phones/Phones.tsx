@@ -1,11 +1,11 @@
 import React, { memo, useState, useEffect } from "react";
-import { client } from '../../utils/fetchClient';
+import { client } from "../../utils/fetchClient";
 import "./Phones.scss";
 import { Phone } from "../../types/Phone";
 import { Card } from "../Card/Card";
 
 export const getPhones = () => {
-  return client.get<Phone[]>('phones');
+  return client.get<Phone[]>("phones");
 };
 
 export const Phones: React.FC = memo(() => {
@@ -22,12 +22,9 @@ export const Phones: React.FC = memo(() => {
 
   return (
     <div className="phone__catalog">
-      {
-        phones.map(phone => (
-          <Card phone={phone} />
-        ))
-      }
+      {phones.map((phone) => (
+        <Card phone={phone} />
+      ))}
     </div>
-
   );
 });

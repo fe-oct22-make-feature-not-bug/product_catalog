@@ -7,7 +7,7 @@ import "./RecomendationsSlider.scss";
 
 const recomendItems = ["1", "2", "3", "4", "5"];
 
-export const RecomendationsSlider: React.FC= () => {
+export const RecomendationsSlider: React.FC = () => {
   const settings = {
     dots: false,
     infinite: true,
