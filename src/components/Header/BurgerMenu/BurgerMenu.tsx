@@ -13,6 +13,7 @@ type Props = {
 export const BurgerMenu: React.FC<Props> = memo(
   ({ burgerMenuActive, setBurgerMenuActive }) => {
     return (
+      <div className="container">
       <div className={cn("menu", { active: burgerMenuActive })}>
         <div className="menu__header">
           <button
@@ -96,6 +97,7 @@ export const BurgerMenu: React.FC<Props> = memo(
             </NavLink>
           </div>
         </div>
+      </div>
       </div>
     );
   }

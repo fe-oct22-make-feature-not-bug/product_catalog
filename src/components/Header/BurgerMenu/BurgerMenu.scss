@@ -1,10 +1,14 @@
 @import "../../../styles/abstracts/index.scss";
+.container {
+  position: relative;
+}
 
 .menu {
-  min-height: calc(100vh - 48px);
-  overflow: hidden;
+  min-height: calc(100vh - 65px);
+  overflow-x: hidden;
   transform: translateX(-100%);
   transition: transform 0.3s;
+  position: absolute;
 
   @include notMobile {
     display: none;
@@ -43,6 +47,14 @@
     justify-content: center;
     margin-top: 32px;
     color: $color-secondary;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  &__link {
+    transition: color 0.3s ease-in-out;
   }
 
   &__link:hover {
@@ -73,7 +85,6 @@
     width: 100%;
     justify-content: center;
     align-items: center;
-    height: 64px;
     border-top: 1px solid $color-elements;
   }
 }
@@ -86,4 +97,8 @@
 
 .active {
   transform: translateX(0);
+}
+
+.menu.active {
+  position: static;
 }
