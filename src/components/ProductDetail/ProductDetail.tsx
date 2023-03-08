@@ -54,14 +54,11 @@ export const ProductDetail: React.FC = () => {
         // showError();
       });
   }, []);
- 
- const description = phone?.description;
 
- 
- // eslint-disable-next-line no-console
- console.log(description);
+  const description = phone?.description;
 
- 
+  // eslint-disable-next-line no-console
+  console.log(description);
 
   return (
     <section className="product">
@@ -94,15 +91,15 @@ export const ProductDetail: React.FC = () => {
                 <p className="product__form-label-id text-small">ID: 802390</p>
               </div>
               <ul className="product__form-color">
-              {phone.colorsAvailable.map((el) =>
-                <li className="product__form-color-wrapper">
+                {phone.colorsAvailable.map((el) => (
+                  <li className="product__form-color-wrapper">
                     <Link
                       key={el}
                       className={`product__form-color-item product__form-color-item--${el}`}
                       to="/"
                     ></Link>
-                    
-                </li>)}
+                  </li>
+                ))}
               </ul>
               <p className="text-small product__form-capacity-label">
                 Select capacity
@@ -123,8 +120,12 @@ export const ProductDetail: React.FC = () => {
                 ))}
               </div>
               <div className="product__form-price">
-                <span className="product__form-price-actual h2">{phone.priceDiscount}</span>
-                <span className="product__form-price-old">{phone.priceRegular}</span>
+                <span className="product__form-price-actual h2">
+                  {phone.priceDiscount}
+                </span>
+                <span className="product__form-price-old">
+                  {phone.priceRegular}
+                </span>
               </div>
               <div className="product__form-buttons">
                 <ProductButtons />
@@ -136,7 +137,9 @@ export const ProductDetail: React.FC = () => {
                 </div>
                 <div className="product__form-item">
                   <p className="product__form-details-key">Resolution</p>
-                  <p className="product__form-details-values">{phone.resolution}</p>
+                  <p className="product__form-details-values">
+                    {phone.resolution}
+                  </p>
                 </div>
                 <div className="product__form-item">
                   <p className="product__form-details-key">Processor</p>
@@ -153,9 +156,8 @@ export const ProductDetail: React.FC = () => {
           </div>
           <article className="product__info">
             <div className="product__about">
-              
               <h3 className="h3 product__about-header">About</h3>
-                {/* {description?.map(item => item)} */}
+              {/* {description?.map(item => item)} */}
               <h4 className="h4 product__about-title">
                 And then there was Pr
                 {/* {JSON.parse(phone.description)}; */}
@@ -216,9 +218,7 @@ export const ProductDetail: React.FC = () => {
               </div>
               <div className="product__specs-details">
                 <p className="product__specs-key">Camera</p>
-                <p className="product__specs-value">
-                  {phone.camera}
-                </p>
+                <p className="product__specs-value">{phone.camera}</p>
               </div>
               <div className="product__specs-details">
                 <p className="product__specs-key">Zoom</p>
@@ -226,9 +226,7 @@ export const ProductDetail: React.FC = () => {
               </div>
               <div className="product__specs-details">
                 <p className="product__specs-key">Cell</p>
-                <p className="product__specs-value">
-                  {phone.cell.join(', ')}
-                </p>
+                <p className="product__specs-value">{phone.cell.join(", ")}</p>
               </div>
             </div>
           </article>

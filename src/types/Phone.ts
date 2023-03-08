@@ -23,4 +23,3 @@ export interface Phone {
   resolution: string;
   colorsAvailable: string[];
 }
-
