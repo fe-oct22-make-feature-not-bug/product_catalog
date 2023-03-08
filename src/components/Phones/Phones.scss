@@ -1,6 +1,6 @@
 @import "../../styles/abstracts/index.scss";
 
-.phone {
+.phones {
   &__catalog {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(230px, 272px));
@@ -10,5 +10,53 @@
     max-width: 1136px;
     gap: 16px;
     justify-content: center;
+  }
+
+  &__dropdowns {
+    position: relative;
+    width: 160px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 32px;
+
+    select {
+      background-color: $color-surface-2;
+      color: #ffffff;
+      cursor: pointer;
+      font-size: 14px;
+      padding: 12px 30px 12px 12px;
+      width: 100%;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+
+      &:focus {
+        outline: none;
+      }
+
+      option {
+        background-color: $color-black;
+        color: $color-secondary;
+        font-size: 14px;
+
+
+        &:hover {
+          background: #000 !important;
+          color: $color-white;
+        }
+
+      }
+    }
+
+    select:focus>option:checked {
+      background: #000 !important;
+    }
+
+    .select-arrow {
+      position: absolute;
+      top: 50%;
+      right: 12px;
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
   }
 }
