@@ -211,17 +211,22 @@
       outline: 1px solid $color-white;
     }
 
-    &--pink {
-      border: 1px solid $color-phone-pink;
-      background-color: $color-phone-pink;
-    }
-
-    &--green {
+    &--midnightgreen {
       border: 1px solid $color-phone-green;
       background-color: $color-phone-green;
     }
 
-    &--grey {
+    &--gold {
+      border: 1px solid $color-phone-gold;
+      background-color: $color-phone-gold;
+    }
+
+    &--spacegray {
+      border: 1px solid $color-surface-1;
+      background-color: $color-surface-1;
+    }
+
+    &--silver {
       border: 1px solid $color-phone-grey;
       background-color: $color-phone-grey;
     }
@@ -229,6 +234,36 @@
     &--white {
       border: 1px solid $color-phone-white;
       background-color: $color-phone-white;
+    }
+
+    &--rosegold {
+      border: 1px solid $color-phone-pink;
+      background-color: $color-phone-pink;
+    }
+
+    &---black {
+      border: 1px solid $color-black;
+      background-color: $color-black;
+    }
+
+    &--red {
+      border: 1px solid $color-red;
+      background-color: $color-red;
+    }
+
+    &--purple {
+      border: 1px solid $color-purple;
+      background-color: $color-purple;
+    }
+
+    &--green {
+      border: 1px solid $color-phone-green;
+      background-color: $color-phone-green;
+    }
+
+    &--yellow {
+      border: 1px solid $color-phone-yellow;
+      background-color: $color-phone-yellow;
     }
   }
 

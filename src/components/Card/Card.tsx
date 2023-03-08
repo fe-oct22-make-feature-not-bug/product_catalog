@@ -23,7 +23,7 @@ export const Card: React.FC<Props> = memo(({ phone }) => {
 
   return (
     <div className="phone-card">
-      <Link to={`/phones/${phone.id}`}>
+      <Link to={`/phones-info/${phone.phoneId}`}>
         <div className="phone-card__image-container">
           <img
             src={`https://raw.githubusercontent.com/mate-academy/product_catalog/main/public/${phone.image}`}

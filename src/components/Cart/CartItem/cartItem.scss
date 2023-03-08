@@ -12,6 +12,13 @@
     padding: 24px;
   }
 
+  @include onBigTablet {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 24px;
+  }
+
   @include onDesktop {
     margin-right: 16px;
     display: flex;
@@ -21,7 +28,7 @@
 
   &-phoneData {
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
     align-items: center;
     gap: 24px;
     margin-bottom: 16px;
@@ -70,7 +77,13 @@
       font-size: 14px;
       line-height: 21px;
 
-      color: #000000;
+      @include onBigTablet {
+        padding-right: 53px;
+      }
+
+      @include onDesktop {
+        padding-right: 53px;
+      }
 
       &-minus {
         display: flex;
@@ -84,7 +97,7 @@
       }
 
       &-minus:disabled {
-        border-color: #e2e6e9;
+        // border-color:
       }
 
       &-plus {
