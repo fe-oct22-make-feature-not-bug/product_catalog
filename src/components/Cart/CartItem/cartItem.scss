@@ -1,5 +1,4 @@
-@import '../../../styles/';
-
+@import "../../../styles/";
 
 .cart__item {
   margin-bottom: 16px;
@@ -82,7 +81,6 @@
         height: 32px;
 
         border: 1px solid $color-elements;
-
       }
 
       &-minus:disabled {

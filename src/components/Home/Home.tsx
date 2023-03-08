@@ -1,6 +1,6 @@
 import React, { memo } from "react";
 import { Banner } from "../Banner/Banner";
-import { NewModelLayout } from "../NewModelLayout/NewModelLayout"; 
+import { NewModelLayout } from "../NewModelLayout/NewModelLayout";
 import { PageSection } from "../PageSection/PageSection";
 import { Categories } from "../Categories/Categories";
 import "./Home.scss";

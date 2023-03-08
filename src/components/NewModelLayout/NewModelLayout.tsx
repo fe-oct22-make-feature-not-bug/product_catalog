@@ -4,7 +4,7 @@ import { RecomendationsSlider } from "../RecomendationsSlider/RecomendationsSlid
 export const NewModelLayout: React.FC = memo(() => {
   return (
     <section>
-      <RecomendationsSlider/>
+      <RecomendationsSlider />
     </section>
   );
 });
