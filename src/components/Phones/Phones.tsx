@@ -21,10 +21,12 @@ export const Phones: React.FC = memo(() => {
   }, [phones.length]);
 
   return (
-    <div className="phone__catalog">
-      {phones.map((phone) => (
-        <Card phone={phone} />
-      ))}
-    </div>
+    <>
+      <div className="phone__catalog">
+        {phones.map((phone) => (
+          <Card phone={phone} />
+        ))}
+      </div>
+    </>
   );
 });

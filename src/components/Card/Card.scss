@@ -1,8 +1,10 @@
 @import "../../styles/abstracts/index.scss";
 
 .phone-card {
-  // width: 272px;
-  // height: 506px;
+  width: 100%;
+  min-width: 230px;
+  max-width: 272px;
+  height: 506px;
 
   padding: 32px;
 
@@ -15,13 +17,14 @@
   }
 
   &__image {
-    width: 100%;
+    display: block;
+    margin: 0 auto;
     height: 100%;
   }
 
   &__divider {
     border-bottom: 1px solid $color-elements;
-    margin: 16px 0;
+    margin-bottom: 16px;
   }
 
   &__info {
@@ -31,6 +34,7 @@
   &__details {
     display: flex;
     margin-bottom: 8px;
+
     justify-content: space-between;
     font-size: 12px;
   }
@@ -41,14 +45,15 @@
 
   &__title {
     margin-bottom: 8px;
-
     font-size: 14px;
+    font-weight: 600;
     line-height: 21px;
   }
 
   &__price-block {
     margin-bottom: 8px;
     display: flex;
+
     justify-content: flex-start;
     align-items: center;
   }
@@ -72,33 +77,44 @@
     justify-content: space-between;
   }
 
-  &__to-cart {
-    width: 160px;
-    height: 40px;
-
+  .product-buttons {
     display: flex;
-    justify-content: center;
-    align-items: center;
+  }
+
+  .addToCart {
+    height: 40px;
+    min-width: 160px;
+    text-align: center;
     background-color: $color-accent;
+    flex-grow: 1;
+    cursor: pointer;
 
     &:hover {
       background-color: $color-accent-hover;
     }
+
+    &:active {
+      background-color: $color-surface-2;
+    }
   }
 
-  &__to-favourite {
+  .addToWishlist {
     width: 40px;
     height: 40px;
-
     background-color: $color-surface-2;
     background-image: url(../../assets/icons/heart.svg);
     background-repeat: no-repeat;
     background-position: center;
-
+    margin-left: 8px;
     cursor: pointer;
 
     &:hover {
       background-color: $color-icons;
     }
+  }
+
+  .is-selected {
+    background-image: url(../../assets/icons/heart-red.svg);
+    background-size: 16px 14px;
   }
 }

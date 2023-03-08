@@ -2,7 +2,7 @@
 
 .h1 {
   font-size: 32px;
-  font-weight: 800;
+  font-weight: 700;
   line-height: 41px;
 
   @include notMobile {
@@ -63,3 +63,9 @@
   line-height: 15px;
   font-weight: 700;
 }
+
+// .text-body {
+//   font-weight: 300;
+//   font-size: 14px;
+//   line-height: 21px;
+// }

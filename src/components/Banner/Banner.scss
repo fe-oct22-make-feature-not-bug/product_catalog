@@ -6,7 +6,7 @@
   width: 100%;
   padding: 0;
 
-  @include onTablet {
+  @include onTabletSize {
     grid-column: 2/12;
   }
 
@@ -18,7 +18,7 @@
     position: relative;
     width: 100%;
 
-    @include onTablet {
+    @include onTabletSize {
       height: 189px;
     }
 
@@ -42,7 +42,7 @@
     width: 100%;
     height: auto;
 
-    @include onTablet {
+    @include onTabletSize {
       height: 189px;
     }
 
@@ -61,7 +61,7 @@
     background-color: $color-surface-2;
     transition: background-color 0.3s;
 
-    @include onTablet {
+    @include onTabletSize {
       height: 189px;
       top: 95px;
     }
@@ -78,7 +78,7 @@
 
       transform: translate(180%, 195px);
 
-      @include onTablet {
+      @include onTabletSize {
         transform: translate(180%, 90px);
       }
 
