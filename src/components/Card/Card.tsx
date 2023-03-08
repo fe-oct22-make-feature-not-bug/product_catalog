@@ -62,7 +62,9 @@ export const Card: React.FC<Props> = memo(({ phone }) => {
           Add to cart
         </button>
         <button
-          className={`addToWishlist ${addedToFavorites === true ? "is-selected" : ""}`}
+          className={`addToWishlist ${
+            addedToFavorites === true ? "is-selected" : ""
+          }`}
           type="submit"
           onClick={() => handleClick(addedToFavorites)}
         >

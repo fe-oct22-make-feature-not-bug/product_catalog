@@ -1,6 +1,6 @@
 import { CartItem } from "../CartItem";
 import { CartTotal } from "../CartTotal";
-import './CartPage.scss';
+import "./CartPage.scss";
 
 export const CartPage: React.FC = () => {
   return (
