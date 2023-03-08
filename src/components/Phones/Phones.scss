@@ -38,16 +38,14 @@
         color: $color-secondary;
         font-size: 14px;
 
-
         &:hover {
           background: #000 !important;
           color: $color-white;
         }
-
       }
     }
 
-    select:focus>option:checked {
+    select:focus > option:checked {
       background: #000 !important;
     }
 

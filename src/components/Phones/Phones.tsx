@@ -13,7 +13,7 @@ export const getPhones = () => {
 
 export const Phones: React.FC = memo(() => {
   const [phones, setPhones] = useState<PhoneMainInfo[]>([]);
-  const [sortOrder, setSortOrder] = useState('newest');  // 
+  const [sortOrder, setSortOrder] = useState("newest"); //
 
   const phonesAmount = phones.length;
 
@@ -31,13 +31,13 @@ export const Phones: React.FC = memo(() => {
     const sortedPhones = [...phones];
 
     switch (sortCondition) {
-      case 'newest':
+      case "newest":
         sortedPhones.sort((a, b) => b.year - a.year);
         break;
-      case 'alphabetically':
+      case "alphabetically":
         sortedPhones.sort((a, b) => a.name.localeCompare(b.name));
         break;
-      case 'cheapest':
+      case "cheapest":
         sortedPhones.sort((a, b) => a.price - b.price);
         break;
       default:
@@ -60,12 +60,22 @@ export const Phones: React.FC = memo(() => {
         <div className="phones__dropdowns">
           <p className="phones__dropdowns-label">Sort by</p>
 
-          <select className="select" value={sortOrder} onChange={(event) => setSortOrder(event.target.value)}>
-            <option className="option" value="newest">Newest</option>
+          <select
+            className="select"
+            value={sortOrder}
+            onChange={(event) => setSortOrder(event.target.value)}
+          >
+            <option className="option" value="newest">
+              Newest
+            </option>
             <option disabled></option>
-            <option className="option" value="alphabetically">Alphabetically</option>
-            <option disabled ></option>
-            <option className="option" value="cheapest">Cheapest</option>
+            <option className="option" value="alphabetically">
+              Alphabetically
+            </option>
+            <option disabled></option>
+            <option className="option" value="cheapest">
+              Cheapest
+            </option>
           </select>
         </div>
 

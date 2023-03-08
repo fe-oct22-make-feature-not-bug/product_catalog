@@ -4,10 +4,10 @@
 import React, { memo, useState } from "react";
 import "./Card.scss";
 import { Link } from "react-router-dom";
-import { PhoneMainInfo  } from "../../types/PhoneMainInfo";
+import { PhoneMainInfo } from "../../types/PhoneMainInfo";
 
 type Props = {
-  phone: PhoneMainInfo ;
+  phone: PhoneMainInfo;
 };
 
 export const Card: React.FC<Props> = memo(({ phone }) => {

@@ -86,7 +86,9 @@ export const ProductDetail: React.FC = () => {
                   <p className="product__form-label-color text-small">
                     Available colors
                   </p>
-                  <p className="product__form-label-id text-small">{phone.id}</p>
+                  <p className="product__form-label-id text-small">
+                    {phone.id}
+                  </p>
                 </div>
                 <ul className="product__form-color">
                   <li className="product__form-color-wrapper">
@@ -122,8 +124,11 @@ export const ProductDetail: React.FC = () => {
                     <button
                       key={button.name}
                       type="submit"
-                      className={`product__form-capacity-item ${selectedCapacityButton === button.name ? "is-active" : ""
-                        }`}
+                      className={`product__form-capacity-item ${
+                        selectedCapacityButton === button.name
+                          ? "is-active"
+                          : ""
+                      }`}
                       onClick={() => handleClick(index, button.name)}
                       onKeyUp={() => handleClick(index, button.name)}
                     >
@@ -173,9 +178,9 @@ export const ProductDetail: React.FC = () => {
                   <br />
                   <br />
                   An unprecedented leap in battery life. And a mind‑blowing chip
-                  that doubles down on machine learning and pushes the boundaries
-                  of what a smartphone can do. Welcome to the first iPhone
-                  powerful enough to be called Pro.
+                  that doubles down on machine learning and pushes the
+                  boundaries of what a smartphone can do. Welcome to the first
+                  iPhone powerful enough to be called Pro.
                 </p>
                 <h4 className="h4 product__about-title">Camera</h4>
                 <p className="product__about-text">
@@ -183,20 +188,20 @@ export const ProductDetail: React.FC = () => {
                   technology with the legendary simplicity of iPhone. Capture up
                   to four times more scene. Get beautiful images in drastically
                   lower light. Shoot the highest‑quality video in a smartphone —
-                  then edit with the same tools you love for photos. You’ve never
-                  shot with anything like it.
+                  then edit with the same tools you love for photos. You’ve
+                  never shot with anything like it.
                 </p>
                 <h4 className="h4 product__about-title">
-                  Shoot it. Flip it. Zoom it. Crop it. Cut it. Light it. Tweak it.
-                  Love it.
+                  Shoot it. Flip it. Zoom it. Crop it. Cut it. Light it. Tweak
+                  it. Love it.
                 </h4>
                 <p className="product__about-text">
-                  iPhone 11 Pro lets you capture videos that are beautifully true
-                  to life, with greater detail and smoother motion. Epic
+                  iPhone 11 Pro lets you capture videos that are beautifully
+                  true to life, with greater detail and smoother motion. Epic
                   processing power means it can shoot 4K video with extended
-                  dynamic range and cinematic video stabilization — all at 60 fps.
-                  You get more creative control, too, with four times more scene
-                  and powerful new editing tools to play with.
+                  dynamic range and cinematic video stabilization — all at 60
+                  fps. You get more creative control, too, with four times more
+                  scene and powerful new editing tools to play with.
                 </p>
               </div>
               <div className="product__specs">
@@ -248,6 +253,5 @@ export const ProductDetail: React.FC = () => {
         )}
       </section>
     </>
-
   );
 };
