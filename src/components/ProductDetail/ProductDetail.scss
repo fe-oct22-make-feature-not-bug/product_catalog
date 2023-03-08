@@ -9,10 +9,13 @@
     padding: 41px 24px;
   }
 
+  @include onBigTablet {
+    padding: 41px 24px;
+  }
+
   &__toBack {
     display: flex;
     align-items: center;
-    width: 66px;
     height: 16px;
     margin-bottom: 16px;
     padding-left: 10px;
@@ -41,6 +44,10 @@
       flex-direction: row;
     }
 
+    @include notMobile {
+      justify-content: flex-start;
+    }
+
     @include onDesktop {
       justify-content: start;
     }
@@ -63,6 +70,10 @@
       max-width: 274px;
     }
 
+    @include onBigTablet {
+      max-width: 380px;
+    }
+
     @include onDesktop {
       max-width: 442px;
       height: 100%;
@@ -78,6 +89,10 @@
 
     @include onTablet {
       max-width: 35px;
+    }
+
+    @include onBigTablet {
+      max-width: 60px;
     }
 
     .slick-current & {
@@ -96,6 +111,12 @@
     margin-bottom: 40px;
 
     @include onTablet {
+      flex-direction: row;
+      flex-wrap: nowrap;
+      width: 60%;
+    }
+
+    @include onBigTablet {
       flex-direction: row;
       flex-wrap: nowrap;
       width: 60%;
@@ -120,6 +141,11 @@
       @include onTablet {
         width: 50px !important;
       }
+
+      @include onBigTablet {
+        width: 50px !important;
+      }
+
       @include onDesktop {
         display: flex;
         flex-direction: column;
@@ -131,6 +157,11 @@
       @include onTablet {
         width: 50px !important;
       }
+
+      @include onBigTablet {
+        width: 50px !important;
+      }
+
       @include onDesktop {
         width: 80px !important;
       }
