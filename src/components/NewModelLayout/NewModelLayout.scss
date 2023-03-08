@@ -1,0 +1,88 @@
+// @import "../../styles/abstracts/index.scss";
+
+// .recomendations {
+//   & .slick-prev {
+//     left: unset;
+//     right: 30px;
+//     top: -42px;
+//     width: 28px;
+//     height: 28px;
+//     border: 1px solid $color-elements;
+
+//     &:hover,
+//     :active {
+//       background-color: $color-surface-2;
+//     }
+
+//     &::before {
+//       position: absolute;
+//       top: -1px;
+//       left: 11px;
+//       content: url(../../assets/icons/chevron-left.svg);
+
+//       @include notMobile {
+//         top: 1px;
+//       }
+//     }
+
+//     @include onTablet {
+//       right: 40px;
+//       top: -45px;
+//     }
+
+//     @include notMobile {
+//       width: 32px;
+//       height: 32px;
+//       right: 50px;
+//     }
+//   }
+
+//   & .slick-next {
+//     top: -42px;
+//     right: 0;
+//     width: 28px;
+//     height: 28px;
+//     border: 1px solid $color-elements;
+
+//     &:hover,
+//     :active {
+//       background-color: $color-surface-2;
+//     }
+
+//     &::before {
+//       position: absolute;
+//       top: -1px;
+//       left: 11px;
+//       content: url(../../assets/icons/chevron-right.svg);
+
+//       @include notMobile {
+//         top: 1px;
+//       }
+//     }
+
+//     @include onTablet {
+//       right: 0px;
+//       top: -45px;
+//     }
+
+//     @include notMobile {
+//       width: 32px;
+//       height: 32px;
+//     }
+//   }
+
+//   &__item {
+//     height: 100%;
+//     margin: 0 auto;
+//     margin-bottom: 23px;
+
+//     @include onTablet {
+//       max-width: 274px;
+//     }
+
+//     @include onDesktop {
+//       max-width: 442px;
+//       height: 100%;
+//     }
+//   }
+// }
