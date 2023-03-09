@@ -25,16 +25,16 @@ export const ImagesSlider: React.FC<Props> = ({ phone }) => {
   return (
     <>
       <div className="product__slider-img">
-        <Slider arrows={false} asNavFor={nav2 ?? undefined} ref={slider1Ref}>
+        <Slider adaptiveHeight slidesToShow={1} arrows={false} asNavFor={nav2 ?? undefined} ref={slider1Ref}>
           {phone.images.map(image => (
             <div 
-              className="product__image" 
+              className="product__image"
               key={image}
             >
             <img
               className="product__image-item" 
-              src={`https://raw.githubusercontent.com/mate-academy/product_catalog/main/public/${image}`} 
-              alt="iphone" 
+              src={`https://raw.githubusercontent.com/mate-academy/product_catalog/main/public/${image}`}
+              alt="iphone"
             />
           </div>
           ))}
@@ -49,6 +49,7 @@ export const ImagesSlider: React.FC<Props> = ({ phone }) => {
           slidesToShow={5}
           swipeToSlide
           focusOnSelect
+          centerMode
         >
           {phone.images.map(image => (
             <div 
@@ -58,7 +59,7 @@ export const ImagesSlider: React.FC<Props> = ({ phone }) => {
               <img
                 className="product__image-item" 
                 src={`https://raw.githubusercontent.com/mate-academy/product_catalog/main/public/${image}`}
-                alt="iphone" />
+                alt="thumbnail" />
           </div>
           ))}
         </Slider>
