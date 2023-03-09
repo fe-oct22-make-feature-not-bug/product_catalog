@@ -2,12 +2,15 @@
 
 .header {
   height: 48px;
-  position: relative;
+  position: sticky;
+  top: 0;
   display: flex;
   justify-content: space-between;
   align-items: start;
   border-bottom: 1px solid $color-elements;
   margin-bottom: 24px;
+  z-index: 100;
+  background-color: $color-black;
 
   @include onTablet {
     margin-bottom: 32px;
