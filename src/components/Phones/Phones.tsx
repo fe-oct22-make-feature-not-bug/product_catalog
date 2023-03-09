@@ -12,7 +12,6 @@ export const getPhones = () => {
   return client.get<PhoneMainInfo[]>("phones");
 };
 
-
 const sortOptions: string[] = ["Newest", "Cheapest", "Alphabetically"];
 const amountOptions: string[] = ["16", "8", "4"];
 
@@ -85,7 +84,7 @@ export const Phones: React.FC = () => {
 
           <div className="phones__dropdown">
             <p className="phones__dropdowns-label text-small">Items on page</p>
-            
+
             <Dropdown
               onChange={setItemsPerPage}
               options={amountOptions}
@@ -94,7 +93,6 @@ export const Phones: React.FC = () => {
             />
           </div>
         </div>
-
       </div>
 
       <div className="phones__catalog">

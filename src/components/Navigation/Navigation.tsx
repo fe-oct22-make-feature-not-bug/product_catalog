@@ -6,10 +6,12 @@ import Home from "../../assets/icons/home.svg";
 export const Navigation: React.FC = memo(() => {
   const location = useLocation();
   const { pathname } = location;
-  const phoneName = pathname.slice(pathname.lastIndexOf('/') + 1);
-  const normalisedName = phoneName.replace(/-/g, ' ').split(' ');
+  const phoneName = pathname.slice(pathname.lastIndexOf("/") + 1);
+  const normalisedName = phoneName.replace(/-/g, " ").split(" ");
 
-  const capitalizedName = normalisedName.map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+  const capitalizedName = normalisedName
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
 
   return (
     <nav className="navigation">
@@ -26,13 +28,9 @@ export const Navigation: React.FC = memo(() => {
           </a>
         </li>
 
-        {(phoneName.length > 6)
-
-          ? <li className="navigation__item">
-            {capitalizedName}
-          </li>
-          : null
-        }
+        {phoneName.length > 6 ? (
+          <li className="navigation__item">{capitalizedName}</li>
+        ) : null}
       </ul>
     </nav>
   );

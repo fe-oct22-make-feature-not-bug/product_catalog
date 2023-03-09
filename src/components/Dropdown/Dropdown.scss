@@ -1,6 +1,6 @@
 @import "../../styles/abstracts/index.scss";
 
-.dropdown{
+.dropdown {
   position: relative;
   box-sizing: border-box;
   width: 176px;
@@ -10,12 +10,11 @@
   color: $color-white;
   background-color: $color-surface-2;
   cursor: pointer;
-  
+
   font-size: 16px;
   line-height: 40px;
   padding: 8px 16px;
   cursor: pointer;
-
 
   &:hover {
     border: 1px solid $color-accent;
@@ -32,7 +31,6 @@
     justify-content: space-between;
     align-items: center;
     height: 100%;
-
 
     &:after {
       content: "";
