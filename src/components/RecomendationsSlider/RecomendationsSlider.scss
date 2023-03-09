@@ -1,6 +1,12 @@
 @import "../../styles/abstracts/index.scss";
 
 .recomendations {
+  margin-bottom: 64px;
+
+  @include onDesktop {
+    margin-bottom: 81px;
+  }
+  
   & .slick-prev {
     left: unset;
     right: 30px;

@@ -80,6 +80,13 @@ export const ProductDetail: React.FC = () => {
     return newPathname;
   }
 
+  const phoneidstr = phone?.id;
+  const regex = /\d+/g;
+  const phoneid = phoneidstr?.match(regex)?.join('-').concat('-', phone?.color|| "");
+
+  // eslint-disable-next-line no-console
+  console.log(phoneid);
+
   return (
     <section className="product">
       <Navigation />
@@ -109,7 +116,7 @@ export const ProductDetail: React.FC = () => {
                 <p className="product__form-label-color text-small">
                   Available colors
                 </p>
-                <p className="product__form-label-id text-small">ID: 802390</p>
+                <p className="product__form-label-id text-small">ID: {phoneid}</p>
               </div>
               <ul className="product__form-color">
                 {phone.colorsAvailable.map((el) => (
