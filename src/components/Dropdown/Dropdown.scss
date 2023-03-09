@@ -1,0 +1,74 @@
+@import "../../styles/abstracts/index.scss";
+
+.dropdown{
+  position: relative;
+  box-sizing: border-box;
+  width: 176px;
+  height: 40px;
+  margin-bottom: 24px;
+  border: 1px solid transparent;
+  color: $color-white;
+  background-color: $color-surface-2;
+  cursor: pointer;
+  
+  font-size: 16px;
+  line-height: 40px;
+  padding: 8px 16px;
+  cursor: pointer;
+
+
+  &:hover {
+    border: 1px solid $color-accent;
+  }
+
+  &.open {
+    .options-container {
+      display: block;
+    }
+  }
+
+  &__option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+
+
+    &:after {
+      content: "";
+      display: inline-block;
+      width: 9px;
+      height: 5px;
+      margin-left: 8px;
+      background-image: url(../../assets/icons/chevron-down-dropdown.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      pointer-events: none;
+    }
+  }
+
+  &__option-container {
+    border: 1px solid $color-surface-2;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    width: 176px;
+    max-height: 144px;
+    background-color: $color-surface-1;
+
+    .option {
+      padding: 8px 12px;
+      font-size: 16px;
+      line-height: 24px;
+
+      color: $color-secondary;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $color-surface-2;
+        color: $color-white;
+      }
+    }
+  }
+}

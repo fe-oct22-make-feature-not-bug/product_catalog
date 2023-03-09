@@ -7,6 +7,7 @@ import { ImagesSlider } from "./ImagesSlider";
 import { RecomendationsSlider } from "../RecomendationsSlider/RecomendationsSlider";
 import { Phone } from "../../types/Phone";
 import { client } from "../../utils/fetchClient";
+import { Navigation } from "../Navigation/Navigation";
 
 export const getPhone = (phoneId: string | undefined) => {
   return client.get<Phone>(`phones-info/${phoneId}`);
@@ -62,6 +63,7 @@ export const ProductDetail: React.FC = () => {
 
   return (
     <section className="product">
+      <Navigation />
       {phone && (
         <>
           <div className="product__toBack">
@@ -109,9 +111,8 @@ export const ProductDetail: React.FC = () => {
                   <button
                     key={button.name}
                     type="submit"
-                    className={`product__form-capacity-item ${
-                      selectedCapacityButton === button.name ? "is-active" : ""
-                    }`}
+                    className={`product__form-capacity-item ${selectedCapacityButton === button.name ? "is-active" : ""
+                      }`}
                     onClick={() => handleClick(index, button.name)}
                     onKeyUp={() => handleClick(index, button.name)}
                   >

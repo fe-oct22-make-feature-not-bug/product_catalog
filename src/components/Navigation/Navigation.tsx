@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import React, { memo } from "react";
 import { useLocation } from "react-router-dom";
 import "./Navigation.scss";
@@ -7,20 +6,33 @@ import Home from "../../assets/icons/home.svg";
 export const Navigation: React.FC = memo(() => {
   const location = useLocation();
   const { pathname } = location;
+  const phoneName = pathname.slice(pathname.lastIndexOf('/') + 1);
+  const normalisedName = phoneName.replace(/-/g, ' ').split(' ');
 
-  console.log(pathname);
+  const capitalizedName = normalisedName.map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
 
   return (
     <nav className="navigation">
-      <ul>
-        <li>
-          <a href="/">
-            <img src={Home} alt="Home" />
+      <ul className="navigation__list">
+        <li className="navigation__item">
+          <a className="navigation__link" href="/">
+            <img className="navigation__link--home" src={Home} alt="Home" />
           </a>
         </li>
-        <li>
-          <a href="/#/phones">Phones</a>
+
+        <li className="navigation__item">
+          <a className="navigation__link" href="/#/phones">
+            Phones
+          </a>
         </li>
+
+        {(phoneName.length > 6)
+
+          ? <li className="navigation__item">
+            {capitalizedName}
+          </li>
+          : null
+        }
       </ul>
     </nav>
   );

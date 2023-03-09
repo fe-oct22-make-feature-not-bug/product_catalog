@@ -1,6 +1,38 @@
 @import "../../styles/abstracts/index.scss";
 
 .phones {
+  &__top-actions {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1136px;
+    justify-content: start;
+
+    @media (max-width: 1135px) {
+      max-width: 848px;
+    }
+
+    @media (max-width: 847px) {
+      max-width: 560px;
+    }
+
+    @media (max-width: 559px) {
+      max-width: 288px;
+    }
+  }
+
+  // &__header {
+  //   margin-bottom: 24px;
+
+  // }
+  &__amount {
+    margin-bottom: 40px;
+  }
+
+  &__dropdown:first-child {
+    margin-right: 16px;
+  }
+
+
   &__catalog {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(230px, 272px));
@@ -14,10 +46,9 @@
 
   &__dropdowns {
     position: relative;
+    display: flex;
+
     width: 160px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 32px;
 
     select {
       background-color: $color-surface-2;
@@ -43,18 +74,6 @@
           color: $color-white;
         }
       }
-    }
-
-    select:focus > option:checked {
-      background: #000 !important;
-    }
-
-    .select-arrow {
-      position: absolute;
-      top: 50%;
-      right: 12px;
-      transform: translateY(-50%);
-      pointer-events: none;
     }
   }
 }
