@@ -10,11 +10,7 @@ interface Props {
 }
 
 export const Pagination: React.FC<Props> = memo(
-  ({
-    currentPage,
-    totalPages,
-    setCurrentPage,
-  }) => {
+  ({ currentPage, totalPages, setCurrentPage }) => {
     const [searchParams, setSearchParams] = useSearchParams();
 
     useEffect(() => {
@@ -28,22 +24,21 @@ export const Pagination: React.FC<Props> = memo(
 
     const setPageNumber = (pageNumber: number) => {
       setSearchParams({ page: pageNumber.toString() });
-      setCurrentPage(pageNumber);
     };
 
     const handlePrevClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
       event.preventDefault();
-  
+
       if (currentPage <= 1) {
         return;
       }
-  
+
       setPageNumber(currentPage - 1);
     };
-  
+
     const handleNextClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
       event.preventDefault();
-  
+
       if (currentPage >= totalPages) {
         return;
       }
@@ -51,11 +46,17 @@ export const Pagination: React.FC<Props> = memo(
       setPageNumber(currentPage + 1);
     };
 
+    const handleNumberClick = (event: React.MouseEvent<HTMLAnchorElement>, newPage: number) => {
+      event.preventDefault();
+
+      setPageNumber(newPage);
+    };
+
     return (
       <>
         <ul className="pagination">
           <li>
-            <Link 
+            <Link
               to={`?page=${currentPage - 1}`}
               className={cn("pagination__link", "pagination__link_prev", {
                 pagination__link_disabled: currentPage === 1,
@@ -72,7 +73,7 @@ export const Pagination: React.FC<Props> = memo(
                 className={cn("pagination__link", {
                   pagination__link_active: pageNumber === currentPage,
                 })}
-                onClick={() => setPageNumber(currentPage)}
+                onClick={(event) => handleNumberClick(event, pageNumber)}
               >
                 {pageNumber}
               </Link>
