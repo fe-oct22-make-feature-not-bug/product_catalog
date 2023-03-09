@@ -5,7 +5,7 @@ export interface Phone {
   phoneId: string;
   itemId: string;
   name: string;
-  description: object[];
+  description: About[];
   priceRegular: string;
   priceDiscount: string;
   screen: string;
@@ -23,3 +23,8 @@ export interface Phone {
   resolution: string;
   colorsAvailable: string[];
 }
+
+type About = {
+  title: string
+  text: string[]
+};
