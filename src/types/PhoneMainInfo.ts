@@ -12,5 +12,5 @@ export interface PhoneMainInfo {
   ram: string;
   year: number;
   image: string;
-  createdAt: any;
+  createdAt: Date;
 }

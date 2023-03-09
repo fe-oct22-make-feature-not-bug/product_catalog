@@ -7,6 +7,7 @@ import { PhoneMainInfo } from "../../types/PhoneMainInfo";
 import { Card } from "../Card/Card";
 import Dropdown from "../Dropdown/Dropdown";
 import { Navigation } from "../Navigation/Navigation";
+import { Pagination } from "../Pagination/Pagination";
 
 export const getPhones = () => {
   return client.get<PhoneMainInfo[]>("phones");
@@ -18,6 +19,7 @@ const amountOptions: string[] = ["16", "8", "4"];
 export const Phones: React.FC = () => {
   const [phones, setPhones] = useState<PhoneMainInfo[]>([]);
 
+
   const [sortOrder, setSortOrder] = useState("Newest");
   const [itemsPerPage, setItemsPerPage] = useState("16");
 
@@ -28,6 +30,8 @@ export const Phones: React.FC = () => {
   const toggleDropdown2 = () => setIsOpen2(!isOpen2);
 
   console.log(itemsPerPage);
+  const [currentPage, setCurrentPage] = useState(1);
+
 
   const phonesAmount = phones.length;
 
@@ -39,6 +43,11 @@ export const Phones: React.FC = () => {
         // showError();
       });
   }, [phones.length, sortOrder]);
+
+  const itemsPerPage = 16;
+  const totalPages = Math.ceil(phonesAmount / itemsPerPage);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
 
   function sortGoods(sortCondition: string) {
     const sortedPhones = [...phones];
@@ -60,7 +69,7 @@ export const Phones: React.FC = () => {
     return sortedPhones;
   }
 
-  const sortedPhones = sortGoods(sortOrder);
+  const sortedPhones = sortGoods(sortOrder).slice(startIndex, endIndex);
 
   return (
     <>
@@ -97,9 +106,15 @@ export const Phones: React.FC = () => {
 
       <div className="phones__catalog">
         {sortedPhones.map((phone) => (
-          <Card phone={phone} />
+          <Card key={phone.id} phone={phone} />
         ))}
       </div>
+
+      <Pagination
+        currentPage={currentPage}
+        totalPages={totalPages}
+        setCurrentPage={setCurrentPage}
+      />
     </>
   );
 };

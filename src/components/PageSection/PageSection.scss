@@ -1,0 +1,21 @@
+@import "../../styles/abstracts/index.scss";
+@import "../../styles/index.scss";
+
+.section-title {
+  font-style: normal;
+  font-weight: 800;
+  font-size: 22px;
+  line-height: 140%;
+  margin-left: 16px;
+  margin-bottom: 24px;
+
+  @include notMobile {
+    margin-left: 16px;
+    margin-bottom: 24px;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 41px;
+    letter-spacing: -0.01em;
+  }
+}

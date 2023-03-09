@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useParams, useNavigate } from "react-router-dom";
+import { Link, useParams, useNavigate, useLocation } from "react-router-dom";
 import chevronLeft from "../../assets/icons/chevron-left.svg";
 import { ProductButtons } from "../ProductButtons/ProductButtons";
 import "./ProductDetail.scss";
@@ -25,11 +25,7 @@ export const ProductDetail: React.FC = () => {
   const [selectedCapacityButton, setSelectedCapacityButton] = useState<
     string | null
   >(null);
-  const [capacityButtons, setCapacityButtons] = useState<CapacityButton[]>([
-    { name: "64GB", isActive: false },
-    { name: "256GB", isActive: false },
-    { name: "512GB", isActive: false },
-  ]);
+  const [capacityButtons, setCapacityButtons] = useState<CapacityButton[]>([]);
 
   function handleGoBack() {
     navigate(-1);
@@ -52,15 +48,41 @@ export const ProductDetail: React.FC = () => {
     getPhone(phoneId)
       .then(setPhone)
       .catch(() => {
-        // showError();
       });
-  }, []);
+  }, [phoneId]);
 
-  const description = phone?.description;
+  useEffect(() => {
+    if (phone) {
+      const oldArray = phone?.capacityAvailable;
+  
+      const newArray = oldArray.map(item => {
+        return { name: item, isActive: false };
+      });
+  
+      setCapacityButtons(newArray);
+    }
+  }, [phone]);
 
-  // eslint-disable-next-line no-console
-  console.log(description);
+  const description1 = { ...phone?.description[0] };
+  const description2 = { ...phone?.description[1] };
+  const description3 = { ...phone?.description[2] };
 
+
+  const location = useLocation();
+  const currentUrl = location.pathname + location.search + location.hash;
+
+  let newPathname = '';
+
+  function changeURL(str: string): any {
+    const replUrl = currentUrl.split("-");
+
+    replUrl[replUrl.length - 1] = str;
+    newPathname = replUrl.join("-");
+
+    return newPathname;
+  } 
+  
+  
   return (
     <section className="product">
       <Navigation />
@@ -83,7 +105,7 @@ export const ProductDetail: React.FC = () => {
           <h2 className="h2 product__header">{phone.name}</h2>
           <div className="product__wrapper">
             <div className="product__slider-wrapper">
-              <ImagesSlider />
+              <ImagesSlider phone={phone}/>
             </div>
             <div className="product__form">
               <div className="product__form-label">
@@ -97,9 +119,14 @@ export const ProductDetail: React.FC = () => {
                   <li className="product__form-color-wrapper">
                     <Link
                       key={el}
+                      onClick={changeURL(el)}
+                      onKeyUp={changeURL(el)}
+                      role="button"
+                      tabIndex={0}
                       className={`product__form-color-item product__form-color-item--${el}`}
-                      to="/"
-                    ></Link>
+                      to={`${newPathname}`}
+                    >
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -159,41 +186,21 @@ export const ProductDetail: React.FC = () => {
           <article className="product__info">
             <div className="product__about">
               <h3 className="h3 product__about-header">About</h3>
-              {/* {description?.map(item => item)} */}
               <h4 className="h4 product__about-title">
-                And then there was Pr
-                {/* {JSON.parse(phone.description)}; */}
+                {description1.title}
               </h4>
               <p className="product__about-text">
-                A transformative triple‑camera system that adds tons of
-                capability without complexity.
-                <br />
-                <br />
-                An unprecedented leap in battery life. And a mind‑blowing chip
-                that doubles down on machine learning and pushes the boundaries
-                of what a smartphone can do. Welcome to the first iPhone
-                powerful enough to be called Pro.
+                {description1.text}
               </p>
-              <h4 className="h4 product__about-title">Camera</h4>
+              <h4 className="h4 product__about-title">{description2.title}</h4>
               <p className="product__about-text">
-                Meet the first triple‑camera system to combine cutting‑edge
-                technology with the legendary simplicity of iPhone. Capture up
-                to four times more scene. Get beautiful images in drastically
-                lower light. Shoot the highest‑quality video in a smartphone —
-                then edit with the same tools you love for photos. You’ve never
-                shot with anything like it.
+                {description2.text}
               </p>
               <h4 className="h4 product__about-title">
-                Shoot it. Flip it. Zoom it. Crop it. Cut it. Light it. Tweak it.
-                Love it.
+                {description3.title}
               </h4>
               <p className="product__about-text">
-                iPhone 11 Pro lets you capture videos that are beautifully true
-                to life, with greater detail and smoother motion. Epic
-                processing power means it can shoot 4K video with extended
-                dynamic range and cinematic video stabilization — all at 60 fps.
-                You get more creative control, too, with four times more scene
-                and powerful new editing tools to play with.
+                {description3.text}
               </p>
             </div>
             <div className="product__specs">

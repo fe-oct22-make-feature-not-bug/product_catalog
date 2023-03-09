@@ -1,13 +1,20 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import Slider from "react-slick";
+import { client } from "../../utils/fetchClient";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./RecomendationsSlider.scss";
-// import { Card } from "../Card/Card";
+import { PhoneMainInfo } from "../../types/PhoneMainInfo";
+import { Card } from "../Card/Card";
 
-const recomendItems = ["1", "2", "3", "4", "5"];
+
+
+export const getPhones = () => {
+  return client.get<PhoneMainInfo[]>("phones/newPhones ");
+};
 
 export const RecomendationsSlider: React.FC = () => {
+  const [phones, setPhones] = useState<PhoneMainInfo[]>([]);
   const settings = {
     dots: false,
     infinite: true,
@@ -31,12 +38,34 @@ export const RecomendationsSlider: React.FC = () => {
     ],
   };
 
+  useEffect(() => {
+    getPhones()
+      .then(setPhones)
+      .catch(() => {
+        setPhones([]);
+      });
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <div className="recomendations">
       <Slider {...settings}>
-        {recomendItems.map((item) => (
-          <div key={item} className="recomendations__item">
-            {/* <Card /> */}
+        {phones.map((phone) => (
+          <div
+            key={phone.id}
+            className="recomendations__item"
+            onClick={scrollToTop}
+            onKeyUp={scrollToTop}
+            role="button"
+            tabIndex={0}
+          >
+              <Card phone={phone} />
           </div>
         ))}
       </Slider>

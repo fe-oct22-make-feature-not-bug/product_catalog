@@ -1,0 +1,72 @@
+@import "../../styles/index.scss";
+
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 80px;
+
+  &__list {
+    display: flex;
+    padding-bottom: 16px;
+  }
+
+  @include onTablet {
+    margin-bottom: 80px;
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 4px;
+    height: 32px;
+    width: 32px;
+    background-color: $color-surface-1;
+
+    &_prev {
+      margin-right: 16px;
+      background-color: $color-surface-2;
+
+      &::after {
+        content: url("../../assets/icons/chevron-left.svg");
+      }
+
+      &:hover {
+        border: 1px solid $color-icons;
+      }
+    }
+
+    &_next {
+      margin-left: 16px;
+      background-color: $color-surface-2;
+
+      &::after {
+        content: url("../../assets/icons/chevron-right.svg");
+      }
+
+      &:hover {
+        border-color: $color-icons;
+      }
+    }
+
+    &:hover {
+      border: 1px solid $color-accent;
+      cursor: pointer;
+    }
+
+    &_active {
+      background-color: $color-accent;
+      color: $color-white;
+    }
+
+    &_disabled {
+      border-color: $color-icons;
+
+      &:hover {
+        border-color: $color-icons;
+        cursor: default;
+      }
+    }
+  }
+}
