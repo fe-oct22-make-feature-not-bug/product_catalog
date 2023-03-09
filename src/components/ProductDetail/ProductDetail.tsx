@@ -24,11 +24,7 @@ export const ProductDetail: React.FC = () => {
   const [selectedCapacityButton, setSelectedCapacityButton] = useState<
     string | null
   >(null);
-  const [capacityButtons, setCapacityButtons] = useState<CapacityButton[]>([
-    { name: "64GB", isActive: false },
-    { name: "256GB", isActive: false },
-    { name: "512GB", isActive: false },
-  ]);
+  const [capacityButtons, setCapacityButtons] = useState<CapacityButton[]>([]);
 
   function handleGoBack() {
     navigate(-1);
@@ -51,10 +47,20 @@ export const ProductDetail: React.FC = () => {
     getPhone(phoneId)
       .then(setPhone)
       .catch(() => {
-        // showError();
       });
   }, []);
 
+  useEffect(() => {
+    if (phone) {
+      const oldArray = phone?.capacityAvailable;
+  
+      const newArray = oldArray.map(item => {
+        return { name: item, isActive: false };
+      });
+  
+      setCapacityButtons(newArray);
+    }
+  }, [phone]);
 
   const description1 = { ...phone?.description[0] };
   const description2 = { ...phone?.description[1] };

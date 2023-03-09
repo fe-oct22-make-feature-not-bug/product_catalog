@@ -265,6 +265,11 @@
       border: 1px solid $color-phone-yellow;
       background-color: $color-phone-yellow;
     }
+
+    &--coral {
+      border: 1px solid $color-phone-coral;
+      background-color: $color-phone-coral;
+    }
   }
 
   &__form-capacity-label {
