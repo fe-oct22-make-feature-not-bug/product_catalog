@@ -25,6 +25,6 @@ export interface Phone {
 }
 
 type About = {
-  title: string
-  text: string[]
+  title: string;
+  text: string[];
 };

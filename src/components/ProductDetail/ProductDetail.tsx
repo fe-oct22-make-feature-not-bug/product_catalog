@@ -21,7 +21,9 @@ export const ProductDetail: React.FC = () => {
   const navigate = useNavigate();
   const [phone, setPhone] = useState<Phone>();
   const { phoneId } = useParams();
-  const [selectedCapacityButton, setSelectedCapacityButton] = useState<string | undefined>('');
+  const [selectedCapacityButton, setSelectedCapacityButton] = useState<
+    string | undefined
+  >("");
   const [capacityButtons, setCapacityButtons] = useState<CapacityButton[]>([]);
 
   function handleGoBack() {
@@ -49,18 +51,17 @@ export const ProductDetail: React.FC = () => {
   useEffect(() => {
     getPhone(phoneId)
       .then(setPhone)
-      .catch(() => {
-      });
+      .catch(() => {});
   }, [phoneId]);
 
   useEffect(() => {
     if (phone) {
       const oldArray = phone?.capacityAvailable;
-  
-      const newArray = oldArray.map(item => {
+
+      const newArray = oldArray.map((item) => {
         return { name: item, isActive: false };
       });
-  
+
       setCapacityButtons(newArray);
     }
   }, [phone]);
@@ -69,11 +70,7 @@ export const ProductDetail: React.FC = () => {
   const description2 = { ...phone?.description[1] };
   const description3 = { ...phone?.description[2] };
 
-
-  // eslint-disable-next-line no-console
-  // console.log(currentUrl);
-
-  let newPathname = '';
+  let newPathname = "";
 
   function changeColorURL(str: string): any {
     const replUrl = currentUrl.split("-");
@@ -82,25 +79,19 @@ export const ProductDetail: React.FC = () => {
     newPathname = replUrl.join("-");
 
     return newPathname;
-  } 
+  }
 
-  let newPathname2 = '';
+  let newPathname2 = "";
 
   function changeCapacityURL(str: string): any {
     const replUrl = currentUrl.split("-");
 
-    // eslint-disable-next-line no-console
-    // console.log(replUrl);
-    
     replUrl[replUrl.length - 2] = str;
     newPathname2 = replUrl.join("-");
 
-    // eslint-disable-next-line no-console
-    console.log("new",newPathname2);
-
     return newPathname2;
   }
-  
+
   return (
     <section className="product">
       {phone && (
@@ -122,7 +113,7 @@ export const ProductDetail: React.FC = () => {
           <h2 className="h2 product__header">{phone.name}</h2>
           <div className="product__wrapper">
             <div className="product__slider-wrapper">
-              <ImagesSlider phone={phone}/>
+              <ImagesSlider phone={phone} />
             </div>
             <div className="product__form">
               <div className="product__form-label">
@@ -141,8 +132,7 @@ export const ProductDetail: React.FC = () => {
                       tabIndex={0}
                       className={`product__form-color-item product__form-color-item--${el}`}
                       to={`${newPathname}`}
-                    >
-                    </Link>
+                    ></Link>
                   </li>
                 ))}
               </ul>
@@ -151,20 +141,20 @@ export const ProductDetail: React.FC = () => {
               </p>
               <div className="product__form-capacity-btn">
                 {capacityButtons.map((button, index) => (
-                    <Link
-                      key={button.name}
-                      role="button"
-                      tabIndex={0}
-                      className={`product__form-capacity-item ${
-                        selectedCapacityButton === button.name ? "is-active" : ""
-                      }`}
-                      onClick= {() => {
-                        handleClick(index, button.name);
-                      }}
-                      to={changeCapacityURL(button.name.toLowerCase())}
-                    >
-                      {button.name}
-                    </Link>
+                  <Link
+                    key={button.name}
+                    role="button"
+                    tabIndex={0}
+                    className={`product__form-capacity-item ${
+                      selectedCapacityButton === button.name ? "is-active" : ""
+                    }`}
+                    onClick={() => {
+                      handleClick(index, button.name);
+                    }}
+                    to={changeCapacityURL(button.name.toLowerCase())}
+                  >
+                    {button.name}
+                  </Link>
                 ))}
               </div>
               <div className="product__form-price">
@@ -205,22 +195,12 @@ export const ProductDetail: React.FC = () => {
           <article className="product__info">
             <div className="product__about">
               <h3 className="h3 product__about-header">About</h3>
-              <h4 className="h4 product__about-title">
-                {description1.title}
-              </h4>
-              <p className="product__about-text">
-                {description1.text}
-              </p>
+              <h4 className="h4 product__about-title">{description1.title}</h4>
+              <p className="product__about-text">{description1.text}</p>
               <h4 className="h4 product__about-title">{description2.title}</h4>
-              <p className="product__about-text">
-                {description2.text}
-              </p>
-              <h4 className="h4 product__about-title">
-                {description3.title}
-              </h4>
-              <p className="product__about-text">
-                {description3.text}
-              </p>
+              <p className="product__about-text">{description2.text}</p>
+              <h4 className="h4 product__about-title">{description3.title}</h4>
+              <p className="product__about-text">{description3.text}</p>
             </div>
             <div className="product__specs">
               <h3 className="h3 product__specs-header">Tech specs</h3>

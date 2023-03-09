@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import { client } from "../../utils/fetchClient";
 import "slick-carousel/slick/slick.css";
@@ -6,8 +6,6 @@ import "slick-carousel/slick/slick-theme.css";
 import "./RecomendationsSlider.scss";
 import { PhoneMainInfo } from "../../types/PhoneMainInfo";
 import { Card } from "../Card/Card";
-
-
 
 export const getPhones = () => {
   return client.get<PhoneMainInfo[]>("phones/newPhones ");
@@ -65,7 +63,7 @@ export const RecomendationsSlider: React.FC = () => {
             role="button"
             tabIndex={0}
           >
-              <Card phone={phone} />
+            <Card phone={phone} />
           </div>
         ))}
       </Slider>

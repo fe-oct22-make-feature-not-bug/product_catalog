@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { Phone } from "../../types/Phone";
 
 type Props = {
-  phone : Phone;
+  phone: Phone;
 };
 
 export const ImagesSlider: React.FC<Props> = ({ phone }) => {
@@ -24,22 +24,18 @@ export const ImagesSlider: React.FC<Props> = ({ phone }) => {
 
   const imagesLength = phone.images.length;
 
-
   return (
     <>
       <div className="product__slider-img">
         <Slider arrows={false} asNavFor={nav2 ?? undefined} ref={slider1Ref}>
-          {phone.images.map(image => (
-            <div 
-              className="product__image" 
-              key={image}
-            >
-            <img
-              className="product__image-item" 
-              src={`https://raw.githubusercontent.com/mate-academy/product_catalog/main/public/${image}`} 
-              alt="iphone" 
-            />
-          </div>
+          {phone.images.map((image) => (
+            <div className="product__image" key={image}>
+              <img
+                className="product__image-item"
+                src={`https://raw.githubusercontent.com/mate-academy/product_catalog/main/public/${image}`}
+                alt="iphone"
+              />
+            </div>
           ))}
         </Slider>
       </div>
@@ -53,16 +49,14 @@ export const ImagesSlider: React.FC<Props> = ({ phone }) => {
           swipeToSlide
           focusOnSelect
         >
-          {phone.images.map(image => (
-            <div 
-              className="product__image-small"
-              key={image}
-            >
+          {phone.images.map((image) => (
+            <div className="product__image-small" key={image}>
               <img
-                className="product__image-item" 
+                className="product__image-item"
                 src={`https://raw.githubusercontent.com/mate-academy/product_catalog/main/public/${image}`}
-                alt="thumbnail" />
-          </div>
+                alt="thumbnail"
+              />
+            </div>
           ))}
         </Slider>
       </div>
