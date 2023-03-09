@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import React, { useState, useEffect } from "react";
 import { client } from "../../utils/fetchClient";
@@ -20,7 +19,7 @@ export const Phones: React.FC = () => {
   const [phones, setPhones] = useState<PhoneMainInfo[]>([]);
 
   const [sortOrder, setSortOrder] = useState("Newest");
-  const [itemsPerPage, setItemsPerPage] = useState("16");
+  const [cardsPerPage, setCardsPerPage] = useState("16");
 
   const [isOpen1, setIsOpen1] = useState(false);
   const [isOpen2, setIsOpen2] = useState(false);
@@ -28,7 +27,6 @@ export const Phones: React.FC = () => {
   const toggleDropdown1 = () => setIsOpen1(!isOpen1);
   const toggleDropdown2 = () => setIsOpen2(!isOpen2);
 
-  // console.log(itemsPerPage);
   const [currentPage, setCurrentPage] = useState(1);
 
   const phonesAmount = phones.length;
@@ -42,7 +40,7 @@ export const Phones: React.FC = () => {
       });
   }, [phones.length, sortOrder]);
 
-  // const itemsPerPage = 16;
+  const itemsPerPage = +cardsPerPage;
   const totalPages = Math.ceil(phonesAmount / +itemsPerPage);
   const startIndex = (currentPage - 1) * +itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
@@ -93,7 +91,7 @@ export const Phones: React.FC = () => {
             <p className="phones__dropdowns-label text-small">Items on page</p>
 
             <Dropdown
-              onChange={setItemsPerPage}
+              onChange={setCardsPerPage}
               options={amountOptions}
               isOpen={isOpen2}
               toggleDropdown={toggleDropdown2}
