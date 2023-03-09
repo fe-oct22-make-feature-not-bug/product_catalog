@@ -19,7 +19,6 @@ const amountOptions: string[] = ["16", "8", "4"];
 export const Phones: React.FC = () => {
   const [phones, setPhones] = useState<PhoneMainInfo[]>([]);
 
-
   const [sortOrder, setSortOrder] = useState("Newest");
   const [itemsPerPage, setItemsPerPage] = useState("16");
 
@@ -31,7 +30,6 @@ export const Phones: React.FC = () => {
 
   // console.log(itemsPerPage);
   const [currentPage, setCurrentPage] = useState(1);
-
 
   const phonesAmount = phones.length;
 

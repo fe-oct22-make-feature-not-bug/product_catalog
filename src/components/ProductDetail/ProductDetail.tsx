@@ -47,18 +47,17 @@ export const ProductDetail: React.FC = () => {
   useEffect(() => {
     getPhone(phoneId)
       .then(setPhone)
-      .catch(() => {
-      });
+      .catch(() => {});
   }, [phoneId]);
 
   useEffect(() => {
     if (phone) {
       const oldArray = phone?.capacityAvailable;
-  
-      const newArray = oldArray.map(item => {
+
+      const newArray = oldArray.map((item) => {
         return { name: item, isActive: false };
       });
-  
+
       setCapacityButtons(newArray);
     }
   }, [phone]);
@@ -67,11 +66,10 @@ export const ProductDetail: React.FC = () => {
   const description2 = { ...phone?.description[1] };
   const description3 = { ...phone?.description[2] };
 
-
   const location = useLocation();
   const currentUrl = location.pathname + location.search + location.hash;
 
-  let newPathname = '';
+  let newPathname = "";
 
   function changeURL(str: string): any {
     const replUrl = currentUrl.split("-");
@@ -80,9 +78,8 @@ export const ProductDetail: React.FC = () => {
     newPathname = replUrl.join("-");
 
     return newPathname;
-  } 
-  
-  
+  }
+
   return (
     <section className="product">
       <Navigation />
@@ -105,7 +102,7 @@ export const ProductDetail: React.FC = () => {
           <h2 className="h2 product__header">{phone.name}</h2>
           <div className="product__wrapper">
             <div className="product__slider-wrapper">
-              <ImagesSlider phone={phone}/>
+              <ImagesSlider phone={phone} />
             </div>
             <div className="product__form">
               <div className="product__form-label">
@@ -125,8 +122,7 @@ export const ProductDetail: React.FC = () => {
                       tabIndex={0}
                       className={`product__form-color-item product__form-color-item--${el}`}
                       to={`${newPathname}`}
-                    >
-                    </Link>
+                    ></Link>
                   </li>
                 ))}
               </ul>
@@ -186,22 +182,12 @@ export const ProductDetail: React.FC = () => {
           <article className="product__info">
             <div className="product__about">
               <h3 className="h3 product__about-header">About</h3>
-              <h4 className="h4 product__about-title">
-                {description1.title}
-              </h4>
-              <p className="product__about-text">
-                {description1.text}
-              </p>
+              <h4 className="h4 product__about-title">{description1.title}</h4>
+              <p className="product__about-text">{description1.text}</p>
               <h4 className="h4 product__about-title">{description2.title}</h4>
-              <p className="product__about-text">
-                {description2.text}
-              </p>
-              <h4 className="h4 product__about-title">
-                {description3.title}
-              </h4>
-              <p className="product__about-text">
-                {description3.text}
-              </p>
+              <p className="product__about-text">{description2.text}</p>
+              <h4 className="h4 product__about-title">{description3.title}</h4>
+              <p className="product__about-text">{description3.text}</p>
             </div>
             <div className="product__specs">
               <h3 className="h3 product__specs-header">Tech specs</h3>
