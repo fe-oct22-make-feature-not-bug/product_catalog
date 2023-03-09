@@ -21,9 +21,7 @@ export const ProductDetail: React.FC = () => {
   const navigate = useNavigate();
   const [phone, setPhone] = useState<Phone>();
   const { phoneId } = useParams();
-  const [selectedCapacityButton, setSelectedCapacityButton] = useState<
-    string | null
-  >(null);
+  const [selectedCapacityButton, setSelectedCapacityButton] = useState<string | undefined>('');
   const [capacityButtons, setCapacityButtons] = useState<CapacityButton[]>([]);
 
   function handleGoBack() {
@@ -37,11 +35,16 @@ export const ProductDetail: React.FC = () => {
     setCapacityButtons(newButtons);
 
     if (selectedCapacityButton === name) {
-      setSelectedCapacityButton(null);
+      const x = phone?.capacityAvailable[0];
+
+      setSelectedCapacityButton(x);
     } else {
       setSelectedCapacityButton(name);
     }
   };
+
+  const location = useLocation();
+  const currentUrl = location.pathname + location.search + location.hash;
 
   useEffect(() => {
     getPhone(phoneId)
@@ -67,12 +70,12 @@ export const ProductDetail: React.FC = () => {
   const description3 = { ...phone?.description[2] };
 
 
-  const location = useLocation();
-  const currentUrl = location.pathname + location.search + location.hash;
+  // eslint-disable-next-line no-console
+  console.log(currentUrl);
 
   let newPathname = '';
 
-  function changeURL(str: string): any {
+  function changeColorURL(str: string): any {
     const replUrl = currentUrl.split("-");
 
     replUrl[replUrl.length - 1] = str;
@@ -80,7 +83,23 @@ export const ProductDetail: React.FC = () => {
 
     return newPathname;
   } 
-  
+
+  let newPathname2 = '';
+
+  function changeCapacityURL(str: string): any {
+    const replUrl = currentUrl.split("-");
+
+    // eslint-disable-next-line no-console
+    console.log(replUrl);
+    
+    replUrl[replUrl.length - 2] = str;
+    newPathname2 = replUrl.join("-");
+
+    // eslint-disable-next-line no-console
+    console.log(newPathname2);
+
+    return newPathname2;
+  }
   
   return (
     <section className="product">
@@ -117,8 +136,7 @@ export const ProductDetail: React.FC = () => {
                   <li className="product__form-color-wrapper">
                     <Link
                       key={el}
-                      onClick={changeURL(el)}
-                      onKeyUp={changeURL(el)}
+                      onClick={changeColorURL(el)}
                       role="button"
                       tabIndex={0}
                       className={`product__form-color-item product__form-color-item--${el}`}
@@ -133,17 +151,21 @@ export const ProductDetail: React.FC = () => {
               </p>
               <div className="product__form-capacity-btn">
                 {capacityButtons.map((button, index) => (
-                  <button
-                    key={button.name}
-                    type="submit"
-                    className={`product__form-capacity-item ${
-                      selectedCapacityButton === button.name ? "is-active" : ""
-                    }`}
-                    onClick={() => handleClick(index, button.name)}
-                    onKeyUp={() => handleClick(index, button.name)}
-                  >
-                    {button.name}
-                  </button>
+                    <Link
+                      key={button.name}
+                      role="button"
+                      tabIndex={0}
+                      className={`product__form-capacity-item ${
+                        selectedCapacityButton === button.name ? "is-active" : ""
+                      }`}
+                      onClick= {() => {
+                        changeCapacityURL(button.name.toLowerCase());
+                        handleClick(index, button.name);
+                      }}
+                      to={`${newPathname2}`}
+                    >
+                      {button.name}
+                    </Link>
                 ))}
               </div>
               <div className="product__form-price">
