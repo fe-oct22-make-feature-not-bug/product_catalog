@@ -7,6 +7,7 @@ import { ImagesSlider } from "./ImagesSlider";
 import { RecomendationsSlider } from "../RecomendationsSlider/RecomendationsSlider";
 import { Phone } from "../../types/Phone";
 import { client } from "../../utils/fetchClient";
+import { Navigation } from "../Navigation/Navigation";
 
 export const getPhone = (phoneId: string | undefined) => {
   return client.get<Phone>(`phones-info/${phoneId}`);
@@ -70,9 +71,13 @@ export const ProductDetail: React.FC = () => {
   const description2 = { ...phone?.description[1] };
   const description3 = { ...phone?.description[2] };
 
+  const location = useLocation();
+  const currentUrl = location.pathname + location.search + location.hash;
+
   let newPathname = "";
 
-  function changeColorURL(str: string): any {
+  function changeURL(str: string): any {
+
     const replUrl = currentUrl.split("-");
 
     replUrl[replUrl.length - 1] = str;
@@ -80,7 +85,7 @@ export const ProductDetail: React.FC = () => {
 
     return newPathname;
   }
-
+  
   let newPathname2 = "";
 
   function changeCapacityURL(str: string): any {
@@ -91,9 +96,10 @@ export const ProductDetail: React.FC = () => {
 
     return newPathname2;
   }
-
+  
   return (
     <section className="product">
+      <Navigation />
       {phone && (
         <>
           <div className="product__toBack">

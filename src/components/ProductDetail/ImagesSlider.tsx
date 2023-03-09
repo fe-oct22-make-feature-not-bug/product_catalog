@@ -28,6 +28,7 @@ export const ImagesSlider: React.FC<Props> = ({ phone }) => {
     <>
       <div className="product__slider-img">
         <Slider arrows={false} asNavFor={nav2 ?? undefined} ref={slider1Ref}>
+
           {phone.images.map((image) => (
             <div className="product__image" key={image}>
               <img
