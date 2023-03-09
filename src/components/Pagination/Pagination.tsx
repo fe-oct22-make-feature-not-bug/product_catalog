@@ -46,7 +46,10 @@ export const Pagination: React.FC<Props> = memo(
       setPageNumber(currentPage + 1);
     };
 
-    const handleNumberClick = (event: React.MouseEvent<HTMLAnchorElement>, newPage: number) => {
+    const handleNumberClick = (
+      event: React.MouseEvent<HTMLAnchorElement>,
+      newPage: number
+    ) => {
       event.preventDefault();
 
       setPageNumber(newPage);

@@ -8,7 +8,7 @@ interface Props {
 
 export const PageSection: React.FC<Props> = ({ sectionTitle, children }) => {
   return (
-    <section>
+    <section className="section">
       <h1 className="section-title h2">{sectionTitle}</h1>
       {children}
     </section>
