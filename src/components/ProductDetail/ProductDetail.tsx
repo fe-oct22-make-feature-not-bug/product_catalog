@@ -71,7 +71,7 @@ export const ProductDetail: React.FC = () => {
 
 
   // eslint-disable-next-line no-console
-  console.log(currentUrl);
+  // console.log(currentUrl);
 
   let newPathname = '';
 
@@ -90,13 +90,13 @@ export const ProductDetail: React.FC = () => {
     const replUrl = currentUrl.split("-");
 
     // eslint-disable-next-line no-console
-    console.log(replUrl);
+    // console.log(replUrl);
     
     replUrl[replUrl.length - 2] = str;
     newPathname2 = replUrl.join("-");
 
     // eslint-disable-next-line no-console
-    console.log(newPathname2);
+    console.log("new",newPathname2);
 
     return newPathname2;
   }
@@ -159,10 +159,9 @@ export const ProductDetail: React.FC = () => {
                         selectedCapacityButton === button.name ? "is-active" : ""
                       }`}
                       onClick= {() => {
-                        changeCapacityURL(button.name.toLowerCase());
                         handleClick(index, button.name);
                       }}
-                      to={`${newPathname2}`}
+                      to={changeCapacityURL(button.name.toLowerCase())}
                     >
                       {button.name}
                     </Link>
