@@ -29,7 +29,7 @@ export const Phones: React.FC = () => {
   const toggleDropdown1 = () => setIsOpen1(!isOpen1);
   const toggleDropdown2 = () => setIsOpen2(!isOpen2);
 
-  console.log(itemsPerPage);
+  // console.log(itemsPerPage);
   const [currentPage, setCurrentPage] = useState(1);
 
 
@@ -44,9 +44,9 @@ export const Phones: React.FC = () => {
       });
   }, [phones.length, sortOrder]);
 
-  const itemsPerPage = 16;
-  const totalPages = Math.ceil(phonesAmount / itemsPerPage);
-  const startIndex = (currentPage - 1) * itemsPerPage;
+  // const itemsPerPage = 16;
+  const totalPages = Math.ceil(phonesAmount / +itemsPerPage);
+  const startIndex = (currentPage - 1) * +itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
 
   function sortGoods(sortCondition: string) {
@@ -69,7 +69,7 @@ export const Phones: React.FC = () => {
     return sortedPhones;
   }
 
-  const sortedPhones = sortGoods(sortOrder).slice(startIndex, endIndex);
+  const sortedPhones = sortGoods(sortOrder).slice(startIndex, +endIndex);
 
   return (
     <>
