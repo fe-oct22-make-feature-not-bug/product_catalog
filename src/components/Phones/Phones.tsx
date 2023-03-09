@@ -6,6 +6,7 @@ import "./Phones.scss";
 import { PhoneMainInfo } from "../../types/PhoneMainInfo";
 import { Card } from "../Card/Card";
 import { Navigation } from "../Navigation/Navigation";
+import { Pagination } from "../Pagination/Pagination";
 
 export const getPhones = () => {
   return client.get<PhoneMainInfo[]>("phones");
@@ -13,7 +14,8 @@ export const getPhones = () => {
 
 export const Phones: React.FC = memo(() => {
   const [phones, setPhones] = useState<PhoneMainInfo[]>([]);
-  const [sortOrder, setSortOrder] = useState("newest"); //
+  const [sortOrder, setSortOrder] = useState("newest");
+  const [currentPage, setCurrentPage] = useState(1);
 
   const phonesAmount = phones.length;
 
@@ -26,6 +28,11 @@ export const Phones: React.FC = memo(() => {
         // showError();
       });
   }, [phones.length]);
+
+  const itemsPerPage = 16;
+  const totalPages = Math.ceil(phonesAmount / itemsPerPage);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
 
   function sortGoods(sortCondition: string) {
     const sortedPhones = [...phones];
@@ -47,7 +54,7 @@ export const Phones: React.FC = memo(() => {
     return sortedPhones;
   }
 
-  const sortedPhones = sortGoods(sortOrder);
+  const sortedPhones = sortGoods(sortOrder).slice(startIndex, endIndex);
 
   return (
     <>
@@ -92,9 +99,15 @@ export const Phones: React.FC = memo(() => {
 
       <div className="phones__catalog">
         {sortedPhones.map((phone) => (
-          <Card phone={phone} />
+          <Card key={phone.id} phone={phone} />
         ))}
       </div>
+
+      <Pagination
+        currentPage={currentPage}
+        totalPages={totalPages}
+        setCurrentPage={setCurrentPage}
+      />
     </>
   );
 });
