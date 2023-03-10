@@ -25,9 +25,9 @@ function App() {
 
           <Route path="/phones-info/:phoneId" element={<ProductDetail />} />
 
-        <Route path="/tablets" element={<Tablets />} />
+          <Route path="/tablets" element={<Tablets />} />
 
-        <Route path="/accessories" element={<Accessories />} />
+          <Route path="/accessories" element={<Accessories />} />
 
           <Route path="/cart" element={<CartPage />} />
 

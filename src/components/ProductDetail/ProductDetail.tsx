@@ -22,7 +22,9 @@ export const ProductDetail: React.FC = memo(() => {
   const navigate = useNavigate();
   const [phone, setPhone] = useState<Phone>();
   const { phoneId } = useParams();
-  const [selectedCapacityButton, setSelectedCapacityButton] = useState<string | undefined>('');
+  const [selectedCapacityButton, setSelectedCapacityButton] = useState<
+    string | undefined
+  >("");
   const [capacityButtons, setCapacityButtons] = useState<CapacityButton[]>([]);
 
   function handleGoBack() {
@@ -69,7 +71,7 @@ export const ProductDetail: React.FC = memo(() => {
   const description2 = { ...phone?.description[1] };
   const description3 = { ...phone?.description[2] };
 
-  let newPathname = '';
+  let newPathname = "";
 
   function replaceUrlSegment(index: number, str: string): any {
     const replUrl = currentUrl.split("-");
@@ -82,7 +84,10 @@ export const ProductDetail: React.FC = memo(() => {
 
   const phoneidstr = phone?.id;
   const regex = /\d+/g;
-  const phoneid = phoneidstr?.match(regex)?.join('-').concat('-', phone?.color|| "");
+  const phoneid = phoneidstr
+    ?.match(regex)
+    ?.join("-")
+    .concat("-", phone?.color || "");
 
   return (
     <section className="product">
@@ -113,14 +118,16 @@ export const ProductDetail: React.FC = memo(() => {
                 <p className="product__form-label-color text-small">
                   Available colors
                 </p>
-                <p className="product__form-label-id text-small">ID: {phoneid}</p>
+                <p className="product__form-label-id text-small">
+                  ID: {phoneid}
+                </p>
               </div>
               <ul className="product__form-color">
                 {phone.colorsAvailable.map((el) => (
                   <li className="product__form-color-wrapper">
                     <Link
                       key={el}
-                      onClick={replaceUrlSegment(1,el)}
+                      onClick={replaceUrlSegment(1, el)}
                       role="button"
                       tabIndex={0}
                       className={`product__form-color-item product__form-color-item--${el}`}
@@ -141,10 +148,8 @@ export const ProductDetail: React.FC = memo(() => {
                     className={`product__form-capacity-item ${
                       selectedCapacityButton === button.name ? "is-active" : ""
                     }`}
-                    onClick= {() => {
-                      
+                    onClick={() => {
                       handleClick(index, button.name);
-                      
                     }}
                     to={replaceUrlSegment(2, button.name.toLowerCase())}
                   >

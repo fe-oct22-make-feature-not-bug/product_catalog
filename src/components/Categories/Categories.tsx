@@ -15,14 +15,12 @@ import { CategoryItem } from "../CategoryItem/CategoryItem";
 export const Categories: React.FC = () => {
   // const [phonesLength, setPhonesLength] = useState(0);
 
-  
   // useEffect(() => {
   //   client.get("phones/")
   //     .then(response => {
   //       setPhonesLength(response.data.length);
   //     });
   // }, []);
-
 
   return (
     <div className="categories-container">
@@ -42,7 +40,7 @@ export const Categories: React.FC = () => {
           categoryImageAlt="Tablets"
           categoryLink="/tablets"
           categoryTitle="Tablets"
-          categoryCount='Almost there!'
+          categoryCount="Almost there!"
         />
       </div>
 
@@ -52,7 +50,7 @@ export const Categories: React.FC = () => {
           categoryImageAlt="Accessories"
           categoryLink="/accessories"
           categoryTitle="Accessories"
-          categoryCount='Arriving tomorrow!'
+          categoryCount="Arriving tomorrow!"
         />
       </div>
     </div>
