@@ -7,7 +7,7 @@
   align-items: center;
   height: 48px;
   color: #ffffff;
-  font-size: 16px;
+  font-size: 14px;
 
   &__list {
     display: flex;
@@ -19,6 +19,18 @@
 
   &__item:last-child {
     color: $color-secondary;
+    width: 155px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    @include onTabletSize {
+      width: 300px;
+    }
+
+    @include onDesktop {
+      width: 300px;
+    }
   }
 
   &__item:nth-child(1):not(:last-child)::after,
