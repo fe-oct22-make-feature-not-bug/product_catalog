@@ -20,6 +20,7 @@ export const RecomendationsSlider: React.FC = () => {
     slidesToShow: 4,
     slidesToScroll: 1,
     initialSlide: 0,
+    autoplay: true,
     responsive: [
       {
         breakpoint: 1199,
