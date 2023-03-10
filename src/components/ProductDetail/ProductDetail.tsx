@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, memo } from "react";
 import { Link, useParams, useNavigate, useLocation } from "react-router-dom";
 import chevronLeft from "../../assets/icons/chevron-left.svg";
 import { ProductButtons } from "../ProductButtons/ProductButtons";
@@ -18,7 +18,7 @@ interface CapacityButton {
   isActive: boolean;
 }
 
-export const ProductDetail: React.FC = () => {
+export const ProductDetail: React.FC = memo(() => {
   const navigate = useNavigate();
   const [phone, setPhone] = useState<Phone>();
   const { phoneId } = useParams();
@@ -84,9 +84,6 @@ export const ProductDetail: React.FC = () => {
   const phoneidstr = phone?.id;
   const regex = /\d+/g;
   const phoneid = phoneidstr?.match(regex)?.join('-').concat('-', phone?.color|| "");
-
-  // eslint-disable-next-line no-console
-  console.log(phoneid);
 
   return (
     <section className="product">
@@ -249,4 +246,4 @@ export const ProductDetail: React.FC = () => {
       )}
     </section>
   );
-};
+});
