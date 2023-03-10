@@ -11,5 +11,6 @@ export interface CreateContextProps {
 export const CreateContext = React.createContext<CreateContextProps>({
   handleAddToCart: () => {},
   cart: [],
+  
   isProductInCart: () => false,
 });
