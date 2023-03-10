@@ -51,9 +51,11 @@
 
   &__title {
     margin-bottom: 8px;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 21px;
+    
+    width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   &__price-block {

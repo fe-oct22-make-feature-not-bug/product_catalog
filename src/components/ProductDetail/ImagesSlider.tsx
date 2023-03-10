@@ -22,6 +22,8 @@ export const ImagesSlider: React.FC<Props> = ({ phone }) => {
     }
   }, []);
 
+  const imagesLength = phone.images.length;
+
   return (
     <>
       <div className="product__slider-img">
@@ -49,7 +51,7 @@ export const ImagesSlider: React.FC<Props> = ({ phone }) => {
           arrows={false}
           asNavFor={nav1 ?? undefined}
           ref={slider2Ref}
-          slidesToShow={5}
+          slidesToShow={imagesLength}
           swipeToSlide
           focusOnSelect
           centerMode

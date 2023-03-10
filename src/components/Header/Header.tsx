@@ -108,12 +108,12 @@ export const Header: React.FC = React.memo(() => {
         >
           {true}
         </button>
-      </header>
 
-      <BurgerMenu
-        burgerMenuActive={burgerMenuActive}
-        setBurgerMenuActive={setBurgerMenuActive}
-      />
+        <BurgerMenu
+          burgerMenuActive={burgerMenuActive}
+          setBurgerMenuActive={setBurgerMenuActive}
+        />
+      </header>
     </>
   );
 });

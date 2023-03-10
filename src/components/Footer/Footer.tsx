@@ -4,7 +4,7 @@ import chevronUp from "../../assets/icons/chevron-up.svg";
 import { Logo } from "../Logo";
 import "./Footer.scss";
 
-const navLinks = ["github", "contacts", "rights"];
+const navLinksLabel = ["github", "contacts", "rights"];
 
 const scrollToTop = () => {
   window.scrollTo({
@@ -22,9 +22,13 @@ export const Footer: React.FC = memo(() => {
         </div>
         <nav className="footer__navigation">
           <ul className="footer__list">
-            {navLinks.map((navLink) => (
+            {navLinksLabel.map((navLink) => (
               <li className="footer__list-item text-uppercase" key={navLink}>
-                <Link to="/" className="footer__link">
+                <Link
+                  to="https://github.com/fe-oct22-make-feature-not-bug" 
+                  className="footer__link"
+                  target="_blank"
+                >
                   {navLink}
                 </Link>
               </li>
