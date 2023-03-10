@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import React, { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom"; 
 import { client } from "../../utils/fetchClient";
 import "./Phones.scss";
 import { PhoneMainInfo } from "../../types/PhoneMainInfo";
@@ -8,8 +9,13 @@ import Dropdown from "../Dropdown/Dropdown";
 import { Navigation } from "../Navigation/Navigation";
 import { Pagination } from "../Pagination/Pagination";
 
-export const getPhones = () => {
-  return client.get<PhoneMainInfo[]>("phones");
+interface ApiResponse {
+  items: PhoneMainInfo[];
+  totalPages: number;
+}
+
+export const getPhones = (url: string) => {
+  return client.get<ApiResponse>(url);
 };
 
 const sortOptions: string[] = ["Newest", "Cheapest", "Alphabetically"];
@@ -24,48 +30,55 @@ export const Phones: React.FC = () => {
   const [isOpen1, setIsOpen1] = useState(false);
   const [isOpen2, setIsOpen2] = useState(false);
 
+  const [currentPage, setCurrentPage] = useState(1);
+  const [pageNumber, setPageNumber] = useState(1);
+  const [searchParams, setSearchParams] = useSearchParams({ page: '1' });
+
   const toggleDropdown1 = () => setIsOpen1(!isOpen1);
   const toggleDropdown2 = () => setIsOpen2(!isOpen2);
 
-  const [currentPage, setCurrentPage] = useState(1);
-
-  const phonesAmount = phones.length;
+  const phonesAmount = phones.length || 0;
 
   useEffect(() => {
-    getPhones()
-      .then(setPhones)
+    const page = searchParams.get('page') || '1';
+
+    getPhones(`phones?page=${page}&items=${cardsPerPage}&sortBy=${sortOrder.toLowerCase()}`)
+      .then((data) => {
+        setPhones(data.items);
+        setPageNumber(+data.totalPages);
+      })
       .catch(() => {
         setPhones([]);
         // showError();
       });
-  }, [phones.length, sortOrder]);
+  }, [phonesAmount, searchParams, currentPage, setSearchParams, sortOrder, cardsPerPage]);
 
-  const itemsPerPage = +cardsPerPage;
-  const totalPages = Math.ceil(phonesAmount / +itemsPerPage);
-  const startIndex = (currentPage - 1) * +itemsPerPage;
-  const endIndex = startIndex + itemsPerPage;
+  // const itemsPerPage = +cardsPerPage;
+  // const totalPages = Math.ceil(phonesAmount / +itemsPerPage);
+  // const startIndex = (currentPage - 1) * +itemsPerPage;
+  // const endIndex = startIndex + itemsPerPage;
 
-  function sortGoods(sortCondition: string) {
-    const sortedPhones = [...phones];
+  // function sortGoods(sortCondition: string) {
+  //   const sortedPhones = [...phones];
 
-    switch (sortCondition) {
-      case "Newest":
-        sortedPhones.sort((a, b) => b.year - a.year);
-        break;
-      case "Alphabetically":
-        sortedPhones.sort((a, b) => a.name.localeCompare(b.name));
-        break;
-      case "Cheapest":
-        sortedPhones.sort((a, b) => a.price - b.price);
-        break;
-      default:
-        break;
-    }
+  //   switch (sortCondition) {
+  //     case "Newest":
+  //       sortedPhones.sort((a, b) => b.year - a.year);
+  //       break;
+  //     case "Alphabetically":
+  //       sortedPhones.sort((a, b) => a.name.localeCompare(b.name));
+  //       break;
+  //     case "Cheapest":
+  //       sortedPhones.sort((a, b) => a.price - b.price);
+  //       break;
+  //     default:
+  //       break;
+  //   }
 
-    return sortedPhones;
-  }
+  //   return sortedPhones;
+  // }
 
-  const sortedPhones = sortGoods(sortOrder).slice(startIndex, +endIndex);
+  const sortedPhones = [...phones]; /* sortGoods(sortOrder).slice(startIndex, +endIndex); */
 
   return (
     <>
@@ -108,7 +121,7 @@ export const Phones: React.FC = () => {
 
       <Pagination
         currentPage={currentPage}
-        totalPages={totalPages}
+        totalPages={pageNumber}
         setCurrentPage={setCurrentPage}
       />
     </>
