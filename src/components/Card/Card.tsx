@@ -1,50 +1,38 @@
+/* eslint-disable no-console */
 /* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable react/button-has-type */
 /* eslint-disable jsx-a11y/control-has-associated-label */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable react/display-name */
-import { useLocalStorage } from "react-use";
-import React, { useState, useEffect } from "react";
+// import { useLocalStorage } from "react-use";
+import React, { useState, useContext } from "react";
 import cn from "classnames";
 import "./Card.scss";
 import { Link } from "react-router-dom";
 import { PhoneMainInfo } from "../../types/PhoneMainInfo";
+import { CreateContext } from "../../context/CreateContext";
 
 type Props = {
   phone: PhoneMainInfo;
 };
 
 export const Card: React.FC<Props> = ({ phone }) => {
-  // memo(
   const [addedToFavorites, setAddedToFavorites] = useState(false);
-  const [cart, setCart] = useLocalStorage<PhoneMainInfo[]>("cart", []);
-  const [isInCart, setIsInCart] = useState(false);
 
-  useEffect(() => {
-    // Check if phone is already in cart when component mounts
-    if (cart) {
-      const index = cart.findIndex((item) => item.id === phone.id);
+  const { cart, handleAddToCart } = useContext(CreateContext);
+  const { isProductInCart } = useContext(CreateContext);
 
-      setIsInCart(index !== -1);
-    }
-  }, [cart, phone]);
+  console.log(cart);
+  const  isInCart =  isProductInCart(phone.id);
+  // useEffect(() => {
+  //   // Check if phone is already in cart when component mounts
+  //   if (cart) {
+  //     const index = cart.findIndex((item) => item.id === phone.id);
 
-  const handleAddToCart = () => {
-    if (cart) {
-      const index = cart.findIndex((item) => item.id === phone.id);
+  //     setIsInCart(index !== -1);
+  //   }
+  // }, [cart, phone]);
 
-      if (index === -1) {
-        setCart([...cart, phone]);
-        setIsInCart(true);
-      } else {
-        const updatedCart = [...cart];
-
-        updatedCart.splice(index, 1);
-        setCart(updatedCart);
-        setIsInCart(false);
-      }
-    }
-  };
 
   const handleClick = (selected: boolean) => {
     if (selected === false) {
@@ -96,15 +84,14 @@ export const Card: React.FC<Props> = ({ phone }) => {
           className={cn("addToCart", "text-button", {
             "in-cart": isInCart,
           })}
-          onClick={handleAddToCart}
+          onClick={() => handleAddToCart(phone)}
         >
           {isInCart ? "Added to cart" : "Add to cart"}
         </button>
 
         <button
-          className={`addToWishlist ${
-            addedToFavorites === true ? "is-selected" : ""
-          }`}
+          className={`addToWishlist ${addedToFavorites === true ? "is-selected" : ""
+            }`}
           type="submit"
           onClick={() => handleClick(addedToFavorites)}
         >

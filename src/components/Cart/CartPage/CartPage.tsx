@@ -17,9 +17,6 @@ export const CartPage: React.FC = () => {
     }
   }, [cart, setCart]);
 
-  // console.log(cart);
-  //
-
   const handleQuantityIncrement = (id: string) => {
     const updatedCart = cart?.map((item) => {
       if (item.id === id) {

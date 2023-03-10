@@ -14,4 +14,5 @@ export interface PhoneMainInfo {
   image: string;
   createdAt: Date;
   quantity: number; //
+  inCart: boolean | undefined; //
 }

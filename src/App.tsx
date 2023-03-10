@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import { CreateContextProvider } from "./context/CreateContextProvider";
 import "./styles/index.scss";
 // import { useState } from "react";
 import { Footer } from "./components/Footer/Footer";
@@ -12,31 +13,33 @@ import { ProductDetail } from "./components/ProductDetail/ProductDetail";
 
 function App() {
   return (
-    <div className="App">
-      <Header />
+    <CreateContextProvider>
+      <div className="App">
+        <Header />
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/phones" element={<Phones />} />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/phones" element={<Phones />} />
 
-        <Route path="/phones-info/:phoneId" element={<ProductDetail />} />
+          <Route path="/phones-info/:phoneId" element={<ProductDetail />} />
 
-        <Route
-          path="/tablets"
-          element={
-            <>
-              <h1 className="h1">Tablets</h1>
-            </>
-          }
-        />
+          <Route
+            path="/tablets"
+            element={
+              <>
+                <h1 className="h1">Tablets</h1>
+              </>
+            }
+          />
 
-        <Route path="/cart" element={<CartPage />} />
+          <Route path="/cart" element={<CartPage />} />
 
-        <Route path="*" element={<PageNotFound />} />
-      </Routes>
+          <Route path="*" element={<PageNotFound />} />
+        </Routes>
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </CreateContextProvider>
   );
 }
 

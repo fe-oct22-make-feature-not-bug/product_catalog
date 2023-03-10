@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import React, { useState, useEffect } from "react";
 import { client } from "../../utils/fetchClient";
@@ -7,6 +8,9 @@ import { Card } from "../Card/Card";
 import Dropdown from "../Dropdown/Dropdown";
 import { Navigation } from "../Navigation/Navigation";
 import { Pagination } from "../Pagination/Pagination";
+// import {useCreateContext} from "../../context/useCreateContext";
+
+// import {CreateContext} from "../../context/CreateContext";
 
 export const getPhones = () => {
   return client.get<PhoneMainInfo[]>("phones");
@@ -30,6 +34,8 @@ export const Phones: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(1);
 
   const phonesAmount = phones.length;
+
+  console.log('x');
 
   useEffect(() => {
     getPhones()
