@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import React, { useState, useEffect } from "react";
-import { useSearchParams } from "react-router-dom"; 
+import { useSearchParams } from "react-router-dom";
 import { client } from "../../utils/fetchClient";
 import "./Phones.scss";
 import { PhoneMainInfo } from "../../types/PhoneMainInfo";
@@ -32,7 +32,7 @@ export const Phones: React.FC = () => {
 
   const [currentPage, setCurrentPage] = useState(1);
   const [pageNumber, setPageNumber] = useState(1);
-  const [searchParams, setSearchParams] = useSearchParams({ page: '1' });
+  const [searchParams, setSearchParams] = useSearchParams({ page: "1" });
 
   const toggleDropdown1 = () => setIsOpen1(!isOpen1);
   const toggleDropdown2 = () => setIsOpen2(!isOpen2);
@@ -40,9 +40,16 @@ export const Phones: React.FC = () => {
   const phonesAmount = phones.length || 0;
 
   useEffect(() => {
-    const page = searchParams.get('page') || '1';
+    const page = searchParams.get("page") || "1";
 
-    getPhones(`phones?page=${page}&items=${cardsPerPage}&sortBy=${sortOrder.toLowerCase()}`)
+    if (+page > pageNumber) {
+      setSearchParams({ page: "1" });
+      setCurrentPage(1);
+    }
+
+    getPhones(
+      `phones?page=${page}&items=${cardsPerPage}&sortBy=${sortOrder.toLowerCase()}`
+    )
       .then((data) => {
         setPhones(data.items);
         setPageNumber(+data.totalPages);
@@ -51,34 +58,18 @@ export const Phones: React.FC = () => {
         setPhones([]);
         // showError();
       });
-  }, [phonesAmount, searchParams, currentPage, setSearchParams, sortOrder, cardsPerPage]);
+  }, [
+    searchParams,
+    currentPage,
+    setSearchParams,
+    sortOrder,
+    cardsPerPage,
+    pageNumber
+  ]);
 
-  // const itemsPerPage = +cardsPerPage;
-  // const totalPages = Math.ceil(phonesAmount / +itemsPerPage);
-  // const startIndex = (currentPage - 1) * +itemsPerPage;
-  // const endIndex = startIndex + itemsPerPage;
-
-  // function sortGoods(sortCondition: string) {
-  //   const sortedPhones = [...phones];
-
-  //   switch (sortCondition) {
-  //     case "Newest":
-  //       sortedPhones.sort((a, b) => b.year - a.year);
-  //       break;
-  //     case "Alphabetically":
-  //       sortedPhones.sort((a, b) => a.name.localeCompare(b.name));
-  //       break;
-  //     case "Cheapest":
-  //       sortedPhones.sort((a, b) => a.price - b.price);
-  //       break;
-  //     default:
-  //       break;
-  //   }
-
-  //   return sortedPhones;
-  // }
-
-  const sortedPhones = [...phones]; /* sortGoods(sortOrder).slice(startIndex, +endIndex); */
+  const sortedPhones = [
+    ...phones,
+  ];
 
   return (
     <>
