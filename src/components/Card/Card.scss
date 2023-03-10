@@ -15,12 +15,18 @@
     width: 208px;
     height: 196px;
     margin-bottom: 24px;
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 
   &__image {
     display: block;
     margin: 0 auto;
     height: 100%;
+
   }
 
   &__divider {
@@ -89,6 +95,7 @@
     background-color: $color-accent;
     flex-grow: 1;
     cursor: pointer;
+    transition: background-color 0.3s;
 
     &:hover {
       background-color: $color-accent-hover;
@@ -117,5 +124,9 @@
   .is-selected {
     background-image: url(../../assets/icons/heart-red.svg);
     background-size: 16px 14px;
+  }
+
+  .in-cart{
+    background-color: $color-surface-2;
   }
 }

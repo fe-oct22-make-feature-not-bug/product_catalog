@@ -1,23 +1,79 @@
 @import "../../../styles/";
 
 .cart__title {
-  margin: 24px 16px 32px;
+  // margin: 24px 16px 32px;
   font-weight: 800;
   font-size: 32px;
   line-height: 41px;
-
-  letter-spacing: -1%;
+  width: 100%;
+  margin-bottom: 32px;
 
   color: $color-white;
 }
 
 .cart__container {
   max-width: 1136px;
-  margin: 56px 16px;
-  margin-top: 0;
+  padding: 56px 16px;
+  margin: 0 auto;
+
   @include onDesktop {
     max-width: 1136px;
     display: flex;
     justify-content: space-between;
+  }
+}
+
+.cart__total {
+  border: 1px solid $color-elements;
+  padding: 24px;
+
+  @include onDesktop {
+    width: 368px;
+    height: 206px;
+  }
+
+  &-title {
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 41px;
+
+    text-align: center;
+    letter-spacing: -0.01em;
+
+    color: $color-white;
+  }
+
+  &-subtitle {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+
+    text-align: center;
+
+    color: $color-secondary;
+    border-bottom: 1px solid $color-secondary;
+
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+  }
+
+  &-checkout {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 21px;
+
+    text-align: center;
+
+    color: #ffffff;
+
+    padding: 14px 86px;
+
+    background: $color-accent;
   }
 }

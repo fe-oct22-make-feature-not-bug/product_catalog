@@ -5,6 +5,7 @@
 
   width: 100%;
   padding: 0;
+  margin-bottom: 96px;
 
   @include onTabletSize {
     grid-column: 2/12;

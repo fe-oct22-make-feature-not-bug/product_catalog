@@ -1,7 +1,11 @@
+/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable react/button-has-type */
 /* eslint-disable jsx-a11y/control-has-associated-label */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable react/display-name */
-import React, { memo, useState } from "react";
+import { useLocalStorage } from "react-use";
+import React, { useState, useEffect } from "react";
+import cn from "classnames";
 import "./Card.scss";
 import { Link } from "react-router-dom";
 import { PhoneMainInfo } from "../../types/PhoneMainInfo";
@@ -10,8 +14,36 @@ type Props = {
   phone: PhoneMainInfo;
 };
 
-export const Card: React.FC<Props> = memo(({ phone }) => {
+export const Card: React.FC<Props> = ({ phone }) => { // memo(
   const [addedToFavorites, setAddedToFavorites] = useState(false);
+  const [cart, setCart] = useLocalStorage<PhoneMainInfo[]>('cart', []);
+  const [isInCart, setIsInCart] = useState(false);
+
+  useEffect(() => {
+    // Check if phone is already in cart when component mounts
+    if (cart) {
+      const index = cart.findIndex((item) => item.id === phone.id);
+
+      setIsInCart(index !== -1);
+    }
+  }, [cart, phone]);
+
+  const handleAddToCart = () => {
+    if (cart) {
+      const index = cart.findIndex((item) => item.id === phone.id);
+
+      if (index === -1) {
+        setCart([...cart, phone]);
+        setIsInCart(true);
+      } else {
+        const updatedCart = [...cart];
+
+        updatedCart.splice(index, 1);
+        setCart(updatedCart);
+        setIsInCart(false);
+      }
+    }
+  };
 
   const handleClick = (selected: boolean) => {
     if (selected === false) {
@@ -58,13 +90,23 @@ export const Card: React.FC<Props> = memo(({ phone }) => {
       </div>
 
       <div className="phone-card__actions">
-        <button className="addToCart text-button" type="submit">
-          Add to cart
-        </button>
+
         <button
-          className={`addToWishlist ${
-            addedToFavorites === true ? "is-selected" : ""
-          }`}
+          type="submit"
+          className={cn('addToCart', 'text-button', {
+            'in-cart': isInCart
+          })}
+          onClick={handleAddToCart}
+        >
+          {isInCart
+            ? "Added to cart"
+            : "Add to cart"
+          }
+        </button>
+
+        <button
+          className={`addToWishlist ${addedToFavorites === true ? "is-selected" : ""
+            }`}
           type="submit"
           onClick={() => handleClick(addedToFavorites)}
         >
@@ -73,4 +115,4 @@ export const Card: React.FC<Props> = memo(({ phone }) => {
       </div>
     </div>
   );
-});
+};

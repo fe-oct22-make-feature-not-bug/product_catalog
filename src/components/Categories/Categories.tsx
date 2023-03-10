@@ -17,7 +17,7 @@ export const Categories: React.FC = () => {
           categoryImageAlt="Phones"
           categoryLink="/phones"
           categoryTitle="Phones"
-          categoryCount={`${95} phones`}
+          categoryCount={`${71} models`}
         />
       </div>
 
@@ -27,7 +27,7 @@ export const Categories: React.FC = () => {
           categoryImageAlt="Tablets"
           categoryLink="/tablets"
           categoryTitle="Tablets"
-          categoryCount={`${24} tablets`}
+          categoryCount="Available soon..."
         />
       </div>
 
@@ -37,7 +37,7 @@ export const Categories: React.FC = () => {
           categoryImageAlt="Accessories"
           categoryLink="/accessories"
           categoryTitle="Accessories"
-          categoryCount={`${100} accessories`}
+          categoryCount="Available soon..."
         />
       </div>
     </div>
