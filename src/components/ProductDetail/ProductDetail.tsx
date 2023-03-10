@@ -22,9 +22,7 @@ export const ProductDetail: React.FC = () => {
   const navigate = useNavigate();
   const [phone, setPhone] = useState<Phone>();
   const { phoneId } = useParams();
-  const [selectedCapacityButton, setSelectedCapacityButton] = useState<
-    string | null
-  >(null);
+  const [selectedCapacityButton, setSelectedCapacityButton] = useState<string | undefined>('');
   const [capacityButtons, setCapacityButtons] = useState<CapacityButton[]>([]);
 
   function handleGoBack() {
@@ -38,26 +36,32 @@ export const ProductDetail: React.FC = () => {
     setCapacityButtons(newButtons);
 
     if (selectedCapacityButton === name) {
-      setSelectedCapacityButton(null);
+      const x = phone?.capacityAvailable[0];
+
+      setSelectedCapacityButton(x);
     } else {
       setSelectedCapacityButton(name);
     }
   };
 
+  const location = useLocation();
+  const currentUrl = location.pathname + location.search + location.hash;
+
   useEffect(() => {
     getPhone(phoneId)
       .then(setPhone)
-      .catch(() => {});
+      .catch(() => {
+      });
   }, [phoneId]);
 
   useEffect(() => {
     if (phone) {
       const oldArray = phone?.capacityAvailable;
-
-      const newArray = oldArray.map((item) => {
+  
+      const newArray = oldArray.map(item => {
         return { name: item, isActive: false };
       });
-
+  
       setCapacityButtons(newArray);
     }
   }, [phone]);
@@ -66,19 +70,23 @@ export const ProductDetail: React.FC = () => {
   const description2 = { ...phone?.description[1] };
   const description3 = { ...phone?.description[2] };
 
-  const location = useLocation();
-  const currentUrl = location.pathname + location.search + location.hash;
+  let newPathname = '';
 
-  let newPathname = "";
-
-  function changeURL(str: string): any {
+  function replaceUrlSegment(index: number, str: string): any {
     const replUrl = currentUrl.split("-");
 
-    replUrl[replUrl.length - 1] = str;
+    replUrl[replUrl.length - index] = str;
     newPathname = replUrl.join("-");
 
     return newPathname;
   }
+
+  const phoneidstr = phone?.id;
+  const regex = /\d+/g;
+  const phoneid = phoneidstr?.match(regex)?.join('-').concat('-', phone?.color|| "");
+
+  // eslint-disable-next-line no-console
+  console.log(phoneid);
 
   return (
     <section className="product">
@@ -109,20 +117,20 @@ export const ProductDetail: React.FC = () => {
                 <p className="product__form-label-color text-small">
                   Available colors
                 </p>
-                <p className="product__form-label-id text-small">ID: 802390</p>
+                <p className="product__form-label-id text-small">ID: {phoneid}</p>
               </div>
               <ul className="product__form-color">
                 {phone.colorsAvailable.map((el) => (
                   <li className="product__form-color-wrapper">
                     <Link
                       key={el}
-                      onClick={changeURL(el)}
-                      onKeyUp={changeURL(el)}
+                      onClick={replaceUrlSegment(1,el)}
                       role="button"
                       tabIndex={0}
                       className={`product__form-color-item product__form-color-item--${el}`}
                       to={`${newPathname}`}
-                    ></Link>
+                    >
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -131,17 +139,22 @@ export const ProductDetail: React.FC = () => {
               </p>
               <div className="product__form-capacity-btn">
                 {capacityButtons.map((button, index) => (
-                  <button
+                  <Link
                     key={button.name}
-                    type="submit"
+                    role="button"
+                    tabIndex={0}
                     className={`product__form-capacity-item ${
                       selectedCapacityButton === button.name ? "is-active" : ""
                     }`}
-                    onClick={() => handleClick(index, button.name)}
-                    onKeyUp={() => handleClick(index, button.name)}
+                    onClick= {() => {
+                      
+                      handleClick(index, button.name);
+                      
+                    }}
+                    to={replaceUrlSegment(2, button.name.toLowerCase())}
                   >
                     {button.name}
-                  </button>
+                  </Link>
                 ))}
               </div>
               <div className="product__form-price">
