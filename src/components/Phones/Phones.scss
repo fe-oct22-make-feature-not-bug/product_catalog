@@ -26,6 +26,7 @@
   // }
   &__amount {
     margin-bottom: 40px;
+    color: $color-secondary;
   }
 
   &__dropdown:first-child {
@@ -74,5 +75,10 @@
         }
       }
     }
+  }
+
+  &__dropdowns-label {
+    color: $color-secondary;
+    margin: 4px;
   }
 }
