@@ -9,8 +9,7 @@ import "./CartPage.scss";
 import { PhoneMainInfo } from "../../../types/PhoneMainInfo";
 
 export const CartPage: React.FC = () => {
-
-  const [cart, setCart] = useLocalStorage<PhoneMainInfo[]>('cart', []);
+  const [cart, setCart] = useLocalStorage<PhoneMainInfo[]>("cart", []);
 
   useEffect(() => {
     if (!cart) {
@@ -37,8 +36,7 @@ export const CartPage: React.FC = () => {
     const updatedCart = cart?.map((item) => {
       if (item.id === id) {
         return { ...item, quantity: Math.max(item.quantity - 1, 1) };
-      }
-      else {
+      } else {
         return item;
       }
     });
@@ -50,7 +48,10 @@ export const CartPage: React.FC = () => {
     if (cart) {
       console.log(cart);
 
-      return cart.reduce((total, item) => total + item.price * item.quantity, 0);
+      return cart.reduce(
+        (total, item) => total + item.price * item.quantity,
+        0
+      );
     }
 
     return 0;
@@ -69,7 +70,7 @@ export const CartPage: React.FC = () => {
   return (
     <section className="cart">
       <h1 className="cart__title">Cart</h1>
-      
+
       <div className="cart__container">
         <div>
           {cart?.map((phone) => (
@@ -86,7 +87,9 @@ export const CartPage: React.FC = () => {
         <div className="cart__total">
           <h1 className="cart__total-title">${calculateTotal()}</h1>
 
-          <h2 className="cart__total-subtitle">Total for {calculateAmount()} items</h2>
+          <h2 className="cart__total-subtitle">
+            Total for {calculateAmount()} items
+          </h2>
 
           <button type="submit" className="cart__total-checkout">
             Checkout

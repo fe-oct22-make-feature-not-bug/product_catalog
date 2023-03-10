@@ -14,9 +14,10 @@ type Props = {
   phone: PhoneMainInfo;
 };
 
-export const Card: React.FC<Props> = ({ phone }) => { // memo(
+export const Card: React.FC<Props> = ({ phone }) => {
+  // memo(
   const [addedToFavorites, setAddedToFavorites] = useState(false);
-  const [cart, setCart] = useLocalStorage<PhoneMainInfo[]>('cart', []);
+  const [cart, setCart] = useLocalStorage<PhoneMainInfo[]>("cart", []);
   const [isInCart, setIsInCart] = useState(false);
 
   useEffect(() => {
@@ -90,23 +91,20 @@ export const Card: React.FC<Props> = ({ phone }) => { // memo(
       </div>
 
       <div className="phone-card__actions">
-
         <button
           type="submit"
-          className={cn('addToCart', 'text-button', {
-            'in-cart': isInCart
+          className={cn("addToCart", "text-button", {
+            "in-cart": isInCart,
           })}
           onClick={handleAddToCart}
         >
-          {isInCart
-            ? "Added to cart"
-            : "Add to cart"
-          }
+          {isInCart ? "Added to cart" : "Add to cart"}
         </button>
 
         <button
-          className={`addToWishlist ${addedToFavorites === true ? "is-selected" : ""
-            }`}
+          className={`addToWishlist ${
+            addedToFavorites === true ? "is-selected" : ""
+          }`}
           type="submit"
           onClick={() => handleClick(addedToFavorites)}
         >

@@ -86,18 +86,14 @@ export const Header: React.FC = React.memo(() => {
           <div className="like">
             <NavLink to="/like">
               <img src={like} alt="like" className="image" />
-              <div className="like__amount">
-                1
-              </div>
+              <div className="like__amount">1</div>
             </NavLink>
           </div>
 
           <div className="bag">
             <NavLink to="/cart">
               <img src={bag} alt="bag" className="image" />
-              <div className="bag__amount">
-                1
-              </div>
+              <div className="bag__amount">1</div>
             </NavLink>
           </div>
         </div>

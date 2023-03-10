@@ -13,5 +13,5 @@ export interface PhoneMainInfo {
   year: number;
   image: string;
   createdAt: Date;
-  quantity:number; //
+  quantity: number; //
 }
