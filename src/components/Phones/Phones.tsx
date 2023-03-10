@@ -35,7 +35,7 @@ export const Phones: React.FC = () => {
 
   const phonesAmount = phones.length;
 
-  console.log('x');
+  console.log("x");
 
   useEffect(() => {
     getPhones()

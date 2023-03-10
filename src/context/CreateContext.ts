@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 import { PhoneMainInfo } from "../types/PhoneMainInfo";
 
@@ -9,7 +9,7 @@ export interface CreateContextProps {
 }
 
 export const CreateContext = React.createContext<CreateContextProps>({
-  handleAddToCart: () => { },
+  handleAddToCart: () => {},
   cart: [],
   isProductInCart: () => false,
 });

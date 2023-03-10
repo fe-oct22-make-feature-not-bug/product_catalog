@@ -23,7 +23,7 @@ export const Card: React.FC<Props> = ({ phone }) => {
   const { isProductInCart } = useContext(CreateContext);
 
   console.log(cart);
-  const  isInCart =  isProductInCart(phone.id);
+  const isInCart = isProductInCart(phone.id);
   // useEffect(() => {
   //   // Check if phone is already in cart when component mounts
   //   if (cart) {
@@ -32,7 +32,6 @@ export const Card: React.FC<Props> = ({ phone }) => {
   //     setIsInCart(index !== -1);
   //   }
   // }, [cart, phone]);
-
 
   const handleClick = (selected: boolean) => {
     if (selected === false) {
@@ -90,8 +89,9 @@ export const Card: React.FC<Props> = ({ phone }) => {
         </button>
 
         <button
-          className={`addToWishlist ${addedToFavorites === true ? "is-selected" : ""
-            }`}
+          className={`addToWishlist ${
+            addedToFavorites === true ? "is-selected" : ""
+          }`}
           type="submit"
           onClick={() => handleClick(addedToFavorites)}
         >
