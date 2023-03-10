@@ -32,11 +32,9 @@
 
   @include onTabletSize {
     grid-column: 2/12;
-    
   }
 
   @include onDesktop {
     grid-column: 2/24;
   }
-
 }

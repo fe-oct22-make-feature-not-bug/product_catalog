@@ -25,7 +25,7 @@ export const Footer: React.FC = memo(() => {
             {navLinksLabel.map((navLink) => (
               <li className="footer__list-item text-uppercase" key={navLink}>
                 <Link
-                  to="https://github.com/fe-oct22-make-feature-not-bug" 
+                  to="https://github.com/fe-oct22-make-feature-not-bug"
                   className="footer__link"
                   target="_blank"
                 >
