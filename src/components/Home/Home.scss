@@ -5,6 +5,11 @@
   @include grid-container;
   max-width: 1200px;
 
+  @mixin onTabletSize {
+    margin: 0 auto;
+    @include grid-container;
+  }
+
   @mixin onDesktop {
     margin: 0 auto;
     @include grid-container;
@@ -14,11 +19,6 @@
 .home-header {
   margin-bottom: 24px;
   grid-column: 1/5;
-
-  @include onTabletSize {
-    margin-bottom: 32px;
-    grid-column: 1/10;
-  }
 
   @include onDesktop {
     margin-bottom: 56px;
@@ -30,11 +30,13 @@
   width: 100%;
   padding: 0;
 
-  @include onTablet {
+  @include onTabletSize {
     grid-column: 2/12;
+    
   }
 
   @include onDesktop {
     grid-column: 2/24;
   }
+
 }

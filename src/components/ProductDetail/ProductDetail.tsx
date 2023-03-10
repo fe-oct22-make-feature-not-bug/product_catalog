@@ -50,18 +50,17 @@ export const ProductDetail: React.FC = memo(() => {
   useEffect(() => {
     getPhone(phoneId)
       .then(setPhone)
-      .catch(() => {
-      });
+      .catch(() => {});
   }, [phoneId]);
 
   useEffect(() => {
     if (phone) {
       const oldArray = phone?.capacityAvailable;
-  
-      const newArray = oldArray.map(item => {
+
+      const newArray = oldArray.map((item) => {
         return { name: item, isActive: false };
       });
-  
+
       setCapacityButtons(newArray);
     }
   }, [phone]);
@@ -126,8 +125,7 @@ export const ProductDetail: React.FC = memo(() => {
                       tabIndex={0}
                       className={`product__form-color-item product__form-color-item--${el}`}
                       to={`${newPathname}`}
-                    >
-                    </Link>
+                    ></Link>
                   </li>
                 ))}
               </ul>
