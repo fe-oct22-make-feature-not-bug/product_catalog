@@ -4,11 +4,12 @@
 }
 
 .menu {
-  min-height: calc(100vh - 65px);
+  min-height: calc(100vh - 48px);
   overflow-x: hidden;
   transform: translateX(-100%);
   transition: transform 0.3s;
   position: absolute;
+  background-color: $color-black;
 
   @include notMobile {
     display: none;
@@ -95,10 +96,10 @@
   justify-content: center;
 }
 
-.active {
-  transform: translateX(0);
-}
-
 .menu.active {
-  position: static;
+  transform: translateX(0);
+  width: 100%;
+  z-index: 10;
+  top: 48px;
+  padding-top: 20px;
 }

@@ -5,13 +5,16 @@
 
   width: 100%;
   padding: 0;
+  margin-bottom: 88px;
 
   @include onTabletSize {
     grid-column: 2/12;
+    margin-bottom: 96px;
   }
 
   @include onDesktop {
     grid-column: 2/24;
+    margin-bottom: 112px;
   }
 
   &__photo-container {

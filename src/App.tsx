@@ -9,6 +9,8 @@ import { Home } from "./components/Home/Home";
 import { Phones } from "./components/Phones/Phones";
 import "./Test.scss";
 import { ProductDetail } from "./components/ProductDetail/ProductDetail";
+import { Tablets } from "./components/Tablets/Tablets";
+import { Accessories } from "./components/Accessories/Accessories";
 
 function App() {
   return (
@@ -21,14 +23,9 @@ function App() {
 
         <Route path="/phones-info/:phoneId" element={<ProductDetail />} />
 
-        <Route
-          path="/tablets"
-          element={
-            <>
-              <h1 className="h1">Tablets</h1>
-            </>
-          }
-        />
+        <Route path="/tablets" element={<Tablets />} />
+
+        <Route path="/accessories" element={<Accessories />} />
 
         <Route path="/cart" element={<CartPage />} />
 
