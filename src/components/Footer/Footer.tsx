@@ -18,7 +18,9 @@ export const Footer: React.FC = memo(() => {
     <footer className="footer">
       <div className="footer__container">
         <div className="footer__logo">
-          <Logo />
+          <Link to="/">
+            <Logo />
+          </Link>
         </div>
         <nav className="footer__navigation">
           <ul className="footer__list">

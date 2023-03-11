@@ -50,10 +50,23 @@
     }
 
     &__title {
-      font-weight: 600;
-      font-size: 14px;
-      line-height: 21px;
       color: $color-white;
+
+      max-width: 128px;
+      white-space: wrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      @include onTabletSize {
+        max-width: 176px;
+      }
+
+      @include onDesktop {
+        white-space: nowrap;
+        width: 300px;
+        overflow: unset;
+        text-overflow: unset;
+      }
     }
   }
 
@@ -73,10 +86,6 @@
       align-items: center;
       gap: 13px;
 
-      font-weight: 600;
-      font-size: 14px;
-      line-height: 21px;
-
       @include onBigTablet {
         padding-right: 53px;
       }
@@ -94,10 +103,6 @@
         height: 32px;
 
         border: 1px solid $color-elements;
-      }
-
-      &-minus:disabled {
-        // border-color:
       }
 
       &-plus {

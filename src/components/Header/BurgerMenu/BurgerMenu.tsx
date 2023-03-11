@@ -91,7 +91,7 @@ export const BurgerMenu: React.FC<Props> = memo(
           </div>
 
           <div className="bag">
-            <NavLink to="/bag" onClick={() => setBurgerMenuActive(false)}>
+            <NavLink to="/cart" onClick={() => setBurgerMenuActive(false)}>
               <img src={bag} alt="bag" className="image" />
             </NavLink>
           </div>

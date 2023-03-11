@@ -20,6 +20,14 @@
   }
 }
 
+@mixin container {
+  max-width: 1136px;
+  padding: 0px 16px;
+  margin: 0 auto;
+  position: relative;
+  @content;
+}
+
 @mixin onBigTablet() {
   @media (min-width: 769px) and (max-width: 1199px) {
     @content;

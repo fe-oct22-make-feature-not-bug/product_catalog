@@ -84,7 +84,7 @@ export const Header: React.FC = React.memo(() => {
 
         <div className="header__likeAndBag">
           <div className="like">
-            <NavLink to="/like">
+            <NavLink to="/favorites">
               <img src={like} alt="like" className="image" />
             </NavLink>
           </div>

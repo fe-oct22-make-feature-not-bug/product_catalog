@@ -53,12 +53,7 @@
     }
   }
   &__header {
-    text-align: center;
     margin-bottom: 38px;
-
-    @include notMobile {
-      text-align: left;
-    }
   }
 
   &__image {
