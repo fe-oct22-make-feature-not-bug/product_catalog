@@ -41,10 +41,23 @@ export const Card: React.FC<Props> = ({ phone }) => {
     }
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <div className="phone-card">
       <Link to={`/phones-info/${phone.phoneId}`}>
-        <div className="phone-card__image-container">
+        <div
+          className="phone-card__image-container"
+          onClick={scrollToTop}
+          onKeyUp={scrollToTop}
+          role="button"
+          tabIndex={0}
+        >
           <img
             src={`https://raw.githubusercontent.com/mate-academy/product_catalog/main/public/${phone.image}`}
             alt="phone"

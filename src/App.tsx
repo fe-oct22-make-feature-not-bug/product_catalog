@@ -12,6 +12,7 @@ import { ProductDetail } from "./components/ProductDetail/ProductDetail";
 import { Tablets } from "./components/Tablets/Tablets";
 import { Accessories } from "./components/Accessories/Accessories";
 import { CreateContextProvider } from "./context/CreateContextProvider";
+import { Favorites } from "./components/Favorites/Favorites";
 
 function App() {
   return (
@@ -30,6 +31,8 @@ function App() {
           <Route path="/accessories" element={<Accessories />} />
 
           <Route path="/cart" element={<CartPage />} />
+
+          <Route path="/favorites" element={<Favorites />} />
 
           <Route path="*" element={<PageNotFound />} />
         </Routes>

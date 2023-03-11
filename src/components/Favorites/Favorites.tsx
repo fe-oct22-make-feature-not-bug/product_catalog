@@ -1,15 +1,15 @@
 import React from "react";
 import ComigSoon from "../../assets/images/coming-soon.png";
-import "./Tablets.scss";
+import "./Favorites.scss";
 
-export const Tablets: React.FC = () => {
+export const Favorites: React.FC = () => {
   return (
-    <section className="tablets">
+    <section className="favorites">
       <h1 hidden>Available soon</h1>
       <img
-        className="tablets__image"
+        className="favorites__image"
         src={ComigSoon}
-        alt="Tablets"
+        alt="Favorites"
       />
     </section>
   );

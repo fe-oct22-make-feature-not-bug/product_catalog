@@ -45,13 +45,6 @@ export const RecomendationsSlider: React.FC = () => {
       });
   }, []);
 
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
-
   return (
     <div className="recomendations">
       <Slider {...settings}>
@@ -59,10 +52,6 @@ export const RecomendationsSlider: React.FC = () => {
           <div
             key={phone.id}
             className="recomendations__item"
-            onClick={scrollToTop}
-            onKeyUp={scrollToTop}
-            role="button"
-            tabIndex={0}
           >
             <Card phone={phone} />
           </div>

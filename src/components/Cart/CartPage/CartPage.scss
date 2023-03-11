@@ -1,57 +1,54 @@
 @import "../../../styles/abstracts/index.scss";
 
 .cart {
-  padding: 32px 16px;
+  padding: 0px 16px 80px;
   max-width: 1200px;
   margin: 0 auto;
   min-height: 70svh;
+  position: relative;
 
   &__title {
     width: 100%;
     margin-bottom: 32px;
-    margin-left: 16px;
     color: $color-white;
-  
-    @include onTabletSize {
-      margin-left: 24px;
-    }
-  
-    @include onDesktop {
-      margin-left: 32px;
-    }
   }
 
   &__container {
-    max-width: 1136px;
-    padding: 56px 16px;
-    margin: 0 auto;
+    @include container;
+
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 16px;
   
     @include onDesktop {
-      justify-content: space-between;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
       gap: 16px;
     }
   }
+
+  &__items {
+    width: 100%;
+    @include onDesktop {
+      width: 797px;
+    }
+  }
+
   &__total {
     border: 1px solid $color-elements;
     padding: 24px;
+    height: 206px;
+    width: 100%;
   
     @include onDesktop {
-      max-width: 368px;
-      height: 206px;
+      width: 291px;
+      position: sticky;
+      top: 75px;
     }
-  
+
     &-title {
-      font-weight: 800;
-      font-size: 32px;
-      line-height: 41px;
-  
       text-align: center;
-      letter-spacing: -0.01em;
-  
       color: $color-white;
     }
   
