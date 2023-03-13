@@ -20,6 +20,13 @@ export const CartPage: React.FC = () => {
     setIsActive(true);
   };
 
+  const handleRemoveItem = (id: string) => {
+    const updatedCart = cart?.filter(item => item.id !== id);
+  
+    setCart(updatedCart);
+    localStorage.setCart('cartItems', JSON.stringify(updatedCart));
+  };
+
   const handleClearLocalStorage = () => {
     localStorage.clear();
   };
@@ -114,6 +121,7 @@ export const CartPage: React.FC = () => {
                 key={phone.id}
                 onQuantityIncrement={() => handleQuantityIncrement(phone.id)}
                 onQuantityDecrement={() => handleQuantityDecrement(phone.id)}
+                handleRemoveItem={handleRemoveItem}
               />
             ))}
           </div>

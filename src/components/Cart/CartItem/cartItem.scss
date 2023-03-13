@@ -26,6 +26,11 @@
     width: 752px;
   }
 
+  &-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
   &-phoneData {
     display: flex;
     justify-content: start;
@@ -40,18 +45,24 @@
     &__delete {
       width: 16px;
       height: 16px;
+      cursor: pointer;
     }
 
     &__photo {
       width: 66px;
       height: 66px;
+      margin-bottom: 23px;
 
       padding: 0 7px;
+
+      @include notMobile {
+        margin-bottom: 0;
+      }
     }
 
     &__title {
       color: $color-white;
-
+      margin-left: 23px;
       max-width: 128px;
       white-space: wrap;
       overflow: hidden;
