@@ -8,6 +8,10 @@ import "slick-carousel/slick/slick-theme.css";
 import "./Banner.scss";
 import bannerPhoto from "../../assets/images/Banner.png";
 import bannerSmall from "../../assets/images/banner-small.png";
+import banner2 from "../../assets/images/2.png";
+import banner2_s from "../../assets/images/2_s.png";
+import banner3 from "../../assets/images/3.png";
+import banner3_s from "../../assets/images/3_s.png";
 
 const CustomPrevArrow = memo((props: React.HTMLProps<HTMLDivElement>) => {
   const { className, onClick } = props;
@@ -61,15 +65,15 @@ export const Banner: React.FC = memo(() => {
 
         <div className="banner__photo-container">
           <picture>
-            <source media="(max-width: 639px)" srcSet={bannerSmall} />
-            <img className="banner__photo" src={bannerPhoto} alt="photo2" />
+            <source media="(max-width: 639px)" srcSet={banner2_s} />
+            <img className="banner__photo" src={banner2} alt="photo2" />
           </picture>
         </div>
 
         <div className="banner__photo-container">
           <picture>
-            <source media="(max-width: 639px)" srcSet={bannerSmall} />
-            <img className="banner__photo" src={bannerPhoto} alt="photo3" />
+            <source media="(max-width: 639px)" srcSet={banner3_s} />
+            <img className="banner__photo" src={banner3} alt="photo3" />
           </picture>
         </div>
       </Slider>
