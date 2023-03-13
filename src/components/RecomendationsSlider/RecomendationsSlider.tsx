@@ -39,7 +39,11 @@ export const RecomendationsSlider: React.FC = () => {
 
   useEffect(() => {
     getPhones()
-      .then(setPhones)
+      .then((data) => {
+        // eslint-disable-next-line no-return-assign, no-param-reassign
+        data.map(item => item.quantity = 1);
+        setPhones(data);
+      })
       .catch(() => {
         setPhones([]);
       });

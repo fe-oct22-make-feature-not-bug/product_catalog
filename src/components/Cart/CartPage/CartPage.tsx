@@ -61,10 +61,10 @@ export const CartPage: React.FC = () => {
 
   const calculateTotal = (): number => {
     if (cart) {
-      console.log(cart);
+      // console.log(cart);
 
       return cart.reduce(
-        (total, item) => total + item.price * item.quantity,
+        (total, item) => total + +item.priceDiscount * item.quantity,
         0
       );
     }

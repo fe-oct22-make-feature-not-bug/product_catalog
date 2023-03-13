@@ -12,18 +12,17 @@ interface Props {
 
 export const CreateContextProvider: FC<Props> = React.memo(({ children }) => {
   const [cart, setCart] = useLocalStorage<PhoneMainInfo[]>("cart", []);
-  // const [isInCart, setIsInCart] = useState(false);
 
-  const handleAddToCart = (phone: any) => {
+  const handleAddToCart = (phone: PhoneMainInfo) => {
     if (cart) {
-      const index = cart.findIndex((item: any) => item.id === phone.id);
+      const indexInCart = cart.findIndex((item: PhoneMainInfo) => item.id === phone.id);
 
-      if (index === -1) {
+      if (indexInCart === -1) {
         setCart([...cart, phone]);
       } else {
         const updatedCart = [...cart];
 
-        updatedCart.splice(index, 1);
+        updatedCart.splice(indexInCart, 1);
         setCart(updatedCart);
       }
     }
