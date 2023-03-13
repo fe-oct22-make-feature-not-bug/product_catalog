@@ -6,10 +6,12 @@ export interface CreateContextProps {
   handleAddToCart: (phone: any) => void;
   cart: PhoneMainInfo[] | undefined;
   isProductInCart: (id: string) => boolean;
+  handleClearLocalStorage: () => void;
 }
 
 export const CreateContext = React.createContext<CreateContextProps>({
   handleAddToCart: () => {},
   cart: [],
   isProductInCart: () => false,
+  handleClearLocalStorage: () => {},
 });
