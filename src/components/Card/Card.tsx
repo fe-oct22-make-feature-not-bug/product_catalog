@@ -5,7 +5,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable react/display-name */
 // import { useLocalStorage } from "react-use";
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import cn from "classnames";
 import "./Card.scss";
 import { Link } from "react-router-dom";
@@ -17,22 +17,15 @@ type Props = {
 };
 
 export const Card: React.FC<Props> = ({ phone }) => {
-  const [addedToFavorites, setAddedToFavorites] = useState(false);
-
+  
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const { cart, handleAddToCart } = useContext(CreateContext);
+  const { handleAddToCart } = useContext(CreateContext);
   const { isProductInCart } = useContext(CreateContext);
+  const { handleAddToFavorite } = useContext(CreateContext);
+  const { isProductInFavorite } = useContext(CreateContext);
 
-  // console.log(cart);
   const isInCart = isProductInCart(phone.id);
-
-  const handleClick = (selected: boolean) => {
-    if (selected === false) {
-      setAddedToFavorites(true);
-    } else {
-      setAddedToFavorites(false);
-    }
-  };
+  const isInFavorite = isProductInFavorite(phone.id);
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -40,8 +33,6 @@ export const Card: React.FC<Props> = ({ phone }) => {
       behavior: "smooth",
     });
   };
-
-  // console.log(phone.name, phone.discountPrice, phone.regularPrice);
 
   return (
     <div className="phone-card">
@@ -97,11 +88,11 @@ export const Card: React.FC<Props> = ({ phone }) => {
         </button>
 
         <button
-          className={`addToWishlist ${
-            addedToFavorites === true ? "is-selected" : ""
-          }`}
+          className={cn("addToWishlist", {
+            "is-selected": isInFavorite,
+          })}
           type="submit"
-          onClick={() => handleClick(addedToFavorites)}
+          onClick={() => handleAddToFavorite(phone)}
         >
           <span hidden>add to wishlist</span>
         </button>

@@ -13,7 +13,6 @@ import chevronLeft from "../../../assets/icons/chevron-left.svg";
 export const CartPage: React.FC = () => {
   const navigate = useNavigate();
   const [isActive, setIsActive] = useState(false);
-
   const [cart, setCart] = useLocalStorage<PhoneMainInfo[]>("cart", []);
 
   const handleClick = () => {
