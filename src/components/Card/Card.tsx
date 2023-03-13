@@ -20,8 +20,7 @@ export const Card: React.FC<Props> = ({ phone }) => {
   const [addedToFavorites, setAddedToFavorites] = useState(false);
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const { cart, handleAddToCart } = useContext(CreateContext);
-  const { isProductInCart } = useContext(CreateContext);
+  const { cart, handleAddToCart, isProductInCart } = useContext(CreateContext);
 
   // console.log(cart);
   const isInCart = isProductInCart(phone.id);

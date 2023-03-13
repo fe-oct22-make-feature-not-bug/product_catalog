@@ -35,10 +35,16 @@ export const CreateContextProvider: FC<Props> = React.memo(({ children }) => {
     [cart]
   );
 
+  const handleClearLocalStorage = () => {
+    // localStorage.clear();
+    setCart(() => []);
+  };
+
   const contextValues = {
     cart,
     handleAddToCart,
     isProductInCart,
+    handleClearLocalStorage,
   };
 
   return (

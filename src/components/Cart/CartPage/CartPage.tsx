@@ -1,20 +1,21 @@
 /* eslint-disable no-else-return */
 /* eslint-disable no-console */
 /* eslint-disable react/button-has-type */
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { useLocalStorage } from "react-use";
 import { CartItem } from "../CartItem";
 import "./CartPage.scss";
 import { PhoneMainInfo } from "../../../types/PhoneMainInfo";
 import chevronLeft from "../../../assets/icons/chevron-left.svg";
+import { CreateContext } from "../../../context/CreateContext";
 
 export const CartPage: React.FC = () => {
   const navigate = useNavigate();
   const [isActive, setIsActive] = useState(false);
 
   const [cart, setCart] = useLocalStorage<PhoneMainInfo[]>("cart", []);
+  const { handleClearLocalStorage } = useContext(CreateContext);
 
   const handleClick = () => {
     setIsActive(true);
@@ -25,10 +26,6 @@ export const CartPage: React.FC = () => {
   
     setCart(updatedCart);
     localStorage.setCart('cartItems', JSON.stringify(updatedCart));
-  };
-
-  const handleClearLocalStorage = () => {
-    localStorage.clear();
   };
 
   function handleGoBack() {
@@ -67,8 +64,6 @@ export const CartPage: React.FC = () => {
 
   const calculateTotal = (): number => {
     if (cart) {
-      // console.log(cart);
-
       return cart.reduce(
         (total, item) => total + +item.priceDiscount * item.quantity,
         0
