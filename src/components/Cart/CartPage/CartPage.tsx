@@ -22,6 +22,7 @@ export const CartPage: React.FC = () => {
 
   const handleClearLocalStorage = () => {
     localStorage.clear();
+    setCart(() => []);
   };
 
   function handleGoBack() {

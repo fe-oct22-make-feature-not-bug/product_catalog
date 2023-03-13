@@ -16,6 +16,7 @@ export const CartItem: React.FC<Props> = ({
   onQuantityIncrement,
   onQuantityDecrement,
 }) => {
+  
   return (
     <div className="cart__item">
       <div className="cart__item-phoneData">

@@ -6,8 +6,8 @@ export interface Phone {
   itemId: string;
   name: string;
   description: About[];
-  priceRegular: string;
-  priceDiscount: string;
+  priceRegular: number;
+  priceDiscount: number;
   screen: string;
   capacity: string;
   color: string;
@@ -20,11 +20,12 @@ export interface Phone {
   namespaceId: string;
   processor: string;
   zoom: string;
+  image: string;
   resolution: string;
   colorsAvailable: string[];
 }
 
 type About = {
-  title: string;
-  text: string[];
+  title: string
+  text: string[]
 };

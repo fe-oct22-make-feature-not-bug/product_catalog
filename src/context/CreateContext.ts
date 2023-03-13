@@ -1,5 +1,4 @@
 import React from "react";
-
 import { PhoneMainInfo } from "../types/PhoneMainInfo";
 
 export interface CreateContextProps {
@@ -10,6 +9,6 @@ export interface CreateContextProps {
 
 export const CreateContext = React.createContext<CreateContextProps>({
   handleAddToCart: () => {},
-  cart: [],
+  cart: undefined,
   isProductInCart: () => false,
 });

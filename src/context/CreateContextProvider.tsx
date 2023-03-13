@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 import React, { FC, useCallback } from "react";
 
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { useLocalStorage } from "react-use";
 import { CreateContext } from "./CreateContext";
 

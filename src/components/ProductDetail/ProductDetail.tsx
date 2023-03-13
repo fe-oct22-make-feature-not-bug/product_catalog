@@ -22,29 +22,12 @@ export const ProductDetail: React.FC = memo(() => {
   const navigate = useNavigate();
   const [phone, setPhone] = useState<Phone>();
   const { phoneId } = useParams();
-  const [selectedCapacityButton, setSelectedCapacityButton] = useState<
-    string | undefined
-  >("");
+  const [selectedCapacityButton, setSelectedCapacityButton] = useState<string | undefined>("");
   const [capacityButtons, setCapacityButtons] = useState<CapacityButton[]>([]);
 
   function handleGoBack() {
     navigate(-1);
   }
-
-  const handleClick = (index: number, name: string) => {
-    const newButtons = [...capacityButtons];
-
-    newButtons[index].isActive = !newButtons[index].isActive;
-    setCapacityButtons(newButtons);
-
-    if (selectedCapacityButton === name) {
-      const x = phone?.capacityAvailable[0];
-
-      setSelectedCapacityButton(x);
-    } else {
-      setSelectedCapacityButton(name);
-    }
-  };
 
   const location = useLocation();
   const currentUrl = location.pathname + location.search + location.hash;
@@ -64,8 +47,24 @@ export const ProductDetail: React.FC = memo(() => {
       });
 
       setCapacityButtons(newArray);
+      setSelectedCapacityButton(phone.capacity);
     }
   }, [phone]);
+
+   const handleClick = (index: number, name: string) => {
+    const newButtons = [...capacityButtons];
+
+    newButtons[index].isActive = !newButtons[index].isActive;
+    setCapacityButtons(newButtons);
+
+    if (selectedCapacityButton === name) {
+      const x = phone?.capacityAvailable[0];
+
+      setSelectedCapacityButton(x);
+    } else {
+      setSelectedCapacityButton(name);
+    }
+  };
 
   const description1 = { ...phone?.description[0] };
   const description2 = { ...phone?.description[1] };
@@ -159,14 +158,14 @@ export const ProductDetail: React.FC = memo(() => {
               </div>
               <div className="product__form-price">
                 <span className="product__form-price-actual h2">
-                  {phone.priceDiscount}
+                  {phone.priceRegular}
                 </span>
                 <span className="product__form-price-old">
-                  {phone.priceRegular}
+                  {phone.priceDiscount}
                 </span>
               </div>
               <div className="product__form-buttons">
-                <ProductButtons />
+                <ProductButtons phone={phone} />
               </div>
               <div className="product__form-details">
                 <div className="product__form-item">

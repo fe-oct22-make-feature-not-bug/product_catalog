@@ -24,15 +24,7 @@ export const Card: React.FC<Props> = ({ phone }) => {
 
   console.log(cart);
   const isInCart = isProductInCart(phone.id);
-  // useEffect(() => {
-  //   // Check if phone is already in cart when component mounts
-  //   if (cart) {
-  //     const index = cart.findIndex((item) => item.id === phone.id);
-
-  //     setIsInCart(index !== -1);
-  //   }
-  // }, [cart, phone]);
-
+  
   const handleClick = (selected: boolean) => {
     if (selected === false) {
       setAddedToFavorites(true);
@@ -50,14 +42,14 @@ export const Card: React.FC<Props> = ({ phone }) => {
 
   return (
     <div className="phone-card">
-      <Link to={`/phones-info/${phone.phoneId}`}>
-        <div
-          className="phone-card__image-container"
-          onClick={scrollToTop}
-          onKeyUp={scrollToTop}
-          role="button"
-          tabIndex={0}
-        >
+      <Link
+        to={`/phones-info/${phone.phoneId}`}
+        onClick={scrollToTop}
+        onKeyUp={scrollToTop}
+        role="button"
+        tabIndex={0}
+      >
+        <div className="phone-card__image-container">
           <img
             src={`https://raw.githubusercontent.com/mate-academy/product_catalog/main/public/${phone.image}`}
             alt="phone"
