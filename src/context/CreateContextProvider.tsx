@@ -59,7 +59,6 @@ export const CreateContextProvider: FC<Props> = React.memo(({ children }) => {
     [favorite]
   );
   const handleClearLocalStorage = () => {
-    // localStorage.clear();
     setCart(() => []);
   };
 
@@ -69,7 +68,7 @@ export const CreateContextProvider: FC<Props> = React.memo(({ children }) => {
     handleAddToCart,
     handleAddToFavorite,
     isProductInCart,
-    isProductInFavorite
+    isProductInFavorite,
     handleClearLocalStorage,
   };
 
