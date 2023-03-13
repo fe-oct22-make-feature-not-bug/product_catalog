@@ -17,12 +17,11 @@ type Props = {
 };
 
 export const Card: React.FC<Props> = ({ phone }) => {
-  
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const { handleAddToCart } = useContext(CreateContext);
-  const { isProductInCart } = useContext(CreateContext);
-  const { handleAddToFavorite } = useContext(CreateContext);
-  const { isProductInFavorite } = useContext(CreateContext);
+  const { handleAddToCart, 
+  isProductInCart,
+  handleAddToFavorite,
+  isProductInFavorite,
+  } = useContext(CreateContext);
 
   const isInCart = isProductInCart(phone.id);
   const isInFavorite = isProductInFavorite(phone.id);

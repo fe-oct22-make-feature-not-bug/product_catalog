@@ -9,6 +9,7 @@ export interface CreateContextProps {
   favorite: PhoneMainInfo [] | undefined;
   isProductInCart: (id: string) => boolean;
   isProductInFavorite: (id: string) => boolean;
+  handleClearLocalStorage: () => void;
 }
 
 export const CreateContext = React.createContext<CreateContextProps>({
@@ -18,4 +19,5 @@ export const CreateContext = React.createContext<CreateContextProps>({
   cart: [],
   isProductInCart: () => false,
   isProductInFavorite: () => false,
+  handleClearLocalStorage: () => {},
 });

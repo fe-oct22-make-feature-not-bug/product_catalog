@@ -58,6 +58,10 @@ export const CreateContextProvider: FC<Props> = React.memo(({ children }) => {
     (phoneId: string) => favorite?.some((item) => item.id === phoneId) || false,
     [favorite]
   );
+  const handleClearLocalStorage = () => {
+    // localStorage.clear();
+    setCart(() => []);
+  };
 
   const contextValues = {
     cart,
@@ -66,6 +70,7 @@ export const CreateContextProvider: FC<Props> = React.memo(({ children }) => {
     handleAddToFavorite,
     isProductInCart,
     isProductInFavorite
+    handleClearLocalStorage,
   };
 
   return (
