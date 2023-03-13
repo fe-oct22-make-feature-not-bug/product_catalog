@@ -18,14 +18,16 @@ export const Footer: React.FC = memo(() => {
     <footer className="footer">
       <div className="footer__container">
         <div className="footer__logo">
-          <Logo />
+          <Link to="/">
+            <Logo />
+          </Link>
         </div>
         <nav className="footer__navigation">
           <ul className="footer__list">
             {navLinksLabel.map((navLink) => (
               <li className="footer__list-item text-uppercase" key={navLink}>
                 <Link
-                  to="https://github.com/fe-oct22-make-feature-not-bug" 
+                  to="https://github.com/fe-oct22-make-feature-not-bug"
                   className="footer__link"
                   target="_blank"
                 >

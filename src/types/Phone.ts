@@ -22,6 +22,7 @@ export interface Phone {
   zoom: string;
   resolution: string;
   colorsAvailable: string[];
+  quantity: number;
 }
 
 type About = {

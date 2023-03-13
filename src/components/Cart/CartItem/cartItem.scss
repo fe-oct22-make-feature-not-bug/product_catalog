@@ -26,12 +26,16 @@
     width: 752px;
   }
 
+  &-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
   &-phoneData {
     display: flex;
     justify-content: start;
     align-items: center;
     gap: 24px;
-    margin-bottom: 16px;
     padding: 7px 0;
 
     @include onTablet {
@@ -41,20 +45,39 @@
     &__delete {
       width: 16px;
       height: 16px;
+      cursor: pointer;
     }
 
     &__photo {
       width: 66px;
       height: 66px;
+      margin-bottom: 23px;
 
       padding: 0 7px;
+
+      @include notMobile {
+        margin-bottom: 0;
+      }
     }
 
     &__title {
-      font-weight: 600;
-      font-size: 14px;
-      line-height: 21px;
       color: $color-white;
+      margin-left: 23px;
+      max-width: 128px;
+      white-space: wrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      @include onTabletSize {
+        max-width: 176px;
+      }
+
+      @include onDesktop {
+        white-space: nowrap;
+        width: 300px;
+        overflow: unset;
+        text-overflow: unset;
+      }
     }
   }
 
@@ -62,6 +85,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-right: 24px;
 
     @include onTablet {
       gap: 53px;
@@ -72,10 +96,6 @@
       justify-content: space-between;
       align-items: center;
       gap: 13px;
-
-      font-weight: 600;
-      font-size: 14px;
-      line-height: 21px;
 
       @include onBigTablet {
         padding-right: 53px;
@@ -94,10 +114,6 @@
         height: 32px;
 
         border: 1px solid $color-elements;
-      }
-
-      &-minus:disabled {
-        // border-color:
       }
 
       &-plus {

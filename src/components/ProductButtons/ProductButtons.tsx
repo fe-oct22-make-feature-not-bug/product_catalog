@@ -1,8 +1,33 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import "./ProductButtons.scss";
+import { Phone } from "../../types/Phone";
+import { CreateContext } from "../../context/CreateContext";
 
-export const ProductButtons: React.FC = () => {
+type Props = {
+  phone: Phone;
+};
+
+export const ProductButtons: React.FC<Props> = ({ phone }) => {
   const [addedToFavorites, setAddedToFavorites] = useState(false);
+  const [buttonText, setButtonText] = useState('Add to cart');
+  const { handleAddToCart } = useContext(CreateContext);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setButtonText('Add to cart');
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, [buttonText]);
+
+  const handleAddedToCart = () => {
+    setButtonText('Added to cart');
+  };
+
+  const handleCombinedClick = () => {
+    handleAddToCart(phone);
+    handleAddedToCart();
+  };
 
   const handleClick = (selected: boolean) => {
     if (selected === false) {
@@ -14,8 +39,12 @@ export const ProductButtons: React.FC = () => {
 
   return (
     <div className="product-buttons">
-      <button className="addToCart text-button" type="submit">
-        Add to cart
+      <button
+        className="addToCart text-button"
+        type="submit"
+        onClick={handleCombinedClick}
+      >
+        {buttonText}
       </button>
       <button
         className={`addToWishlist ${

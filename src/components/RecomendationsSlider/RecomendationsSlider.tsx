@@ -70,31 +70,21 @@ export const RecomendationsSlider: React.FC = () => {
 
   useEffect(() => {
     getPhones()
-      .then(setPhones)
+      .then((data) => {
+        // eslint-disable-next-line no-return-assign, no-param-reassign
+        data.map((item) => (item.quantity = 1));
+        setPhones(data);
+      })
       .catch(() => {
         setPhones([]);
       });
   }, []);
 
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
-
   return (
     <div className="recomendations">
       <Slider {...settings}>
         {phones.map((phone) => (
-          <div
-            key={phone.id}
-            className="recomendations__item"
-            onClick={scrollToTop}
-            onKeyUp={scrollToTop}
-            role="button"
-            tabIndex={0}
-          >
+          <div key={phone.id} className="recomendations__item">
             <Card phone={phone} />
           </div>
         ))}

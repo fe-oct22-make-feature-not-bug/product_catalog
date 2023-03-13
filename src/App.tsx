@@ -11,29 +11,35 @@ import "./Test.scss";
 import { ProductDetail } from "./components/ProductDetail/ProductDetail";
 import { Tablets } from "./components/Tablets/Tablets";
 import { Accessories } from "./components/Accessories/Accessories";
+import { CreateContextProvider } from "./context/CreateContextProvider";
+import { Favorites } from "./components/Favorites/Favorites";
 
 function App() {
   return (
-    <div className="App">
-      <Header />
+    <CreateContextProvider>
+      <div className="App">
+        <Header />
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/phones" element={<Phones />} />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/phones" element={<Phones />} />
 
-        <Route path="/phones-info/:phoneId" element={<ProductDetail />} />
+          <Route path="/phones-info/:phoneId" element={<ProductDetail />} />
 
-        <Route path="/tablets" element={<Tablets />} />
+          <Route path="/tablets" element={<Tablets />} />
 
-        <Route path="/accessories" element={<Accessories />} />
+          <Route path="/accessories" element={<Accessories />} />
 
-        <Route path="/cart" element={<CartPage />} />
+          <Route path="/cart" element={<CartPage />} />
 
-        <Route path="*" element={<PageNotFound />} />
-      </Routes>
+          <Route path="/favorites" element={<Favorites />} />
 
-      <Footer />
-    </div>
+          <Route path="*" element={<PageNotFound />} />
+        </Routes>
+
+        <Footer />
+      </div>
+    </CreateContextProvider>
   );
 }
 
