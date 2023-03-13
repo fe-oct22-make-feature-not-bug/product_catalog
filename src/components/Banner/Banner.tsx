@@ -8,10 +8,10 @@ import "slick-carousel/slick/slick-theme.css";
 import "./Banner.scss";
 import bannerPhoto from "../../assets/images/Banner.png";
 import bannerSmall from "../../assets/images/banner-small.png";
-import banner2 from '../../assets/images/2.png';
-import banner2_s from '../../assets/images/2_s.png';
-import banner3 from '../../assets/images/3.png';
-import banner3_s from '../../assets/images/3_s.png';
+import banner2 from "../../assets/images/2.png";
+import banner2_s from "../../assets/images/2_s.png";
+import banner3 from "../../assets/images/3.png";
+import banner3_s from "../../assets/images/3_s.png";
 
 const CustomPrevArrow = memo((props: React.HTMLProps<HTMLDivElement>) => {
   const { className, onClick } = props;
