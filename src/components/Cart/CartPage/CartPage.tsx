@@ -10,7 +10,6 @@ import { PhoneMainInfo } from "../../../types/PhoneMainInfo";
 import chevronLeft from "../../../assets/icons/chevron-left.svg";
 import { CreateContext } from "../../../context/CreateContext";
 
-
 export const CartPage: React.FC = () => {
   const navigate = useNavigate();
   const [isActive, setIsActive] = useState(false);
