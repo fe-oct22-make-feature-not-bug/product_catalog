@@ -41,7 +41,7 @@ export const RecomendationsSlider: React.FC = () => {
     getPhones()
       .then((data) => {
         // eslint-disable-next-line no-return-assign, no-param-reassign
-        data.map(item => item.quantity = 1);
+        data.map((item) => (item.quantity = 1));
         setPhones(data);
       })
       .catch(() => {
@@ -53,10 +53,7 @@ export const RecomendationsSlider: React.FC = () => {
     <div className="recomendations">
       <Slider {...settings}>
         {phones.map((phone) => (
-          <div
-            key={phone.id}
-            className="recomendations__item"
-          >
+          <div key={phone.id} className="recomendations__item">
             <Card phone={phone} />
           </div>
         ))}

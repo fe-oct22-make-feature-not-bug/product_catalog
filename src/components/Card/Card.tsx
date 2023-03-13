@@ -41,7 +41,7 @@ export const Card: React.FC<Props> = ({ phone }) => {
     });
   };
 
-// console.log(phone.name, phone.discountPrice, phone.regularPrice);
+  // console.log(phone.name, phone.discountPrice, phone.regularPrice);
 
   return (
     <div className="phone-card">

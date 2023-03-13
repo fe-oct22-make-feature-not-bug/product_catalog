@@ -6,11 +6,7 @@ export const Tablets: React.FC = () => {
   return (
     <section className="tablets">
       <h1 hidden>Available soon</h1>
-      <img
-        className="tablets__image"
-        src={ComigSoon}
-        alt="Tablets"
-      />
+      <img className="tablets__image" src={ComigSoon} alt="Tablets" />
     </section>
   );
 };

@@ -15,7 +15,9 @@ export const CreateContextProvider: FC<Props> = React.memo(({ children }) => {
 
   const handleAddToCart = (phone: PhoneMainInfo) => {
     if (cart) {
-      const indexInCart = cart.findIndex((item: PhoneMainInfo) => item.id === phone.id);
+      const indexInCart = cart.findIndex(
+        (item: PhoneMainInfo) => item.id === phone.id
+      );
 
       if (indexInCart === -1) {
         setCart([...cart, phone]);

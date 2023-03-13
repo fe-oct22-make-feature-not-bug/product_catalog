@@ -18,7 +18,7 @@ export const CartItem: React.FC<Props> = ({
 }) => {
   // eslint-disable-next-line no-console
   console.log(phone);
-  
+
   return (
     <div className="cart__item">
       <div className="cart__item-phoneData">

@@ -56,7 +56,7 @@ export const ProductDetail: React.FC = memo(() => {
         item.quantity = 1;
         setPhone(() => item);
       })
-      .catch(() => { });
+      .catch(() => {});
   }, [phoneId]);
 
   useEffect(() => {
@@ -149,8 +149,9 @@ export const ProductDetail: React.FC = memo(() => {
                     key={button.name}
                     role="button"
                     tabIndex={0}
-                    className={`product__form-capacity-item ${selectedCapacityButton === button.name ? "is-active" : ""
-                      }`}
+                    className={`product__form-capacity-item ${
+                      selectedCapacityButton === button.name ? "is-active" : ""
+                    }`}
                     onClick={() => {
                       handleClick(index, button.name);
                     }}

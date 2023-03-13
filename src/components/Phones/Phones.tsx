@@ -52,7 +52,7 @@ export const Phones: React.FC = () => {
     )
       .then((data) => {
         // eslint-disable-next-line no-return-assign, no-param-reassign
-        data.items.map(item => item.quantity = 1);
+        data.items.map((item) => (item.quantity = 1));
         setPhones(data.items);
         setPageNumber(+data.totalPages);
       })
@@ -66,12 +66,10 @@ export const Phones: React.FC = () => {
     setSearchParams,
     sortOrder,
     cardsPerPage,
-    pageNumber
+    pageNumber,
   ]);
 
-  const sortedPhones = [
-    ...phones,
-  ];
+  const sortedPhones = [...phones];
 
   // // eslint-disable-next-line no-console
   // console.log(phones);

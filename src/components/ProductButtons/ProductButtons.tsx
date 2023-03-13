@@ -1,10 +1,10 @@
 import React, { useState, useContext } from "react";
 import "./ProductButtons.scss";
-import { Phone } from '../../types/Phone';
+import { Phone } from "../../types/Phone";
 import { CreateContext } from "../../context/CreateContext";
 
 type Props = {
-  phone: Phone,
+  phone: Phone;
 };
 
 export const ProductButtons: React.FC<Props> = ({ phone }) => {
@@ -22,12 +22,17 @@ export const ProductButtons: React.FC<Props> = ({ phone }) => {
 
   return (
     <div className="product-buttons">
-      <button className="addToCart text-button" type="submit" onClick={() => handleAddToCart(phone)}>
+      <button
+        className="addToCart text-button"
+        type="submit"
+        onClick={() => handleAddToCart(phone)}
+      >
         Add to cart
       </button>
       <button
-        className={`addToWishlist ${addedToFavorites === true ? "is-selected" : ""
-          }`}
+        className={`addToWishlist ${
+          addedToFavorites === true ? "is-selected" : ""
+        }`}
         type="submit"
         onClick={() => handleClick(addedToFavorites)}
       >
