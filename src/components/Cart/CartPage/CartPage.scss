@@ -20,7 +20,7 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 16px;
-  
+
     @include onDesktop {
       flex-wrap: nowrap;
       justify-content: flex-start;
@@ -40,7 +40,7 @@
     padding: 24px;
     height: 206px;
     width: 100%;
-  
+
     @include onDesktop {
       width: 291px;
       position: sticky;
@@ -51,38 +51,38 @@
       text-align: center;
       color: $color-white;
     }
-  
+
     &-subtitle {
       font-weight: 600;
       font-size: 14px;
       line-height: 21px;
-  
+
       text-align: center;
-  
+
       color: $color-secondary;
       border-bottom: 1px solid $color-secondary;
-  
+
       padding-bottom: 16px;
       margin-bottom: 16px;
     }
-  
+
     &-checkout {
       width: 100%;
-  
+
       display: flex;
       justify-content: center;
       align-items: center;
-  
+
       font-weight: 700;
       font-size: 14px;
       line-height: 21px;
-  
+
       text-align: center;
-  
+
       color: #ffffff;
-  
+
       padding: 14px 86px;
-  
+
       background: $color-accent;
       cursor: pointer;
 

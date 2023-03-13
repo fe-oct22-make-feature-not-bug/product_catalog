@@ -1,8 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./ProductButtons.scss";
+import { Phone } from "../../types/Phone";
+import { CreateContext } from "../../context/CreateContext";
 
-export const ProductButtons: React.FC = () => {
+type Props = {
+  phone: Phone;
+};
+
+export const ProductButtons: React.FC<Props> = ({ phone }) => {
   const [addedToFavorites, setAddedToFavorites] = useState(false);
+
+  const { handleAddToCart } = useContext(CreateContext);
 
   const handleClick = (selected: boolean) => {
     if (selected === false) {
@@ -14,7 +22,11 @@ export const ProductButtons: React.FC = () => {
 
   return (
     <div className="product-buttons">
-      <button className="addToCart text-button" type="submit">
+      <button
+        className="addToCart text-button"
+        type="submit"
+        onClick={() => handleAddToCart(phone)}
+      >
         Add to cart
       </button>
       <button

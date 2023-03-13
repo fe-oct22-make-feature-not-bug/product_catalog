@@ -19,19 +19,12 @@ type Props = {
 export const Card: React.FC<Props> = ({ phone }) => {
   const [addedToFavorites, setAddedToFavorites] = useState(false);
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { cart, handleAddToCart } = useContext(CreateContext);
   const { isProductInCart } = useContext(CreateContext);
 
-  console.log(cart);
+  // console.log(cart);
   const isInCart = isProductInCart(phone.id);
-  // useEffect(() => {
-  //   // Check if phone is already in cart when component mounts
-  //   if (cart) {
-  //     const index = cart.findIndex((item) => item.id === phone.id);
-
-  //     setIsInCart(index !== -1);
-  //   }
-  // }, [cart, phone]);
 
   const handleClick = (selected: boolean) => {
     if (selected === false) {
@@ -47,6 +40,8 @@ export const Card: React.FC<Props> = ({ phone }) => {
       behavior: "smooth",
     });
   };
+
+  // console.log(phone.name, phone.discountPrice, phone.regularPrice);
 
   return (
     <div className="phone-card">
@@ -69,8 +64,8 @@ export const Card: React.FC<Props> = ({ phone }) => {
       </Link>
 
       <div className="phone-card__price-block">
-        <p className="phone-card__price h3">${phone.price}</p>
-        <p className="phone-card__price-discount">${phone.fullPrice}</p>
+        <p className="phone-card__price h3">${phone.priceDiscount}</p>
+        <p className="phone-card__price-discount">${phone.priceRegular}</p>
       </div>
 
       <div className="phone-card__divider"></div>

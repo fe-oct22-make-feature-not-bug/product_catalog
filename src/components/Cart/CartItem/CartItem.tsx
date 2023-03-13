@@ -16,6 +16,9 @@ export const CartItem: React.FC<Props> = ({
   onQuantityIncrement,
   onQuantityDecrement,
 }) => {
+  // eslint-disable-next-line no-console
+  console.log(phone);
+
   return (
     <div className="cart__item">
       <div className="cart__item-phoneData">
@@ -51,7 +54,7 @@ export const CartItem: React.FC<Props> = ({
           </button>
         </div>
         <h1 className="cart__item-price__value">
-          ${phone.price * phone.quantity}
+          ${phone.priceDiscount * phone.quantity}
         </h1>
       </div>
     </div>

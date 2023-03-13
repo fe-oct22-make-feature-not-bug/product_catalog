@@ -13,7 +13,7 @@ import chevronLeft from "../../../assets/icons/chevron-left.svg";
 export const CartPage: React.FC = () => {
   const navigate = useNavigate();
   const [isActive, setIsActive] = useState(false);
-  
+
   const [cart, setCart] = useLocalStorage<PhoneMainInfo[]>("cart", []);
 
   const handleClick = () => {
@@ -27,7 +27,6 @@ export const CartPage: React.FC = () => {
   function handleGoBack() {
     navigate(-1);
   }
-
 
   useEffect(() => {
     if (!cart) {
@@ -61,10 +60,10 @@ export const CartPage: React.FC = () => {
 
   const calculateTotal = (): number => {
     if (cart) {
-      console.log(cart);
+      // console.log(cart);
 
       return cart.reduce(
-        (total, item) => total + item.price * item.quantity,
+        (total, item) => total + +item.priceDiscount * item.quantity,
         0
       );
     }
@@ -110,12 +109,12 @@ export const CartPage: React.FC = () => {
         <div className="cart__container">
           <div className="cart__items">
             {cart?.map((phone) => (
-                <CartItem
-                  phone={phone}
-                  key={phone.id}
-                  onQuantityIncrement={() => handleQuantityIncrement(phone.id)}
-                  onQuantityDecrement={() => handleQuantityDecrement(phone.id)}
-                />
+              <CartItem
+                phone={phone}
+                key={phone.id}
+                onQuantityIncrement={() => handleQuantityIncrement(phone.id)}
+                onQuantityDecrement={() => handleQuantityDecrement(phone.id)}
+              />
             ))}
           </div>
 
@@ -127,7 +126,7 @@ export const CartPage: React.FC = () => {
             </h2>
 
             <button
-              type="submit" 
+              type="submit"
               className="cart__total-checkout"
               onClick={handleClick}
             >
@@ -136,15 +135,15 @@ export const CartPage: React.FC = () => {
           </div>
         </div>
       )}
-      <div className={`cart__modal ${isActive ? 'is-active' : ''}`}>
-          <h3 className="text-center h3">Thank you for purchase</h3>
-          <Link 
-            to="/"
-            className="cart__total-checkout"
-            onClick={handleClearLocalStorage}
-          >
-            Continue shoping
-          </Link>
+      <div className={`cart__modal ${isActive ? "is-active" : ""}`}>
+        <h3 className="text-center h3">Thank you for purchase</h3>
+        <Link
+          to="/"
+          className="cart__total-checkout"
+          onClick={handleClearLocalStorage}
+        >
+          Continue shoping
+        </Link>
       </div>
     </section>
   );

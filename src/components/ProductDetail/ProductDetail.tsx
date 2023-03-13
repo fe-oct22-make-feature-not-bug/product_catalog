@@ -51,7 +51,11 @@ export const ProductDetail: React.FC = memo(() => {
 
   useEffect(() => {
     getPhone(phoneId)
-      .then(setPhone)
+      .then((item) => {
+        // eslint-disable-next-line no-return-assign, no-param-reassign
+        item.quantity = 1;
+        setPhone(() => item);
+      })
       .catch(() => {});
   }, [phoneId]);
 
@@ -166,7 +170,7 @@ export const ProductDetail: React.FC = memo(() => {
                 </span>
               </div>
               <div className="product__form-buttons">
-                <ProductButtons />
+                <ProductButtons phone={phone} />
               </div>
               <div className="product__form-details">
                 <div className="product__form-item">
