@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 import React, { FC, useCallback } from "react";
 
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { useLocalStorage } from "react-use";
 import { CreateContext } from "./CreateContext";
 
@@ -12,6 +13,7 @@ interface Props {
 
 export const CreateContextProvider: FC<Props> = React.memo(({ children }) => {
   const [cart, setCart] = useLocalStorage<PhoneMainInfo[]>("cart", []);
+  const [favorite, setFavorite] = useLocalStorage<PhoneMainInfo[]>("favorite", []);
 
   const handleAddToCart = (phone: PhoneMainInfo) => {
     if (cart) {
@@ -30,11 +32,32 @@ export const CreateContextProvider: FC<Props> = React.memo(({ children }) => {
     }
   };
 
+  const handleAddToFavorite = (phone: PhoneMainInfo) => {
+    if (favorite) {
+      const indexInFavorite = favorite.findIndex(
+        (item: PhoneMainInfo) => item.id === phone.id
+      );
+
+      if (indexInFavorite === -1) {
+        setFavorite([...favorite, phone]);
+      } else {
+        const updatedFavorite = [...favorite];
+
+        updatedFavorite.splice(indexInFavorite, 1);
+        setFavorite(updatedFavorite);
+      }
+    }
+  };
+
   const isProductInCart = useCallback(
     (phoneId: string) => cart?.some((item) => item.id === phoneId) || false,
     [cart]
   );
 
+  const isProductInFavorite = useCallback(
+    (phoneId: string) => favorite?.some((item) => item.id === phoneId) || false,
+    [favorite]
+  );
   const handleClearLocalStorage = () => {
     // localStorage.clear();
     setCart(() => []);
@@ -42,8 +65,11 @@ export const CreateContextProvider: FC<Props> = React.memo(({ children }) => {
 
   const contextValues = {
     cart,
+    favorite,
     handleAddToCart,
+    handleAddToFavorite,
     isProductInCart,
+    isProductInFavorite
     handleClearLocalStorage,
   };
 

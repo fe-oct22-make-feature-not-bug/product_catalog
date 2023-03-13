@@ -85,7 +85,7 @@ export const BurgerMenu: React.FC<Props> = memo(
 
         <div className="menu__likeAndBag">
           <div className="like">
-            <NavLink to="/like" onClick={() => setBurgerMenuActive(false)}>
+            <NavLink to="/favorites" onClick={() => setBurgerMenuActive(false)}>
               <img src={like} alt="like" className="image" />
             </NavLink>
           </div>

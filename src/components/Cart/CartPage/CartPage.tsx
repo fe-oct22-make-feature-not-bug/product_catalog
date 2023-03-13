@@ -13,7 +13,6 @@ import { CreateContext } from "../../../context/CreateContext";
 export const CartPage: React.FC = () => {
   const navigate = useNavigate();
   const [isActive, setIsActive] = useState(false);
-
   const [cart, setCart] = useLocalStorage<PhoneMainInfo[]>("cart", []);
   const { handleClearLocalStorage } = useContext(CreateContext);
 

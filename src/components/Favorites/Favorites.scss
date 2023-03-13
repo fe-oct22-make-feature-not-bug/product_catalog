@@ -1,6 +1,50 @@
+@import "../../styles/abstracts/index.scss";
+
 .favorites {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 80svh;
+  max-width: 1200px;
+  padding: 0px 16px;
+  margin: 0 auto;
+  position: relative;
+  min-height: 70svh;
+  padding-bottom: 56px;
+  width: 100%;
+
+  &__title {
+    width: 100%;
+    margin-bottom: 32px;
+  }
+
+  &__counter {
+    color: $color-secondary;
+    margin-bottom: 40px
+  }
+
+
+  &__items {
+    width: 100%;
+
+    @include notMobile {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 auto;
+    }
+  }
+
+  &__item {
+    @include notMobile {
+      margin-right: 16px;
+    }
+  }
+
+  &__item:not(:last-child) {
+    margin-bottom: 40px;
+  }
+
+  &__empty {
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 }
