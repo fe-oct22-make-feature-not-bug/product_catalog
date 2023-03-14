@@ -17,7 +17,6 @@ const scrollToTop = () => {
   });
 };
 
-
 export const BurgerMenu: React.FC<Props> = memo(
   ({ burgerMenuActive, setBurgerMenuActive }) => {
     return (
@@ -110,7 +109,8 @@ export const BurgerMenu: React.FC<Props> = memo(
               onClick={() => {
                 setBurgerMenuActive(false);
                 scrollToTop();
-              }}>
+              }}
+            >
               <img src={like} alt="like" className="image" />
             </NavLink>
           </div>
@@ -121,7 +121,8 @@ export const BurgerMenu: React.FC<Props> = memo(
               onClick={() => {
                 setBurgerMenuActive(false);
                 scrollToTop();
-              }}>
+              }}
+            >
               <img src={bag} alt="bag" className="image" />
             </NavLink>
           </div>
