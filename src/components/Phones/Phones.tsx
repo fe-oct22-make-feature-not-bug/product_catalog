@@ -33,6 +33,10 @@ export const Phones: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [pageNumber, setPageNumber] = useState(1);
   const [searchParams, setSearchParams] = useSearchParams({ page: "1" });
+  const [value, setValue] = useState('');
+  const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setValue(event.target.value);
+  };
 
   const toggleDropdown1 = () => setIsOpen1(!isOpen1);
   const toggleDropdown2 = () => setIsOpen2(!isOpen2);
@@ -70,6 +74,18 @@ export const Phones: React.FC = () => {
   ]);
 
   const sortedPhones = [...phones];
+  
+  const visibleSortedPhones = sortedPhones.filter(item => {
+    const title = item.name.toLocaleLowerCase();
+    const part = value
+      .toLocaleLowerCase()
+      .trim()
+      .split(' ')
+      .filter(Boolean)
+      .join(' ');
+    
+    return title.includes(part);
+  });
 
   // // eslint-disable-next-line no-console
   // console.log(phones);
@@ -104,11 +120,22 @@ export const Phones: React.FC = () => {
               toggleDropdown={toggleDropdown2}
             />
           </div>
+          
+          <div className="search">
+            <input 
+              type="text" 
+              className="search-input"
+              placeholder="Search..."
+              value={value}
+              onChange={handleInput}
+              />
+            <div className="search-icon"></div>
+          </div>
         </div>
       </div>
 
       <div className="phones__catalog">
-        {sortedPhones.map((phone) => (
+        {visibleSortedPhones.map((phone) => (
           <Card key={phone.id} phone={phone} />
         ))}
       </div>
