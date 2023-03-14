@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import "./styles/index.scss";
-import React, { useEffect } from 'react';
-import favicon from './assets/logo/logo_footer.svg';
+import React, { useEffect } from "react";
+import favicon from "./assets/logo/logo_footer.svg";
 // import { useState } from "react";
 import { Footer } from "./components/Footer/Footer";
 import { PageNotFound } from "./components/PageNotFound/PageNotFound";
@@ -18,14 +18,14 @@ import { Favorites } from "./components/Favorites/Favorites";
 
 function App() {
   useEffect(() => {
-    document.title = 'Nice Gadgets';
+    document.title = "Nice Gadgets";
     const icon = document.querySelector('link[rel="icon"]');
 
     if (icon instanceof HTMLLinkElement) {
       icon.href = favicon;
     }
   }, []);
-  
+
   return (
     <CreateContextProvider>
       <div className="App">

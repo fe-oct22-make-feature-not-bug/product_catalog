@@ -10,6 +10,14 @@ type Props = {
   setBurgerMenuActive: Dispatch<SetStateAction<boolean>>;
 };
 
+const scrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+};
+
+
 export const BurgerMenu: React.FC<Props> = memo(
   ({ burgerMenuActive, setBurgerMenuActive }) => {
     return (
@@ -35,7 +43,10 @@ export const BurgerMenu: React.FC<Props> = memo(
                     ? "menu__link menu__link--is--active is-active"
                     : "menu__link"
                 }
-                onClick={() => setBurgerMenuActive(false)}
+                onClick={() => {
+                  setBurgerMenuActive(false);
+                  scrollToTop();
+                }}
               >
                 home
               </NavLink>
@@ -49,7 +60,10 @@ export const BurgerMenu: React.FC<Props> = memo(
                     ? "menu__link nav__link--is--active is-active"
                     : "menu__link"
                 }
-                onClick={() => setBurgerMenuActive(false)}
+                onClick={() => {
+                  setBurgerMenuActive(false);
+                  scrollToTop();
+                }}
               >
                 phones
               </NavLink>
@@ -62,7 +76,10 @@ export const BurgerMenu: React.FC<Props> = memo(
                     ? "menu__link nav__link--is--active is-active"
                     : "menu__link"
                 }
-                onClick={() => setBurgerMenuActive(false)}
+                onClick={() => {
+                  setBurgerMenuActive(false);
+                  scrollToTop();
+                }}
               >
                 tablets
               </NavLink>
@@ -75,7 +92,10 @@ export const BurgerMenu: React.FC<Props> = memo(
                     ? "menu__link menu__link--is--active is-active"
                     : "menu__link"
                 }
-                onClick={() => setBurgerMenuActive(false)}
+                onClick={() => {
+                  setBurgerMenuActive(false);
+                  scrollToTop();
+                }}
               >
                 accessories
               </NavLink>
@@ -85,13 +105,23 @@ export const BurgerMenu: React.FC<Props> = memo(
 
         <div className="menu__likeAndBag">
           <div className="like">
-            <NavLink to="/favorites" onClick={() => setBurgerMenuActive(false)}>
+            <NavLink
+              to="/favorites"
+              onClick={() => {
+                setBurgerMenuActive(false);
+                scrollToTop();
+              }}>
               <img src={like} alt="like" className="image" />
             </NavLink>
           </div>
 
           <div className="bag">
-            <NavLink to="/cart" onClick={() => setBurgerMenuActive(false)}>
+            <NavLink
+              to="/cart"
+              onClick={() => {
+                setBurgerMenuActive(false);
+                scrollToTop();
+              }}>
               <img src={bag} alt="bag" className="image" />
             </NavLink>
           </div>

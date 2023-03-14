@@ -17,7 +17,7 @@ export const CartItem: React.FC<Props> = ({
   phone,
   onQuantityIncrement,
   onQuantityDecrement,
-  handleRemoveItem
+  handleRemoveItem,
 }) => {
   // eslint-disable-next-line no-console
   console.log(phone);
@@ -26,13 +26,16 @@ export const CartItem: React.FC<Props> = ({
     <div className="cart__item">
       <div className="cart__item-phoneData">
         <button
-          type="submit" 
+          type="submit"
           className="cart__item-phoneData__delete"
           onClick={() => handleRemoveItem(phone.id)}
         >
           <img src={crossDelete} alt="crossDelete" />
         </button>
-        <Link className="cart__item-wrapper" to={`/phones-info/${phone.phoneId}`}>
+        <Link
+          className="cart__item-wrapper"
+          to={`/phones-info/${phone.phoneId}`}
+        >
           <img
             src={`https://raw.githubusercontent.com/mate-academy/product_catalog/main/public/${phone.image}`}
             alt="phone"

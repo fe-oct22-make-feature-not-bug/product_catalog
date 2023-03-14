@@ -31,7 +31,7 @@ export const RecomendationsSlider: React.FC = () => {
       {
         breakpoint: 999,
         settings: {
-          slidesToShow: 2.5
+          slidesToShow: 2.5,
         },
       },
       {
@@ -43,7 +43,7 @@ export const RecomendationsSlider: React.FC = () => {
       {
         breakpoint: 719,
         settings: {
-          slidesToShow: 1.8
+          slidesToShow: 1.8,
         },
       },
 

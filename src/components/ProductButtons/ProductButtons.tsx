@@ -9,19 +9,19 @@ type Props = {
 
 export const ProductButtons: React.FC<Props> = ({ phone }) => {
   const [addedToFavorites, setAddedToFavorites] = useState(false);
-  const [buttonText, setButtonText] = useState('Add to cart');
+  const [buttonText, setButtonText] = useState("Add to cart");
   const { handleAddToCart } = useContext(CreateContext);
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setButtonText('Add to cart');
+      setButtonText("Add to cart");
     }, 3000);
 
     return () => clearTimeout(timer);
   }, [buttonText]);
 
   const handleAddedToCart = () => {
-    setButtonText('Added to cart');
+    setButtonText("Added to cart");
   };
 
   const handleCombinedClick = () => {

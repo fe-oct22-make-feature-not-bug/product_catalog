@@ -21,10 +21,10 @@ export const CartPage: React.FC = () => {
   };
 
   const handleRemoveItem = (id: string) => {
-    const updatedCart = cart?.filter(item => item.id !== id);
-  
+    const updatedCart = cart?.filter((item) => item.id !== id);
+
     setCart(updatedCart);
-    localStorage.setCart('cartItems', JSON.stringify(updatedCart));
+    localStorage.setCart("cartItems", JSON.stringify(updatedCart));
   };
 
   function handleGoBack() {

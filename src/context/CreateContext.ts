@@ -6,7 +6,7 @@ export interface CreateContextProps {
   handleAddToCart: (phone: any) => void;
   handleAddToFavorite: (phone: any) => void;
   cart: PhoneMainInfo[] | undefined;
-  favorite: PhoneMainInfo [] | undefined;
+  favorite: PhoneMainInfo[] | undefined;
   isProductInCart: (id: string) => boolean;
   isProductInFavorite: (id: string) => boolean;
   handleClearLocalStorage: () => void;

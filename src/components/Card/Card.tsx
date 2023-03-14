@@ -17,10 +17,11 @@ type Props = {
 };
 
 export const Card: React.FC<Props> = ({ phone }) => {
-  const { handleAddToCart, 
-  isProductInCart,
-  handleAddToFavorite,
-  isProductInFavorite,
+  const {
+    handleAddToCart,
+    isProductInCart,
+    handleAddToFavorite,
+    isProductInFavorite,
   } = useContext(CreateContext);
 
   const isInCart = isProductInCart(phone.id);

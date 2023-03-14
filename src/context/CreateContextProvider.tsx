@@ -13,7 +13,10 @@ interface Props {
 
 export const CreateContextProvider: FC<Props> = React.memo(({ children }) => {
   const [cart, setCart] = useLocalStorage<PhoneMainInfo[]>("cart", []);
-  const [favorite, setFavorite] = useLocalStorage<PhoneMainInfo[]>("favorite", []);
+  const [favorite, setFavorite] = useLocalStorage<PhoneMainInfo[]>(
+    "favorite",
+    []
+  );
 
   const handleAddToCart = (phone: PhoneMainInfo) => {
     if (cart) {

@@ -4,21 +4,16 @@
   margin: 0 auto;
   @include grid-container;
   max-width: 1200px;
-
-  @mixin onTabletSize {
-    margin: 0 auto;
-    @include grid-container;
-  }
-
-  @mixin onDesktop {
-    margin: 0 auto;
-    @include grid-container;
-  }
 }
 
 .home-header {
   margin-bottom: 24px;
   grid-column: 1/5;
+
+  @include onTabletSize {
+    margin-bottom: 56px;
+    grid-column: 2/10;
+  }
 
   @include onDesktop {
     margin-bottom: 56px;

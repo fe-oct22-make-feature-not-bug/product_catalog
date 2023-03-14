@@ -22,7 +22,9 @@ export const ProductDetail: React.FC = memo(() => {
   const navigate = useNavigate();
   const [phone, setPhone] = useState<Phone>();
   const { phoneId } = useParams();
-  const [selectedCapacityButton, setSelectedCapacityButton] = useState<string | undefined>("");
+  const [selectedCapacityButton, setSelectedCapacityButton] = useState<
+    string | undefined
+  >("");
   const [capacityButtons, setCapacityButtons] = useState<CapacityButton[]>([]);
 
   function handleGoBack() {
