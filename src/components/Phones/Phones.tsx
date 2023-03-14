@@ -1,6 +1,8 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import React, { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
+// eslint-disable-next-line import/no-extraneous-dependencies
+// import { debounce } from 'lodash';
 import { client } from "../../utils/fetchClient";
 import "./Phones.scss";
 import { PhoneMainInfo } from "../../types/PhoneMainInfo";
@@ -8,6 +10,7 @@ import { Card } from "../Card/Card";
 import Dropdown from "../Dropdown/Dropdown";
 import { Navigation } from "../Navigation/Navigation";
 import { Pagination } from "../Pagination/Pagination";
+
 
 interface ApiResponse {
   items: PhoneMainInfo[];
@@ -33,9 +36,28 @@ export const Phones: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [pageNumber, setPageNumber] = useState(1);
   const [searchParams, setSearchParams] = useSearchParams({ page: "1" });
-  const [value, setValue] = useState('');
+  // const [value, setValue] = useState("");
+  const [value, setValue] = useState(() => {
+    const params = new URLSearchParams(window.location.search);
+    const query = params.get('query') || '';
+
+    return query;
+  });
+
+  // const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
+  //   setValue(event.target.value);
+  // };
+
   const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setValue(event.target.value);
+    const query = event.target.value.trim().toLocaleLowerCase();
+
+    setValue(query);
+
+    if (query) {
+      window.history.pushState({ query }, '', `?query=${query}`);
+    } else {
+      window.history.pushState(null, '', '/');
+    }
   };
 
   const toggleDropdown1 = () => setIsOpen1(!isOpen1);
@@ -54,11 +76,17 @@ export const Phones: React.FC = () => {
     getPhones(
       `phones?page=${page}&items=${cardsPerPage}&sortBy=${sortOrder.toLowerCase()}`
     )
+      // .then((data) => {
+      //   // eslint-disable-next-line no-return-assign, no-param-reassign
+      //   data.items.map((item) => (item.quantity = 1));
+      //   setPhones(data.items);
+      //   setPageNumber(+data.totalPages);
       .then((data) => {
         // eslint-disable-next-line no-return-assign, no-param-reassign
-        data.items.map((item) => (item.quantity = 1));
-        setPhones(data.items);
-        setPageNumber(+data.totalPages);
+        const updatedItems = data.items.map((item) => ({ ...item, quantity: 1 }));
+
+        setPhones(updatedItems);
+        setPageNumber(data.totalPages);
       })
       .catch(() => {
         setPhones([]);
@@ -74,16 +102,16 @@ export const Phones: React.FC = () => {
   ]);
 
   const sortedPhones = [...phones];
-  
-  const visibleSortedPhones = sortedPhones.filter(item => {
+
+  const visibleSortedPhones = sortedPhones.filter((item) => {
     const title = item.name.toLocaleLowerCase();
     const part = value
       .toLocaleLowerCase()
       .trim()
-      .split(' ')
+      .split(" ")
       .filter(Boolean)
-      .join(' ');
-    
+      .join(" ");
+
     return title.includes(part);
   });
 
@@ -120,15 +148,17 @@ export const Phones: React.FC = () => {
               toggleDropdown={toggleDropdown2}
             />
           </div>
-          
+
           <div className="search">
-            <input 
-              type="text" 
+            <input
+              type="text"
               className="search-input"
               placeholder="Search..."
               value={value}
+              // onChange={(event) => handleInput(event)}
               onChange={handleInput}
-              />
+
+            />
             <div className="search-icon"></div>
           </div>
         </div>
