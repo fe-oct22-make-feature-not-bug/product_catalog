@@ -1,8 +1,9 @@
 {
   "files": {
-    "main.css": "/product_catalog/static/css/main.36652691.css",
-    "main.js": "/product_catalog/static/js/main.3543f6b5.js",
+    "main.css": "/product_catalog/static/css/main.67e50f02.css",
+    "main.js": "/product_catalog/static/js/main.cd9f785d.js",
     "static/js/787.10a53ce6.chunk.js": "/product_catalog/static/js/787.10a53ce6.chunk.js",
+    "static/media/3.png": "/product_catalog/static/media/3.65e29083854490403698.png",
     "static/media/logo_footer.svg": "/product_catalog/static/media/logo_footer.017df26b30774e1dcf803209904aa24c.svg",
     "static/media/Mont-Heavy.ttf": "/product_catalog/static/media/Mont-Heavy.f370bce757bbfe4c8350.ttf",
     "static/media/Mont-SemiBold.ttf": "/product_catalog/static/media/Mont-SemiBold.0b5e68ebb36ca4006e21.ttf",
@@ -11,7 +12,9 @@
     "static/media/Accessories.png": "/product_catalog/static/media/Accessories.4a11b59f09ea131d790b.png",
     "static/media/404.png": "/product_catalog/static/media/404.690f5682ec222bb15211.png",
     "static/media/Tablets.png": "/product_catalog/static/media/Tablets.dcf825a9a0c5d2651926.png",
+    "static/media/3_s.png": "/product_catalog/static/media/3_s.66f9dd07b483421cb581.png",
     "static/media/Phones.png": "/product_catalog/static/media/Phones.bede7cbe8973031a1f14.png",
+    "static/media/2.png": "/product_catalog/static/media/2.795602a5b015a4f04d2e.png",
     "static/media/Mont-Heavy.woff": "/product_catalog/static/media/Mont-Heavy.235606fac6f32b88355c.woff",
     "static/media/Mont-SemiBold.woff": "/product_catalog/static/media/Mont-SemiBold.5d4afcfe00f8d6a38e5f.woff",
     "static/media/Mont-Bold.woff": "/product_catalog/static/media/Mont-Bold.bbedfa075d47682c0041.woff",
@@ -19,13 +22,13 @@
     "static/media/Mont-Heavy.woff2": "/product_catalog/static/media/Mont-Heavy.1a5d4089eeb291d65b03.woff2",
     "static/media/Mont-SemiBold.woff2": "/product_catalog/static/media/Mont-SemiBold.95ab478c134f9e9da545.woff2",
     "static/media/coming-soon.png": "/product_catalog/static/media/coming-soon.8b5afed5894c0de56291.png",
+    "static/media/2_s.png": "/product_catalog/static/media/2_s.613a11b491cddaebae4a.png",
     "static/media/Mont-Bold.woff2": "/product_catalog/static/media/Mont-Bold.8b7a4e0626328dd44205.woff2",
     "static/media/slick.svg": "/product_catalog/static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/slick.eot": "/product_catalog/static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "static/media/slick.ttf": "/product_catalog/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/heart.svg": "/product_catalog/static/media/heart.a48831a1ed897e1e3553.svg",
     "static/media/slick.woff": "/product_catalog/static/media/slick.295183786cd8a1389865.woff",
-    "static/media/heart-red.svg": "/product_catalog/static/media/heart-red.2a934b93571980f92cc4.svg",
     "static/media/home.svg": "/product_catalog/static/media/home.901f72c9436f9e8c63573838c422c80d.svg",
     "index.html": "/product_catalog/index.html",
     "static/media/plusItem.svg": "/product_catalog/static/media/plusItem.8519972be0ca323eba6504c8f26d4920.svg",
@@ -34,13 +37,14 @@
     "static/media/chevron-right-grey.svg": "/product_catalog/static/media/chevron-right-grey.985360c2305523348313.svg",
     "static/media/chevron-up.svg": "/product_catalog/static/media/chevron-up.c0e3f15d57e31409821a3231e7f6f127.svg",
     "static/media/chevron-left.svg": "/product_catalog/static/media/chevron-left.594aaed50078a31117a2eb61ba1cee75.svg",
+    "static/media/heart-red.svg": "/product_catalog/static/media/heart-red.db5f2c5f77bae45dfa19.svg",
     "static/media/minusItem.svg": "/product_catalog/static/media/minusItem.a6cc83682174ac68c902f78ea79c4434.svg",
-    "main.36652691.css.map": "/product_catalog/static/css/main.36652691.css.map",
-    "main.3543f6b5.js.map": "/product_catalog/static/js/main.3543f6b5.js.map",
+    "main.67e50f02.css.map": "/product_catalog/static/css/main.67e50f02.css.map",
+    "main.cd9f785d.js.map": "/product_catalog/static/js/main.cd9f785d.js.map",
     "787.10a53ce6.chunk.js.map": "/product_catalog/static/js/787.10a53ce6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.36652691.css",
-    "static/js/main.3543f6b5.js"
+    "static/css/main.67e50f02.css",
+    "static/js/main.cd9f785d.js"
   ]
 }
