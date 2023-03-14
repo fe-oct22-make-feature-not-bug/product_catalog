@@ -11,6 +11,7 @@ export const ProductButtons: React.FC<Props> = ({ phone }) => {
   const [addedToFavorites, setAddedToFavorites] = useState(false);
   const [buttonText, setButtonText] = useState("Add to cart");
   const { handleAddToCart } = useContext(CreateContext);
+  const { handleAddToFavorite } = useContext(CreateContext);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -37,6 +38,11 @@ export const ProductButtons: React.FC<Props> = ({ phone }) => {
     }
   };
 
+  const handleAddToWishList = () => {
+    handleAddToFavorite(phone);
+    handleClick(addedToFavorites);
+  };
+
   return (
     <div className="product-buttons">
       <button
@@ -51,7 +57,7 @@ export const ProductButtons: React.FC<Props> = ({ phone }) => {
           addedToFavorites === true ? "is-selected" : ""
         }`}
         type="submit"
-        onClick={() => handleClick(addedToFavorites)}
+        onClick={handleAddToWishList}
       >
         <span hidden>add to wishlist</span>
       </button>

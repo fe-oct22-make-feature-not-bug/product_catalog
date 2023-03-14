@@ -73,6 +73,24 @@
   &:hover {
     background-color: $color-elements;
   }
+
+  &__counter {
+    position: absolute;
+    top: 15px;
+    right: 85px;
+    width: 14px;
+    height: 14px;
+    border-radius: 100%;
+    background-color: $color-red;
+    font-size: 9px;
+    text-align: center;
+    line-height: 15px;
+
+    @include notMobile {
+      top: 15px;
+      right: 15px;
+    }
+  }
 }
 
 .nav__list {

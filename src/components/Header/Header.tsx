@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useContext } from "react";
 import cn from "classnames";
 import { NavLink } from "react-router-dom";
 import { Logo } from "../Logo";
@@ -6,9 +6,12 @@ import "./Header.scss";
 import like from "../../assets/icons/like.png";
 import bag from "../../assets/icons/bag.png";
 import { BurgerMenu } from "./BurgerMenu/BurgerMenu";
+import { CreateContext } from "../../context/CreateContext";
 
 export const Header: React.FC = React.memo(() => {
   const [burgerMenuActive, setBurgerMenuActive] = useState(false);
+  const { cart } = useContext(CreateContext);
+  const { favorite } = useContext(CreateContext);
 
   const toggle = useCallback(
     (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
@@ -86,12 +89,18 @@ export const Header: React.FC = React.memo(() => {
           <div className="like">
             <NavLink to="/favorites">
               <img src={like} alt="like" className="image" />
+              {favorite && favorite.length > 0 && (
+                <span className="like__counter">{favorite?.length}</span>
+              )}
             </NavLink>
           </div>
 
           <div className="bag">
             <NavLink to="/cart">
               <img src={bag} alt="bag" className="image" />
+              {cart && cart.length > 0 && (
+                <span className="bag__counter">{cart?.length}</span>
+              )}
             </NavLink>
           </div>
         </div>
