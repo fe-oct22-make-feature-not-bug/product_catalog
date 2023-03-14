@@ -82,3 +82,47 @@
     margin: 4px;
   }
 }
+
+.search {
+  position: relative;
+  height: 40px;
+  width: auto;
+  margin-top: 23px;
+  margin-left: 16px;
+  cursor: pointer;
+  box-sizing: border-box;
+
+  
+
+    &-input {
+      height: 100%;
+      width:auto;
+
+      padding-left: 26px;
+      display: flex;
+      align-items: center;
+      background-color: $color-surface-2;
+      display: flex;
+      flex-basis: auto;
+
+      &:hover, 
+      &:focus {
+        border: 1px solid $color-accent;
+      }
+      // &:focus {
+      //   border: 1px solid $color-accent;
+      // }
+    }
+
+    &-icon {
+      background-image: url('../../assets/icons/search.png');
+      height: 17px;
+      width: 17px;
+      position: absolute;
+      left: 7px;
+      top: 50%;
+      transform: translateY(-50%);
+      object-fit:fill;
+    }
+  
+}
