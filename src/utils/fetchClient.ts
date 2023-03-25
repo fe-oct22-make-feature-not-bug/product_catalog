@@ -1,4 +1,4 @@
-const BASE_URL = "https://productcatalogapi-production-e384.up.railway.app/";
+const BASE_URL = "http://109.251.89.5:5000/";
 
 type RequestMethod = "GET" | "POST" | "PATCH" | "DELETE";
 
