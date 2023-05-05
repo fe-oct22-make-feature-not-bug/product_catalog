@@ -1,4 +1,4 @@
-const BASE_URL = "http://109.251.89.5:5000/";
+const BASE_URL = "https://nicegudgets.up.railway.app/";
 
 type RequestMethod = "GET" | "POST" | "PATCH" | "DELETE";
 
